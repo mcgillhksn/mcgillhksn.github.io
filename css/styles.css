@@ -36,8 +36,7 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
- 
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /*masthead aka title font*/
   --font-family:"Roboto Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-sans-serif:"Roboto Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
@@ -10239,7 +10238,7 @@ body {
   background-size: cover;
 }
 .masthead h1 {
-  font-family:"Abril Fatface", sans;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /*team header font */
   /* --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */ /*letter-spacing: 10px;*/
   text-align: center;
   background: rgba(255, 255, 255, 0);
@@ -10268,7 +10267,7 @@ body {
   .masthead h1 {
     font-size: 9rem;
     line-height: 10rem;
-    letter-spacing: 0.8rem;
+    letter-spacing: .8rem;
     font-weight: 700;
     text-align: center;
   }
@@ -10384,7 +10383,7 @@ body {
 
 /******* exec page ********/
 .teamheader {
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /*team header font */
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 3rem;
@@ -10405,15 +10404,17 @@ body {
   margin-left: auto;
 }
 
+/*
 .execimg {
-  padding: 0px 40px 5px 40px; /* top right bottom left */
+  padding: 0px 40px 5px 40px; /* top right bottom left */ /*
+} */
+
+/**************************** exec overlay ****************************/
+.execs {
+  background-color: white;
 }
 
-.copresimg {
-  padding: 0px 75px 5px 75px; /* top right bottom left */
-}
-
-/******* exec overlay ********/
+/*
 .execoverlaycon {
   position: relative;
   width: 100%;
@@ -10441,13 +10442,81 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+} */
+
+.exec-padding {
+  padding: 0px 30px 10px 30px;
 }
 
-.execs {
-  background-color: white;
+.exec-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
 }
 
-/****** team/execs masthead ******/
+.exec-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.exec-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 10;
+  background-color: #48a4de;
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+  transition: .5s ease;
+}
+
+.exec-container:hover .exec-overlay {
+  height: 100%;
+}
+
+.exec-text {
+  color: white;
+  position: absolute;
+  top: 40%; /* bigger number pushes text down more */
+  left: 50%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: auto;
+  line-height: 2;
+  white-space: nowrap; /* normal/nowrap/pre/ */
+}
+
+.exec-text h {
+  font-size: 21px;
+}
+
+.exec-text p {
+  font-size: 15px;
+}
+
+.exec-caption {
+  color: black;
+  font-weight: normal;
+  font-size: 16px;
+  position: absolute;
+  top: 91%; /* pushes text down */
+  left: 50%;
+  bottom: 10%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: auto;
+}
+
+
+/*********************** team/execs masthead ********************/
 .masthead-team {
   position: relative;
   width: 100%;
@@ -10461,7 +10530,8 @@ body {
   background-size: cover;
 }
 .masthead-team h1 {
-  font-family:"Abril Fatface"; /*letter-spacing: 10px;*/
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /*team header font */
+  /*letter-spacing: 10px;*/
   /*letter-spacing: 10px;*/
   font-size: 24px;
   line-height: 2.5rem;
@@ -10493,7 +10563,7 @@ body {
   }
 }
 
-/****** sponsor masthead ******/
+/********************** sponsor masthead ******************/
 .masthead-sponsors {
   position: relative;
   width: 100%;
@@ -10507,7 +10577,8 @@ body {
   background-size: cover;
 }
 .masthead-sponsors h1 {
-  font-family:"Abril Fatface"; /*letter-spacing: 10px;*/
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /*team header font */
+  /*letter-spacing: 10px;*/
   /*letter-spacing: 10px;*/
   font-size: 24px;
   line-height: 2.5rem;
@@ -10537,6 +10608,7 @@ body {
     letter-spacing: 0.6rem;
     font-weight: 700;
     text-align: center;
+    text ;
   }
 }
 

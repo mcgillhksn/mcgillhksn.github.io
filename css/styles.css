@@ -5,6 +5,7 @@
     https://fontawesome.com/v4.7.0/cheatsheet/
     https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/ THIS ONE WORKS
     https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons
+    https://www.colorbook.io/
     */
  
 :root {
@@ -10238,7 +10239,7 @@ body {
   background-size: cover;
 }
 .masthead h1 {
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /*team header font */
+  --font-family:"Roboto Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  /* header font */
   /* --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */ /*letter-spacing: 10px;*/
   text-align: center;
   background: rgba(255, 255, 255, 0);
@@ -10612,7 +10613,141 @@ body {
   }
 }
 
-.sponsorimg {
+/****************** sponsor name/list text ********************/
+.sponsorimg /* aka sponsor text */ {
   padding: 0px 40px 5px 40px; /* top right bottom left */
   text-align: center;
+}
+
+.sponsors {
+  background-color: white;
+  width: 60%;
+  margin: auto;
+  font-weight: normal;
+  font-size: 1.15rem;
+}
+
+/******** css for sponsor blurb container ********/
+.sponsorblurb {
+  width: 80%;
+  padding-top: 2rem;  
+  padding-bottom: 0rem;
+}
+
+.sponsorblurb p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: auto;
+  line-height: 1.8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.sponsor-cover {
+  display: inline-block;
+  margin: auto;
+  padding: 10%;
+}
+
+
+
+/************ contact / socials ********************/
+.btn.btn-social-icon {
+  display: inline-flex; /* margin auto + this keeps icon in middle? ---- flex vs block */
+  width: 8rem;
+  height: 8rem;
+  padding: 0;
+  font-size: 32px;
+  margin: 15px;
+  align-content: center;
+}
+.template-demo>.btn {
+  margin-right: 0.5rem !important
+}
+
+.template-demo {
+  margin-top: 0.5rem !important
+}
+
+.btn.btn-rounded {
+  border-radius: 50%;
+}
+
+.btn-facebook {
+  background: #3b579d;
+  color: #ffffff;
+}
+
+.btn-youtube {
+  background: #e52d27;
+  color: #ffffff
+}
+
+.btn-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); /* #dc4a38; */
+  color: #ffffff;
+}
+
+.btn-snapchat {
+  background: #fffc00;
+  color: #ffffff
+}
+
+.btn-spotify {
+  background: #1DB954;
+  color: #ffffff
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+  background: #2d4278;
+  color: #ffffff
+}
+
+.btn-youtube:hover,
+.btn-youtube:focus {
+  background: #c21d17;
+  color: #ffffff
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+  /* background: #bf3322; */
+  background: radial-gradient(circle at 30% 107%, #FFF47C 0%, #FFF47C 5%, #FF3F2E 45%,#C1158B 60%,#1444D4 90%);
+  color: #ffffff;
+  
+}
+
+.btn-snapchat:hover,
+.btn-snapchat:focus {
+  background: #E6E300;
+  color: #ffffff
+}
+
+.btn-spotify:hover,
+.btn-spotify:focus {
+  background: #1aa34a;
+  color: #ffffff
+}
+
+/************ css for contact page text *******************/
+.p-contact {
+  display: block;
+  margin-top: 3rem;
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+
+/******** css for membership card container ********/
+.membership-cont {
+  width: 100%;
+  padding-top: 2rem;  
+  padding-bottom: 0rem;
+  text-align: center;
+}
+.mem-card-front {
+  display: inline-block; 
+  margin: auto; 
+  padding: 25%;
 }

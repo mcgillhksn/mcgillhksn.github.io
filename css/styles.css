@@ -10233,8 +10233,10 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/hksnexec.jpg");
-  background-position: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("https://wallpapercave.com/wp/wp1849599.jpg");
+  /* ../assets/img/hksnexec.jpg
+    center */
+  background-position: unset;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -10527,8 +10529,10 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/hksnexec.jpg") ;
-  background-position: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("https://wallpapercave.com/wp/wp1849599.jpg") ;
+  /* ../assets/img/hksnexec.jpg 
+   center*/
+  background-position: unset;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -10574,8 +10578,10 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/hksnexec.jpg") ;
-  background-position: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("https://wallpapercave.com/wp/wp1849599.jpg");
+  /* ../assets/img/hksnexec.jpg 
+  cetner */
+  background-position: unset;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -10616,7 +10622,7 @@ body {
   }
 }
 
-/****************** sponsor name/list text ********************/
+/****************** sponsor names/list text ********************/
 .sponsorimg /* aka sponsor text */ {
   padding: 0px 40px 5px 40px; /* top right bottom left */
   text-align: center;
@@ -10753,4 +10759,10 @@ body {
   display: inline-block; 
   margin: auto; 
   padding: 25%;
+}
+
+
+/************** career careers **************/
+.sponsors p {
+  text-align: center;
 }

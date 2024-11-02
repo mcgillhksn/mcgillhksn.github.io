@@ -1,0 +1,213 @@
+#nav {
+    position: absolute !important;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #009ADB !important;
+    --bs-btn-border-color: #009ADB !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #0083BA !important;
+    --bs-btn-hover-border-color: #007AAE !important;
+    --bs-btn-focus-shadow-rgb: 0, 154, 219 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #007AAE !important;
+    --bs-btn-active-border-color: #0072A2 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-disabled-bg: #009ADB !important;
+    --bs-btn-disabled-border-color: #009ADB !important;
+}
+  
+.nav-link {
+    --bs-nav-link-display: block !important;
+    --bs-nav-link-padding-y: 0.5rem !important;
+    --bs-nav-link-padding-x: 1rem !important;
+    --bs-nav-link-font-size: 1rem !important;
+    --bs-nav-link-font-weight: 400 !important;
+    --bs-nav-link-color: #009ADB !important;
+    --bs-nav-link-text-decoration: none !important;
+    --bs-nav-link-background: transparent !important;
+    --bs-nav-link-border: 0 !important;
+    --bs-nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !important;
+    --bs-nav-link-hover-color: #0083BA !important;
+    --bs-nav-link-active-color: #007AAE !important;
+    --bs-nav-link-disabled-color: #009ADB !important;
+}
+
+.nav-link {
+    padding: 2px !important;
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+}
+  
+.nav-link:hover {
+    color: var(--bs-nav-link-hover-color);
+}
+  
+.nav-link:active, .nav-link.active {
+    color: var(--bs-nav-link-color);
+}
+  
+.nav-link:disabled, .nav-link.disabled {
+    color: var(--bs-nav-link-color);
+}
+
+.navbar-toggler {
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.navbar-toggler:active .navbar-toggler-icon,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(134, 136, 138, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(158, 158, 158, 0.298) !important;
+    border-radius: 8px !important;
+    margin-top: 8px !important;
+    padding: 8px 0 !important;
+}
+
+.dropdown-item {
+    color: #009ADB !important;
+    padding: 8px 20px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 154, 219, 0.1) !important;
+    color: #0083BA !important;
+}
+
+.dropdown-item:active {
+    background-color: rgba(0, 154, 219, 0.2) !important;
+    color: #007AAE !important;
+}
+
+/* Dropdown toggle arrow color */
+.dropdown-toggle::after {
+    color: #009ADB !important;
+    border-top-color: #009ADB !important;
+    margin-left: 0.5em !important;
+}
+
+/* Remove default box shadow on dropdown toggle when active */
+.show > .nav-link.dropdown-toggle {
+    box-shadow: none !important;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    background-color: transparent !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(158, 158, 158, 0.298) !important;
+    border-radius: 8px !important;
+    margin-top: 8px !important;
+    padding: 8px 0 !important;
+}
+
+.dropdown-item {
+    color: #009ADB !important;
+    padding: 8px 20px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 154, 219, 0.1) !important;
+    color: #0083BA !important;
+}
+
+.dropdown-item:active {
+    background-color: rgba(0, 154, 219, 0.2) !important;
+    color: #007AAE !important;
+}
+
+
+/* Style for the burger menu icon */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Keep the active/expanded state the same color */
+.navbar-toggler:active .navbar-toggler-icon,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(158, 158, 158, 0.298);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 150px;
+    background-color: rgba(101, 101, 101, 0.132);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+}
+
+nav ul {
+    display: flex;
+    gap: 4em;
+}
+
+nav a {
+    position: relative;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 4px;
+    border-radius: 1em;
+    background-color: #03e9f4;
+    box-shadow: 
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4;
+    transition: 0.4s ease;
+}
+
+nav a:hover::before {
+    width: 100%;
+ }
+ 
+nav .logo {
+    font-size: 28px;
+    color: white;
+    font-weight: 800;
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+
+nav .logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+} */

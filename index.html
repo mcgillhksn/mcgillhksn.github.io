@@ -1,220 +1,105 @@
- <!-- 
-     sections: events, sponsors, news, execs (photo, name, major, position, hometown)
- -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title> HKSN McGill - Hong Kong Student Network </title>
-        <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&family=Bowlby+One&family=Changa+One&family=Chilanka&family=Lalezar&family=Manrope:wght@800&family=Poller+One&display=swap" rel="stylesheet">        
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
 
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src="assets/img/logo.png" alt="logo" width="65.0625" height="49.3125" > </a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/logo/logo.png" />
+
+    <link rel="stylesheet" href="./styles/designPatterns.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/home.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script defer src="./app.js"></script>
+</head>
+<body>
+    <!-- 
+    MARK: Navbar 
+    -->
+    <div class="fixed-top hiddenSlideY" id="nav">
+        <nav class="navbar navbar-expand-md container py-3 container">
+            <div class="container-fluid">
+                <a href="#top" class="navbar-brand d-flex align-items-center text-decoration-none">
+                    <img src="./assets/logo/logo+text.png" alt="HKSN Logo" height="32" style="margin-top: -7px;"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="team.html">TEAM</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="sponsors.html">SPONSORS</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ABOUT</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#events">EVENTS</a></li> -->
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="careers.html">CAREERS</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="contact.html">CONTACT</a></li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item ms-auto">
+                            <a href="#top" class="nav-link richLink fw-bold">Home</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a href="#About" class="nav-link richLink fw-bold">Events</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a href="#Projects" class="nav-link richLink fw-bold">Store</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a href="#Interests" class="nav-link richLink fw-bold">Socials</a>
+                        </li>
+                        <li class="nav-item ms-auto dropdown">
+                            <a class="nav-link richLink fw-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#team">Team</a></li>
+                                <li><a class="dropdown-item" href="#sponsors">Sponsors</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    </div>
 
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 " style="letter-spacing: 0rem;">  H K S N </h1>
-                    <p>
-                        <br>
-                    </p>
-                    <!-- <h2 class="text-white-50 mx-auto mt-2 mb-5"> Hong Kong Student Network at McGill </h2> -->
-                    <a class="btn btn-primary js-scroll-trigger" href="#about"> Learn more! </a>
-                </div>
-            </div>
-        </header>
+    <header>
+        <img src="./assets/home/bg.png" id="MaskingImage">
+        <div class="images">
+            <img src="./assets/home/layer1.png" class="img1" alt="Image 1" style="margin-top: -6px;">
+            <img src="./assets/home/layer2.png" class="img2" alt="Image 2" style="margin-top: -5px;">
+            <img src="./assets/home/layer3.png" class="img3" alt="Image 3" style="margin-top: -4px;">
+            <img src="./assets/home/layer4.png" class="img4" alt="Image 4" style="margin-top: -3px;">
+            <img src="./assets/home/layer5.png" class="img5" alt="Image 5" style="margin-top: -2px;">
+            <img src="./assets/home/layer6.png" class="img6" alt="Image 6" style="margin-top: -1px;">
+            <img src="./assets/home/layer7.png" class="img7" alt="Image 7">
+        </div>
+        <!-- <h1 class="title">
+            <img src="./assets/logo/logo+text.png">
+        </h1> -->
+    </header>
 
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">HONG KONG STUDENT NETWORK</h2>
-                        <p class="text-white-50">
-                            Hong Kong Student Network is a Student Group of the Students’ Society of McGill University (SSMU). We strive to accommodate new students from all over the world and familiarize them with McGill and everything beautiful about it. We pride ourselves on being a Home Away From Home for everybody, and we whole-heartedly embrace the multiculturalism that Hong Kong is known for. 
-                            We plan a wide variety of events, from singing competitions to ski trips, to get the student body involved. We hope that everyone who joins HKSN will have an awesome time and meet lots of new friends!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section>
+        <h1>
+            Hong Kong Student Network
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut sapien metus. Mauris rhoncus lobortis libero, in ornare libero elementum ac. Fusce porta neque elementum condimentum euismod. Curabitur metus purus, tempor non mauris ac, sagittis sagittis felis. Nullam consectetur orci eu mauris feugiat, eget condimentum est rutrum. Curabitur tempor diam sit amet dictum condimentum. Pellentesque maximus vel nunc at gravida. Mauris at luctus eros. Suspendisse gravida imperdiet velit a pulvinar. Suspendisse potenti. Nam tempor pharetra leo. Quisque dapibus eget libero ac dictum. Praesent a lobortis massa. Nullam condimentum viverra urna, ut blandit risus viverra a. Praesent ultrices porttitor lorem ac placerat.
 
-        
-        <!-- About: Membership Card-->
-        <!---
-        <section class="membership-cont text-center">
-            <div class="row align-items-center no-gutters">
-                <div class="col-xl-4 col-lg-4 mx-auto">
-                    <img src="assets/img/front-membership-card.png" class="img-fluid mem-card-front">
-                </div>
-            </div>
-        </section> -->
-        
+Duis posuere leo in elit eleifend, nec gravida nibh hendrerit. Curabitur molestie lectus mi, quis commodo tellus scelerisque vel. Praesent ut ligula id mi ultricies iaculis. Nunc vulputate, quam ut dictum dictum, sem neque semper neque, eu luctus metus ligula dapibus ante. Mauris lectus erat, condimentum posuere odio in, eleifend fermentum nibh. Vestibulum rutrum mollis est, vel fermentum enim luctus nec. Etiam sit amet gravida risus. Vivamus nisi ligula, semper quis mattis rhoncus, sollicitudin at lorem. Nam vulputate, lorem quis tincidunt blandit, urna ex convallis ante, a facilisis magna mauris vitae leo. Mauris sodales gravida auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris sit amet ex egestas, congue sapien sit amet, lacinia urna. Integer congue nulla viverra fermentum tempor. Nulla dui quam, ornare et ex sit amet, mollis volutpat mi.
 
-        <!-- Events (projects) -->
-        <section class="projects-section bg-white" id="events">
-            <div class="container">
-                <!-- Featured Project Rows (2rows) -->
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/dimsum.jpg" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-textleft text-center text-lg-left">
-                            <h4>DIM SUM</h4>
-                            <p class="text-black-50 mb-0">We host our Dim Sum event twice a year. Come join us to make new friends and eat good food! </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-textright text-center text-lg-right">
-                            <h4>GUEST SPEAKERS</h4>
-                            <p class="text-black-50 mb-0"> CantoMando's Sheldon, Edward, and Mike share their stories of how they got to where they are today. </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/cantomando.jpg" alt="" /></div>
-                </div>
+Maecenas non eros dapibus nibh ultricies ultricies. Vestibulum aliquet pulvinar dui et imperdiet. Donec vitae sapien mi. Mauris mollis pulvinar purus, eget condimentum augue bibendum ac. Nulla consectetur metus vel orci imperdiet pellentesque. Quisque nec ligula a lorem tincidunt dictum. Integer porttitor dui ipsum, nec dignissim turpis feugiat at. Ut pharetra gravida dignissim. Cras et dolor ac sem tincidunt consequat. Fusce aliquam leo nunc, non elementum nulla efficitur at. Aenean libero lacus, malesuada eu nibh cursus, porttitor faucibus diam. Proin accumsan pellentesque ante, sed porta felis malesuada vel. Duis consequat nisl ullamcorper odio elementum tempus. Quisque sollicitudin, mi non tincidunt porta, leo augue pellentesque lorem, vitae aliquam nisi velit ac ligula. Cras et quam a massa congue euismod ac non urna. Aliquam semper arcu non interdum ultrices.
 
-                <!-- Project One Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/skitrip.jpg" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">SKI TRIPS</h4>
-                                    <p class="mb-0 text-white-50"> Don't hold it back anymore when skiing/snowboarding/tubing down the powdery slopes!  </p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+Donec lorem lectus, consectetur vel nunc eu, semper sagittis augue. Vivamus vehicula vulputate leo, et aliquam mauris cursus quis. Donec id neque dui. Donec eget lectus luctus, vulputate magna blandit, dignissim lacus. Quisque iaculis urna ac pretium vestibulum. Nulla vehicula sem ac erat aliquam volutpat. Proin eu placerat lectus. Duis id mauris ullamcorper, vestibulum diam nec, bibendum velit. Curabitur quis commodo mi. In scelerisque ipsum eget eleifend congue. Proin a scelerisque nisi, eget tempus orci.
 
-                <!-- Project Two Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/semi.jpg" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white"> SEMI-FORMALS </h4>
-                                    <p class="mb-0 text-white-50"> We guarantee that NO-FACE will be frowning in this event, and everyone will be feasting and smiling instead. </p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+Aenean eu rutrum velit. In pretium vestibulum dolor hendrerit aliquet. Fusce id augue ac risus bibendum venenatis et sed lacus. Nam at neque sit amet magna accumsan egestas a nec ante. Integer ut nulla eu ante feugiat bibendum. Quisque dapibus venenatis dui, vitae viverra felis lobortis in. Quisque eros nunc, semper at mauris id, sollicitudin ultricies leo. Nam quis nibh ac sem egestas congue sit amet a metus. Aliquam erat volutpat.
+        </p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 
-        <!-- Contact (signup) -->
-        <!---
-        <section class="signup-section" id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                        <form class="form-inline d-flex">
-                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+    </section>
 
-        <!-- Contact-->
-        <section class="contact-section">
-            <!--
-            <div class="container"> 
-                <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">+1 (555) 902-8832</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            -->
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://www.instagram.com/hksnmcgill/"><i class="fab fa-instagram"></i></a>
-                    <a class="mx-2" href="https://www.facebook.com/mcgillhksn/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="https://www.youtube.com/user/HKSNmcgill"><i class="fab fa-youtube"></i></a>
-                    <a class="mx-2" href="mailto:mcgillhksn@gmail.com"><i class="fa fa-envelope"></i></a>
-                </div>
-                <!--
-            </div>
-            -->
-        </section>
-
-        <!-- Footer-->
-        <footer class="footer small text-center text-white-50"><div class="container">Copyright © HKSN McGill 2020</div></footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-
+    <!-- Boostrap JS script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
 </html>

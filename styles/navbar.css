@@ -58,79 +58,6 @@
     border-color: transparent !important;
 }
 
-.navbar-toggler:active .navbar-toggler-icon,
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(134, 136, 138, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Dropdown styling */
-.dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(158, 158, 158, 0.298) !important;
-    border-radius: 8px !important;
-    margin-top: 8px !important;
-    padding: 8px 0 !important;
-}
-
-.dropdown-item {
-    color: #009ADB !important;
-    padding: 8px 20px !important;
-    font-weight: 500 !important;
-    transition: all 0.3s ease !important;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(0, 154, 219, 0.1) !important;
-    color: #0083BA !important;
-}
-
-.dropdown-item:active {
-    background-color: rgba(0, 154, 219, 0.2) !important;
-    color: #007AAE !important;
-}
-
-/* Dropdown toggle arrow color */
-.dropdown-toggle::after {
-    color: #009ADB !important;
-    border-top-color: #009ADB !important;
-    margin-left: 0.5em !important;
-}
-
-/* Remove default box shadow on dropdown toggle when active */
-.show > .nav-link.dropdown-toggle {
-    box-shadow: none !important;
-}
-
-/* Dropdown styling */
-.dropdown-menu {
-    background-color: transparent !important;
-    backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(158, 158, 158, 0.298) !important;
-    border-radius: 8px !important;
-    margin-top: 8px !important;
-    padding: 8px 0 !important;
-}
-
-.dropdown-item {
-    color: #009ADB !important;
-    padding: 8px 20px !important;
-    font-weight: 500 !important;
-    transition: all 0.3s ease !important;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(0, 154, 219, 0.1) !important;
-    color: #0083BA !important;
-}
-
-.dropdown-item:active {
-    background-color: rgba(0, 154, 219, 0.2) !important;
-    color: #007AAE !important;
-}
-
-
-/* Style for the burger menu icon */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
@@ -141,14 +68,28 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-@keyframes dropdownFade {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        text-align: right;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .navbar-nav {
+        display: inline-flex !important;
+        flex-direction: column;
+        align-items: flex-end !important;  /* Changed from flex-start to flex-end */
+        width: 100%;  /* Ensure full width container */
+    }
+    
+    .dropdown-menu {
+        position: absolute !important;
+        width: auto !important;
+        min-width: 200px !important;
+        right: 0 !important;  /* Align dropdown to the right */
+        left: auto !important;  /* Override default left alignment */
+    }
+    
+    .nav-item.dropdown {
+        width: auto !important;
     }
 }
 

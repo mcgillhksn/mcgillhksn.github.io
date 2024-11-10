@@ -123,3 +123,24 @@ header::before {
     text-transform: uppercase;
     text-align: center;
 }
+
+.description{
+    font: bold
+}
+
+/* scrolling pop up animation */
+.description-animation{
+    animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(opx) scale(1);
+    }
+}

@@ -10,3 +10,15 @@ window.addEventListener('scroll', () => {
     images[6].style.top = "-" + (window.scrollY / 9) + "px";
 
 });
+
+//observer so text pops up when scrolled down to the text
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting){
+            entry.target.classList.add("description-animation")
+        }
+    })
+})
+
+observer.observe(document.querySelector(".description"))

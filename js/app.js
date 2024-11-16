@@ -8,5 +8,4 @@ window.addEventListener('scroll', () => {
     images[4].style.top = "-" + (window.scrollY / 6) + "px";
     images[5].style.top = "-" + (window.scrollY / 7) + "px";
     images[6].style.top = "-" + (window.scrollY / 9) + "px";
-
 });

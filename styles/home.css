@@ -81,3 +81,39 @@ header::before {
     left: 0;
     z-index: 9;
 }
+
+.title {
+    font-size: 6em;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    color: #fff;
+    text-shadow:
+        0 5px 10px
+        rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.description{
+    font: bold
+}
+
+/* scrolling pop up animation */
+.description-animation{
+    animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(opx) scale(1);
+    }
+}

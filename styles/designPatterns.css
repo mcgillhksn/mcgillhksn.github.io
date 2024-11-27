@@ -16,33 +16,43 @@
                 -3px -3px 8px #ffffff !important;
 }
 
-.richLinkHighlight {
-    box-shadow: inset 200px 0 0 0 #009ADB !important;
-    color: #fff !important;
-    padding-top: 0 .25rem !important;
-    padding-bottom: 0 .25rem !important;
-    margin-top: 0 -.25rem !important;
-    margin-bottom: 0 -.25rem !important;
-    cursor: pointer !important;
-}
-
 .richLink {
-    box-shadow: inset 0 0 0 0 #009ADB !important;
-    color: #009ADB !important;
-    
-    padding-top: 0 .25rem !important;
-    padding-bottom: 0 .25rem !important;
-
-    margin-top: 0 -.25rem !important;
-    margin-bottom: 0 -.25rem !important;
-
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out !important;
-    cursor: pointer !important;
+    position: relative;
 }
 
-.richLink:hover {
-    color: #fff !important;
-    box-shadow: inset 200px 0 0 0 #009ADB !important;
+.richLinkHighlight {
+    position: relative;
 }
+
+.richLinkHighlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #009ADB;
+    bottom: 0;
+    left: 0;
+}
+
+.richLink::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #009ADB;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.richLink:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
 
 

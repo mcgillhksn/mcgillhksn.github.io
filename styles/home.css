@@ -27,7 +27,14 @@ header {
     height: 130%;
     object-fit: cover;
 }
-  
+
+.images-container {
+    height: 100vh !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
 .images {
     height: 100vh;
     overflow: hidden;
@@ -38,8 +45,8 @@ header {
     left: 0;
     width: 100%;
     height: 130%;
-    object-fit: cover;
     transition: 0.1s;
+    object-fit: cover;
 }
 
   .img1 { z-index: 7; }

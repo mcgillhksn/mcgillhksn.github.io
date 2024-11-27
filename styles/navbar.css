@@ -68,6 +68,10 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #007AAE !important;
+}
+
 @media (max-width: 767.98px) {
     .navbar-collapse {
         text-align: right;

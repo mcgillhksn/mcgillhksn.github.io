@@ -1,6 +1,7 @@
 (async function loadFragments() {
     const parts = [
       { targetId: "include-navbar", file: "navbar.html"},
+      { targetId: "include-footer", file: "footer.html"},
     ];
   
     await Promise.all(

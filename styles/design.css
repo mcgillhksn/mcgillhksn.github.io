@@ -1,13 +1,4 @@
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-blur: 10px;
-    --neumorphic-shadow-dark: #bebebe;
-    --neumorphic-shadow-light: #ffffff;
-    --neumorphic-img-shadow-dark: #bebebe;
-    --neumorphic-img-shadow-light: #ffffff;
-}
-
-[data-theme="dark"] {
     --glass-bg: rgba(30, 30, 30, 0.85);
     --glass-blur: 10px;
     --neumorphic-shadow-dark: #1f1f1f;

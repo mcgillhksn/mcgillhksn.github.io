@@ -1,0 +1,30 @@
+:root {
+    --dropdown-bg: #2a2a2a;
+    --dropdown-border-color: rgba(255, 255, 255, 0.15);
+    --dropdown-link-active-bg: var(--primary-color);
+}
+
+/* 
+    MARK: Dropdown section
+*/
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: var(--dropdown-link-active-bg) !important;
+    --bs-dropdown-bg: var(--dropdown-bg) !important;
+    --bs-dropdown-link-color: var(--text-color) !important;
+    --bs-dropdown-link-hover-color: var(--text-color) !important;
+    --bs-dropdown-link-hover-bg: rgba(0, 0, 0, 0.1) !important;
+    --bs-dropdown-link-active-color: var(--primary-text-color) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dropdown-item {
+    color: var(--bs-dropdown-link-color);
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    background-color: var(--bs-dropdown-link-active-bg);
+}

@@ -1,28 +1,11 @@
-/* 
-    MARK: Global Styles 
-*/
-
 /* CSS variables for light and dark themes */
 :root {
-    --body-bg: #ffffff;
-    --text-color: #212529;
-    --secondary-text-color: rgb(85, 85, 85);
-    --primary-color: #54b3d6;
-    --primary-hover-color: #4392b5;
-    --primary-active-color: #52b7e6;
-    --primary-text-color: #fff;
-    --form-switch-bg: #eee;
-    --form-switch-checked-bg: var(--primary-color);
-    --form-switch-border-color: rgba(0, 0, 0, 0.25);
-}
-
-[data-theme="dark"] {
     --body-bg: #1a1a1a;
     --text-color: #d4d1cb;
     --secondary-text-color: #aaaaaa;
-    --primary-color: #64c4e8;
-    --primary-hover-color: #81dbff;
-    --primary-active-color: #8ad9f2;
+    --primary-color: #009ADB ;
+    --primary-hover-color: #00b3ff ;
+    --primary-active-color: #2fc1ff ;
     --primary-text-color: #121212;
     --form-switch-bg: #444;
     --form-switch-checked-bg: var(--primary-color);
@@ -42,12 +25,6 @@ body {
     background-color: var(--body-bg) !important;
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-}
-
-.title {
-    font-size: 3rem;
-    text-align: center;
-    color: var(--text-color);
 }
 
 .icon {
@@ -81,39 +58,4 @@ body {
 .form-switch .form-check-label {
     cursor: pointer;
     color: var(--text-color);
-}
-
-/* GitHub Logo Theme Handling */
-.github-logo-dark {
-    display: none;
-}
-.github-logo-light {
-    display: block;
-}
-
-[data-theme="dark"] .github-logo-light {
-    display: none;
-}
-[data-theme="dark"] .github-logo-dark {
-    display: block;
-}
-
-/* Footer Icon Theme Handling */
-.footer-icon {
-    fill: var(--text-color);
-    transition: fill 0.3s ease;
-}
-
-.btn.disabled, .btn:disabled {
-    background-color: var(--body-bg);
-    border-color: var(--body-bg);
-    opacity: 0.65; 
-    color: var(--secondary-text-color);
-}
-
-[data-theme="dark"] .btn.disabled,
-[data-theme="dark"] .btn:disabled {
-    background-color: var(--body-bg);
-    border-color: var(--body-bg);
-    color: var(--secondary-text-color);
 }

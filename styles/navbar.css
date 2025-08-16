@@ -1,15 +1,11 @@
 :root {
-    --navbar-toggler-icon-stroke: rgba(0, 0, 0, 0.55);
-    --navbar-link-hover-color: var(--primary-hover-color);
-    --navbar-link-active-color: var(--primary-active-color);
-    --navbar-link-disabled-color: rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] {
     --navbar-toggler-icon-stroke: rgba(255, 255, 255, 0.55);
     --navbar-link-hover-color: var(--primary-hover-color);
     --navbar-link-active-color: var(--primary-active-color);
     --navbar-link-disabled-color: rgba(255, 255, 255, 0.25);
+    --dropdown-bg: #2a2a2a;
+    --dropdown-border-color: rgba(255, 255, 255, 0.15);
+    --dropdown-link-active-bg: var(--primary-color);
 }
 
 /* 

@@ -1,9 +1,7 @@
 const images = document.querySelectorAll('.images img');
-const title = document.querySelector('.title');
 
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    title.style.top = `calc(20% + ${scrollY / 1.1}px)`;
     images[0].style.top = "-" + (scrollY / 3) + "px";
     images[1].style.top = "-" + (scrollY / 5) + "px";
     images[2].style.top = "-" + (scrollY / 7) + "px";

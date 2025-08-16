@@ -85,16 +85,10 @@ header::before {
 .title {
     font-size: 6em;
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 45%;
+    left: 48%;
     transform: translate(-50%, -50%);
     z-index: 5;
-    color: #fff;
-    text-shadow:
-        0 5px 10px
-        rgba(0,0,0,0.3);
-    text-transform: uppercase;
-    text-align: center;
 }
 
 .description{

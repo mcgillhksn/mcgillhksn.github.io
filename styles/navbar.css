@@ -1,56 +1,44 @@
-:root {
-    --navbar-toggler-icon-stroke: rgba(255, 255, 255, 0.55);
-    --navbar-link-hover-color: var(--primary-hover-color);
-    --navbar-link-active-color: var(--primary-active-color);
-    --navbar-link-disabled-color: rgba(255, 255, 255, 0.25);
-    --dropdown-bg: #2a2a2a;
-    --dropdown-border-color: rgba(255, 255, 255, 0.15);
-    --dropdown-link-active-bg: var(--primary-color);
-}
-
-/* 
-    MARK: Navbar section
-*/
-#Navbar {
-    border-radius: 10px;
-}
-
-#name {
-    color: var(--text-color) !important;
+#nav {
+    position: absolute !important;
 }
 
 .btn-primary {
-    --bs-btn-color: #ffffff !important;
-    --bs-btn-bg: var(--primary-color) !important;
-    --bs-btn-border-color: var(--primary-color) !important;
-    --bs-btn-hover-color: #ffffff !important;
-    --bs-btn-hover-bg: var(--primary-hover-color) !important;
-    --bs-btn-hover-border-color: var(--primary-hover-color) !important;
-    --bs-btn-focus-shadow-rgb: var(--primary-color) !important;
-    --bs-btn-active-color: #ffffff !important;
-    --bs-btn-active-bg: var(--primary-active-color) !important;
-    --bs-btn-active-border-color: var(--primary-active-color) !important;
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #009ADB !important;
+    --bs-btn-border-color: #009ADB !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #0083BA !important;
+    --bs-btn-hover-border-color: #007AAE !important;
+    --bs-btn-focus-shadow-rgb: 0, 154, 219 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #007AAE !important;
+    --bs-btn-active-border-color: #0072A2 !important;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
-    --bs-btn-disabled-color: #ffffff !important;
-    --bs-btn-disabled-bg: var(--primary-color) !important;
-    --bs-btn-disabled-border-color: var(--primary-color) !important;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-disabled-bg: #009ADB !important;
+    --bs-btn-disabled-border-color: #009ADB !important;
 }
-
+  
 .nav-link {
     --bs-nav-link-display: block !important;
     --bs-nav-link-padding-y: 0.5rem !important;
     --bs-nav-link-padding-x: 1rem !important;
     --bs-nav-link-font-size: 1rem !important;
     --bs-nav-link-font-weight: 400 !important;
-    --bs-nav-link-color: var(--primary-color) !important;
+    --bs-nav-link-color: #009ADB !important;
     --bs-nav-link-text-decoration: none !important;
     --bs-nav-link-background: transparent !important;
     --bs-nav-link-border: 0 !important;
     --bs-nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !important;
-    --bs-nav-link-hover-color: var(--navbar-link-hover-color) !important;
-    --bs-nav-link-active-color: var(--navbar-link-active-color) !important;
-    --bs-nav-link-disabled-color: var(--navbar-link-disabled-color) !important;
+    --bs-nav-link-hover-color: #0083BA !important;
+    --bs-nav-link-active-color: #007AAE !important;
+    --bs-nav-link-disabled-color: #009ADB !important;
+}
+
+.nav-link {
+    padding: 2px !important;
+    margin-left: 8px !important;
+    margin-right: 8px !important;
 }
   
 .nav-link:hover {
@@ -58,11 +46,11 @@
 }
   
 .nav-link:active, .nav-link.active {
-    color: var(--bs-nav-link-active-color);
+    color: var(--bs-nav-link-color);
 }
   
 .nav-link:disabled, .nav-link.disabled {
-    color: var(--bs-nav-link-disabled-color);
+    color: var(--bs-nav-link-color);
 }
 
 .navbar-toggler {
@@ -70,29 +58,37 @@
     border-color: transparent !important;
 }
 
-[data-theme="dark"] .navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
+/* Keep the active/expanded state the same color */
 .navbar-toggler:active .navbar-toggler-icon,
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(134, 136, 138, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 154, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-[data-theme="dark"] .navbar-toggler:active .navbar-toggler-icon,
-[data-theme="dark"] .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(200, 200, 200, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.form-check {
-    margin-bottom: 0px !important;
-}
-
-#lightIcon {
-    color: var(--primary-color) !important;
-    margin-right: 8px;
-}
-
-#darkIcon {
-    color: var(--primary-color) !important;
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        text-align: right;
+    }
+    
+    .navbar-nav {
+        display: inline-flex !important;
+        flex-direction: column;
+        align-items: flex-end !important;  /* Changed from flex-start to flex-end */
+        width: 100%;  /* Ensure full width container */
+    }
+    
+    .dropdown-menu {
+        position: absolute !important;
+        width: auto !important;
+        min-width: 200px !important;
+        right: 0 !important;  /* Align dropdown to the right */
+        left: auto !important;  /* Override default left alignment */
+    }
+    
+    .nav-item.dropdown {
+        width: auto !important;
+    }
 }

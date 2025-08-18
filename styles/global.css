@@ -36,7 +36,7 @@ body {
 .mainBody {
     background: var(--main-bg-color) !important;
     color: #fff;
-    margin-top: 60px !important;
+    margin-top: 70px !important;
     position: relative;
     z-index: 2;
 }
@@ -49,9 +49,4 @@ body {
 
 .faded {
     color: var(--secondary-text-color);
-}
-
-.container-fluid {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
 }

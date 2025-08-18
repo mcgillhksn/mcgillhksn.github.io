@@ -1,4 +1,4 @@
-#nav {
+#navigationBar {
     position: absolute !important;
 }
 
@@ -69,14 +69,11 @@
 }
 
 @media (max-width: 767.98px) {
-    #nav {
+    #navigationBar {
         text-align: right;
         background: rgba(30, 30, 30, 0.85);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 0.5rem;
     }
     
     .navbar-nav {

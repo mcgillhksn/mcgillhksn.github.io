@@ -57,20 +57,7 @@ header {
 /*
 Main body
 */
-.mainBody {
-    background: var(--main-bg-color) !important;
-    color: #fff;
-    margin-top: 60px !important;
-    position: relative;
-    z-index: 2;
-}
-  
-.mainBody p {
-    max-width: 35em;
-    font-size: 1.1em;
-    line-height: 30px;
-}
-  
+
 header::before {
     content: '';
     background: linear-gradient(

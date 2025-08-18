@@ -17,7 +17,7 @@
     const navLinks = document.querySelectorAll("#include-navbar .nav-link");
     navLinks.forEach(link => {
         const linkPage = link.getAttribute("href").split("/").pop();
-        if (linkPage === currentPage) {
+        if (linkPage === currentPage && linkPage !== "index.html" && linkPage !== "") {
             link.classList.remove("richLink");
             link.classList.add("richLinkHighlight");
         }

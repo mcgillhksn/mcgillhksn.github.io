@@ -40,12 +40,6 @@ body {
     position: relative;
     z-index: 2;
 }
-  
-.mainBody p {
-    max-width: 35em;
-    font-size: 1.1em;
-    line-height: 30px;
-}
 
 .faded {
     color: var(--secondary-text-color);

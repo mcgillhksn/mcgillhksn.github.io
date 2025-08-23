@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Janet He",
+        "position": "Co-President",
+        "image": "a.jpg"
+    },
+    {
+        "name": "Mikale Hum",
+        "position": "Co-President",
+        "image": ".jpg"
+    },
+    {
+        "name": "Nathan Yee",
+        "position": "VP Marketing",
+        "image": ".jpg"
+    },
+    {
+        "name": "Emma Chan",
+        "position": "VP Marketing",
+        "image": ".jpg"
+    },
+    {
+        "name": "Michelle Ho",
+        "position": "VP Events",
+        "image": ".jpg"
+    },
+    {
+        "name": "Joyce Choi",
+        "position": "VP Internal",
+        "image": ".jpg"
+    },
+    {
+        "name": "Antony Ma",
+        "position": "VP External",
+        "image": ".jpg"
+    },
+    {
+        "name": "Gordon Ng",
+        "position": "VP External",
+        "image": ".jpg"
+    },
+    {
+        "name": "Jessica Sun",
+        "position": "VP Finance",
+        "image": ".jpg"
+    },
+    {
+        "name": "Wei Heng Gao",
+        "position": "VP Finance",
+        "image": ".jpg"
+    },
+    {
+        "name": "Malcolm Mak",
+        "position": "VP Graphic",
+        "image": ".jpg"
+    },
+    {
+        "name": "Kinson Chiu",
+        "position": "VP Media",
+        "image": ".jpg"
+    },
+    {
+        "name": "Ian Pan",
+        "position": "Senior Advisor",
+        "image": ".jpg"
+    },
+    {
+        "name": "Alexander Lam",
+        "position": "Senior Advisor",
+        "image": ".jpg"
+    }
+]

@@ -13,7 +13,7 @@
 
 .modal-content {
     height: max-content !important;
-    background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color) !important;
     color: var(--text-color);
     border: 1px solid var(--dropdown-border-color);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -21,13 +21,8 @@
 
 /* Ensure modal header/footer text and close button adapt */
 .modal-header .btn-close {
-    filter: none;
-    transition: filter 0.3s ease;
-}
-
-[data-theme="dark"] .modal-header .btn-close {
-    /* Invert close button in dark mode */
     filter: invert(1) grayscale(100%) brightness(200%);
+    transition: filter 0.3s ease;
 }
 
 .modal-title {

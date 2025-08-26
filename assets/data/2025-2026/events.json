@@ -1,0 +1,30 @@
+[
+  {
+    "id": "welcome-back",
+    "title": "Welcome Back Social",
+    "subtitle": "Kickoff mixer to start the semester",
+    "image": "home/bg.png",
+    "description": "Join us for snacks, games, and a chance to meet the HKSN community. Open to all!"
+  },
+  {
+    "id": "mid-autumn",
+    "title": "Mid-Autumn Festival Night",
+    "subtitle": "Lanterns, mooncakes, and festivities",
+    "image": "home/bg.png",
+    "description": "Celebrate Mid-Autumn with traditional treats and activities."
+  },
+  {
+    "id": "career-panel",
+    "title": "HK Alumni Career Panel",
+    "subtitle": "Insights from alumni across industries",
+    "image": "home/bg.png",
+    "description": "Hear from McGill alumni from Hong Kong about career journeys and network afterwards."
+  },
+  {
+    "id": "hotpot-night",
+    "title": "Winter Hotpot Night",
+    "subtitle": "Warm food, warmer vibes",
+    "image": "home/bg.png",
+    "description": "A cozy hotpot evening with friends before finals. Limited spots — first come, first served."
+  }
+]

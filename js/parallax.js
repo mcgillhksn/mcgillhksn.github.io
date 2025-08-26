@@ -18,8 +18,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-//observer so text pops up when scrolled down to the text
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting){

@@ -1,0 +1,33 @@
+.flashMitigationStart {
+    opacity: 0;
+}
+
+.flashMitigationEnd {
+    opacity: 1;
+}
+
+.hiddenBlur {
+    opacity: 0;
+    transition: opacity 1s, transform 1s, filter 1s;
+}
+
+.showBlur {
+    opacity: 1;
+}
+
+@media(prefers-reduced-motion) {
+    .hiddenBlur, .hiddenSlideY {
+        transition: none;
+    }
+}
+
+.hoverable {
+    transition: transform 0.4s;
+    will-change: transform;
+    cursor: pointer;
+}
+  
+.hoverable:hover {
+    transform: scale(1.015);
+    position: relative;
+}

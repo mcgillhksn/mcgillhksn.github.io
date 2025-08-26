@@ -1,3 +1,4 @@
+// Load common HTML fragments (navbar, footer) into the page
 (async function loadFragments() {
     const parts = [
       { targetId: "include-navbar", file: "navbar.html"},

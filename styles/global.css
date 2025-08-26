@@ -29,14 +29,13 @@ body {
 
 body {
     margin: 0;
-    font-family: Helvetica, sans-serif;
     background: var(--main-bg-color) !important;
 }
 
 .mainBody {
     background: var(--main-bg-color) !important;
     color: #fff;
-    margin-top: 70px !important;
+    margin-top: 90px !important;
     position: relative;
     z-index: 2;
 }

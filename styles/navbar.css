@@ -1,5 +1,10 @@
 #navigationBar {
+    background: var(--main-bg-color);
+}
+
+.home-page #navigationBar {
     position: absolute !important;
+    background: transparent;
 }
 
 .btn-primary {
@@ -71,9 +76,7 @@
 @media (max-width: 767.98px) {
     #navigationBar {
         text-align: right;
-        background: rgba(30, 30, 30, 0.85);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: var(--main-bg-color) !important;
     }
     
     .navbar-nav {
@@ -93,5 +96,11 @@
     
     .nav-item.dropdown {
         width: auto !important;
+    }
+
+    .nav-link {
+        padding: 2px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
     }
 }

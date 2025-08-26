@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HKSN</title>
+    <title>About - HKSN</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./assets/logo/logo.png" />
 
     <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/design.css">
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/links.css">
     <link rel="stylesheet" href="./styles/buttons.css">
     <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/team.css">
+    <link rel="stylesheet" href="./styles/about.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
@@ -23,10 +21,25 @@
 <body>
     <div id="include-navbar"></div>
 
-    <div class="execs mainBody container">
-       <div class="row align-items-center no-gutters mb-4 mb-lg-5" id="team-container">
-           <!-- Member cards will be inserted here by JavaScript -->
-       </div>
+    <div class="mainBody container">
+        <div class="row align-items-center gx-5 mb-5">
+            <div class="col-12 col-lg-5">
+                <h1 class="display-5 fw-bold mb-3">About Us</h1>
+                <p class="lead mb-4">We are the McGill Hong Kong Students' Network (HKSN) — a student-run club building community, celebrating Hong Kong culture, and hosting events throughout the year. Come meet new friends, learn, and get involved.</p>
+                <a href="#" class="btn btn-primary btn-lg">Join Us</a>
+            </div>
+
+            <div class="col-12 col-lg-7 text-center">
+                <img src="./assets/members/2025-2026/groupPhoto.jpeg" alt="About HKSN" class="img-fluid rounded shadow-sm" loading="lazy">
+            </div>
+        </div>
+
+        <h1 class="display-5 fw-bold text-center mt-5 mb-2">Meet Our Team</h1>
+        <h3 class="fw-bold text-center mb-5">2025 - 2026</h3>
+
+        <div class="row align-items-center gx-5 mb-4 mb-lg-5" id="about-container">
+           <!-- Images are inserted from members.json here via the loaderMembers.js file -->
+        </div>
     </div>
 
     <div id="include-footer"></div>

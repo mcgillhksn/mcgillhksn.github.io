@@ -4,7 +4,7 @@
   
 body {
     margin: 0;
-    /* font-family: Helvetica, sans-serif; */
+    font-family: Helvetica, sans-serif !important;
     background: var(--main-bg-color) !important;
 }
   
@@ -16,6 +16,21 @@ header {
     height: 100vh;
     overflow: hidden;
     position: relative;
+}
+
+header::before {
+    content: '';
+    background: linear-gradient(
+      0deg,
+      var(--main-bg-color),
+      rgba(0, 0, 0, 0)
+    );
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
 }
   
 #MaskingImage {
@@ -58,20 +73,6 @@ header {
 Main body
 */
 
-header::before {
-    content: '';
-    background: linear-gradient(
-      0deg,
-      var(--main-bg-color),
-      rgba(0, 0, 0, 0)
-    );
-    width: 100%;
-    height: 40%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 9;
-}
 
 .title {
     font-size: 6em;
@@ -84,24 +85,17 @@ header::before {
     pointer-events: none;
 }
 
+/* .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    color: white;
+    text-align: center;
+} */
+
 .description{
     font: bold;
     color: #fff;
-}
-
-/* scrolling pop up animation */
-.description-animation{
-    animation: fade-in 0.5s;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.9);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px) scale(1);
-    }
 }

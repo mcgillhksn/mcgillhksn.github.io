@@ -1,0 +1,30 @@
+.exec-padding {
+  padding: 0px 0px 20px 0px;
+}
+
+.exec-container {
+  position: relative;
+  text-align: center;
+}
+
+.exec-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.member-info {
+  color: white;
+}
+
+.member-name {
+color: var(--primary-color);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 16px;
+}

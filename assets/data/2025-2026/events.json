@@ -1,0 +1,88 @@
+[
+  {
+    "id": "semiFormal",
+    "title": "Semi Formal",
+    "subtitle": "A night of elegance and memories (and drinks).",
+    "description": "Our annual semi-formal, a night to dress up and celebrate with friends.",
+    "images": [
+      "semiFormal/1.jpg",
+      "semiFormal/2.jpg",
+      "semiFormal/3.jpg",
+      "semiFormal/4.jpg",
+      "semiFormal/5.jpg"
+    ],
+    "displayInfoOnCard": true,
+    "alignImageLeft": false
+  },
+  {
+    "id": "midAutumnHike",
+    "title": "Mid Autumn Hike",
+    "subtitle": "A scenic hike to celebrate the festival.",
+    "description": "A relaxing hike to enjoy the autumn scenery and celebrate the Mid-Autumn Festival with mooncakes.",
+    "images": [
+      "midAutumnHike/1.jpg",
+      "midAutumnHike/2.jpg",
+      "midAutumnHike/3.jpg",
+      "midAutumnHike/4.jpg"
+    ],
+    "displayInfoOnCard": true,
+    "alignImageLeft": false
+  },
+  {
+    "id": "welcomeParty",
+    "title": "Welcome Party",
+    "subtitle": "",
+    "description": "Our first event of the year to introduce HKSN to everyone!",
+    "images": [
+      "welcomeParty/1.jpg",
+      "welcomeParty/2.jpg",
+      "welcomeParty/3.jpg",
+      "welcomeParty/4.jpg"
+    ],
+    "displayInfoOnCard": false,
+    "alignImageLeft": true
+  },
+  {
+    "id": "lny",
+    "title": "Lunar New Year",
+    "subtitle": "",
+    "description": "A festive celebration of the Lunar New Year with dim sum, games, and a night market.",
+    "images": [
+      "lny/1.jpg",
+      "lny/2.jpg",
+      "lny/3.jpg",
+      "lny/4.jpg"
+    ],
+    "displayInfoOnCard": false,
+    "alignImageLeft": false
+  },
+  {
+    "id": "retreat",
+    "title": "Retreat",
+    "subtitle": "",
+    "description": "Our annual execs retreat for team bonding and planning for the year ahead.",
+    "images": [
+      "retreat/1.jpg",
+      "retreat/2.jpg",
+      "retreat/3.jpg",
+      "retreat/4.jpg",
+      "retreat/5.jpg"
+    ],
+    "displayInfoOnCard": false,
+    "alignImageLeft": true
+  },
+  {
+    "id": "halloween",
+    "title": "Halloween",
+    "subtitle": "",
+    "description": "Our annual Halloween party!",
+    "images": [
+      "halloween/1.jpg",
+      "halloween/2.jpg",
+      "halloween/3.jpg",
+      "halloween/4.jpg"
+    ],
+    "displayInfoOnCard": false,
+    "alignImageLeft": true
+  }
+]

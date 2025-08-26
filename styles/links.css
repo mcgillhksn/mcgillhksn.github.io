@@ -1,21 +1,11 @@
-.glass {
-    background: rgba( 255, 255, 255, 0.85) !important;
-    backdrop-filter: blur( 20px ) !important;
-    -webkit-backdrop-filter: blur( 20px ) !important;
+:root {
+    --link-color: var(--primary-color);
+    --link-hover-bg: var(--primary-color);
 }
 
-.neumorphism {
-    background: #ffffff;
-    box-shadow:  20px 20px 60px #a6a6a6,
-                -20px -20px 60px #ffffff;
-}
-
-.neumorphicButton {
-    /* background: #ffffff; */
-    box-shadow:  3px 3px 8px #a6a6a6,
-                -3px -3px 8px #ffffff !important;
-}
-
+/* 
+    MARK: Hyperlink styling 
+*/
 .richLinkHighlight {
     box-shadow: inset 200px 0 0 0 #009ADB !important;
     color: #fff !important;
@@ -44,5 +34,3 @@
     color: #fff !important;
     box-shadow: inset 200px 0 0 0 #009ADB !important;
 }
-
-

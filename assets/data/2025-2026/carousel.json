@@ -1,0 +1,18 @@
+[
+  {
+    "image": "./assets/events/semiFormal/1.jpg",
+    "alt": "Semi Formal"
+  },
+  {
+    "image": "./assets/events/lny/3.jpg",
+    "alt": "Dim Sum"
+  },
+  {
+    "image": "./assets/events/lny/2.jpg",
+    "alt": "LNY Bonding"
+  },
+  {
+    "image": "./assets/events/welcomeParty/1.jpg",
+    "alt": "Welcome Party"
+  }
+]

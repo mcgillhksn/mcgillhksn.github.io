@@ -8,7 +8,7 @@
 
 .hiddenBlur {
     opacity: 0;
-    transition: opacity 1s, transform 1s, filter 1s;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s;
 }
 
 .showBlur {

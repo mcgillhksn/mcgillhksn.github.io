@@ -13,7 +13,7 @@
       const images = ev.images || [];
 
       const imageGallery = images.map(img => `
-        <div class="col-12 col-md-6 mb-4">
+        <div class="col-12 col-lg-6 mb-4">
           <img src="./assets/events/${img}" alt="${ev.title}" class="img-fluid rounded" loading="lazy" />
         </div>
       `).join('');
@@ -28,7 +28,6 @@
             </div>
             <div class="modal-body px-0">
               <h3 class="mb-0 fs-4 pb-2">Description</h3>
-              ${subtitle}
               ${description}
               <h3 class="mb-3 mt-4 fs-4 pb-2">Gallery</h3>
               <div class="row">

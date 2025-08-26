@@ -95,3 +95,8 @@ Main body
     font: bold;
     color: #fff;
 }
+
+.carousel-item img {
+    height: 500px !important;
+    object-fit: cover;
+}

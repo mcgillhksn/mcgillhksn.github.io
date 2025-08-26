@@ -19,7 +19,7 @@
       ` : '';
 
       return `
-        <div class="col default-col hiddenBlur" data-bs-toggle="modal" data-bs-target="#${modalId}">
+        <div class="col default-col" data-bs-toggle="modal" data-bs-target="#${modalId}">
           <div class="position-relative h-100 overflow-hidden rounded hoverable">
             <img src="./assets/events/${image}" alt="${ev.title}" loading="lazy" style="object-fit: cover; width: 100%; height: 100%; position: absolute; inset: 0; z-index: -1; ${ev.alignImageLeft ? 'object-position: left;' : ''}" />
             <div class="position-absolute top-0 start-0 w-100 h-100"></div>

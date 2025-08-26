@@ -2,7 +2,7 @@
   {
     "id": "semiFormal",
     "title": "Semi Formal",
-    "subtitle": "A night of elegance and memories.",
+    "subtitle": "A night of elegance and memories (and drinks).",
     "description": "Our annual semi-formal, a night to dress up and celebrate with friends.",
     "images": [
       "semiFormal/1.jpg",
@@ -29,9 +29,37 @@
     "alignImageLeft": false
   },
   {
+    "id": "welcomeParty",
+    "title": "Welcome Party",
+    "subtitle": "",
+    "description": "Our first event of the year to introduce HKSN to everyone!",
+    "images": [
+      "welcomeParty/1.jpg",
+      "welcomeParty/2.jpg",
+      "welcomeParty/3.jpg",
+      "welcomeParty/4.jpg"
+    ],
+    "displayInfoOnCard": false,
+    "alignImageLeft": true
+  },
+  {
+    "id": "lny",
+    "title": "Lunar New Year",
+    "subtitle": "",
+    "description": "A festive celebration of the Lunar New Year with dim sum, games, and a night market.",
+    "images": [
+      "lny/1.jpg",
+      "lny/2.jpg",
+      "lny/3.jpg",
+      "lny/4.jpg"
+    ],
+    "displayInfoOnCard": false,
+    "alignImageLeft": false
+  },
+  {
     "id": "retreat",
     "title": "Retreat",
-    "subtitle": "A weekend getaway with the exec team.",
+    "subtitle": "",
     "description": "Our annual execs retreat for team bonding and planning for the year ahead.",
     "images": [
       "retreat/1.jpg",
@@ -44,43 +72,15 @@
     "alignImageLeft": true
   },
   {
-    "id": "lny",
-    "title": "Lunar New Year",
-    "subtitle": "Celebrating the new year with the community.",
-    "description": "A festive celebration of the Lunar New Year with food, games, and performances.",
-    "images": [
-      "lny/1.jpg",
-      "lny/2.jpg",
-      "lny/3.jpg",
-      "lny/4.jpg"
-    ],
-    "displayInfoOnCard": false,
-    "alignImageLeft": false
-  },
-  {
     "id": "halloween",
     "title": "Halloween",
-    "subtitle": "A spooky night of fun and costumes.",
-    "description": "Our annual Halloween party with a costume contest, games, and treats.",
+    "subtitle": "",
+    "description": "Our annual Halloween party!",
     "images": [
       "halloween/1.jpg",
       "halloween/2.jpg",
       "halloween/3.jpg",
       "halloween/4.jpg"
-    ],
-    "displayInfoOnCard": false,
-    "alignImageLeft": true
-  },
-  {
-    "id": "welcomeParty",
-    "title": "Welcome Party",
-    "subtitle": "Kicking off the school year with a bang.",
-    "description": "Our first event of the year to welcome new and returning members to the HKSN family.",
-    "images": [
-      "welcomeParty/1.jpg",
-      "welcomeParty/2.jpg",
-      "welcomeParty/3.jpg",
-      "welcomeParty/4.jpg"
     ],
     "displayInfoOnCard": false,
     "alignImageLeft": true

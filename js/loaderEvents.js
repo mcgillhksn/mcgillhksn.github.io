@@ -1,6 +1,11 @@
 (async function loadEventCards() {
   try {
-    const res = await fetch('./assets/data/2025-2026/events.json');
+    // Determine if we're in a subdirectory or root
+    const currentPath = window.location.pathname;
+    const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
+    const basePath = isInSubdirectory ? '../' : './';
+    
+    const res = await fetch(`${basePath}assets/data/2025-2026/events.json`);
     const events = await res.json();
 
     const grid = document.getElementById('events-grid');
@@ -21,7 +26,7 @@
       return `
         <div class="col default-col" data-bs-toggle="modal" data-bs-target="#${modalId}">
           <div class="position-relative h-100 overflow-hidden rounded hoverable">
-            <img src="./assets/events/${image}" alt="${ev.title}" loading="lazy" style="object-fit: cover; width: 100%; height: 100%; position: absolute; inset: 0; z-index: -1; ${ev.alignImageLeft ? 'object-position: left;' : ''}" />
+            <img src="${basePath}assets/events/${image}" alt="${ev.title}" loading="lazy" style="object-fit: cover; width: 100%; height: 100%; position: absolute; inset: 0; z-index: -1; ${ev.alignImageLeft ? 'object-position: left;' : ''}" />
             <div class="position-absolute top-0 start-0 w-100 h-100"></div>
             <div class="d-flex flex-column h-100 p-5 text-white" style="position: relative; z-index: 1;">
               ${cardText}

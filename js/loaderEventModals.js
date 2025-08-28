@@ -1,6 +1,11 @@
 (async function loadEventModals() {
   try {
-    const res = await fetch('./assets/data/2025-2026/events.json');
+    // Determine if we're in a subdirectory or root
+    const currentPath = window.location.pathname;
+    const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
+    const basePath = isInSubdirectory ? '../' : './';
+    
+    const res = await fetch(`${basePath}assets/data/2025-2026/events.json`);
     const events = await res.json();
 
     const container = document.getElementById('events-modals');
@@ -14,7 +19,7 @@
 
       const imageGallery = images.map(img => `
         <div class="col-12 col-lg-6 mb-4">
-          <img src="./assets/events/${img}" alt="${ev.title}" class="img-fluid rounded" loading="lazy" />
+          <img src="${basePath}assets/events/${img}" alt="${ev.title}" class="img-fluid rounded" loading="lazy" />
         </div>
       `).join('');
 

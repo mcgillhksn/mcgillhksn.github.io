@@ -16,10 +16,3 @@
     opacity: 0.65; 
     color: var(--secondary-text-color);
 }
-
-[data-theme="dark"] .btn.disabled,
-[data-theme="dark"] .btn:disabled {
-    background-color: var(--body-bg);
-    border-color: var(--body-bg);
-    color: var(--secondary-text-color);
-}

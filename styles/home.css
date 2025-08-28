@@ -79,6 +79,7 @@ Main body
     z-index: 5;
     user-select: none;
     pointer-events: none;
+    width: 400px;
 }
 
 /* .title {
@@ -99,4 +100,10 @@ Main body
 .carousel-item img {
     height: 500px !important;
     object-fit: cover;
+}
+
+@media (max-width: 767.98px) {
+    .title {
+        width: 350px !important;
+    }
 }

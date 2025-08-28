@@ -53,22 +53,17 @@
     
     navLinks.forEach(link => {
         const linkHref = link.getAttribute("href");
-        
-        // Handle root/home page
-        if (currentPath === "/" && (linkHref === "./" || linkHref === "../")) {
+
+        // Handle subdirectory pages - check for both original and updated hrefs
+        if (currentPath.includes("/events") && (linkHref === "./events" || linkHref === "../events/")) {
             link.classList.remove("richLink");
             link.classList.add("richLinkHighlight");
         }
-        // Handle subdirectory pages (events, about, store)
-        else if (currentPath.includes("/events") && (linkHref === "./events" || linkHref === "../events")) {
+        else if (currentPath.includes("/about") && (linkHref === "./about" || linkHref === "../about/")) {
             link.classList.remove("richLink");
             link.classList.add("richLinkHighlight");
         }
-        else if (currentPath.includes("/about") && (linkHref === "./about" || linkHref === "../about")) {
-            link.classList.remove("richLink");
-            link.classList.add("richLinkHighlight");
-        }
-        else if (currentPath.includes("/store") && (linkHref === "./store" || linkHref === "../store")) {
+        else if (currentPath.includes("/store") && (linkHref === "./store" || linkHref === "../store/")) {
             link.classList.remove("richLink");
             link.classList.add("richLinkHighlight");
         }

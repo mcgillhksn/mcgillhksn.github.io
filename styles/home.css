@@ -104,6 +104,6 @@ Main body
 
 @media (max-width: 767.98px) {
     .title {
-        width: 350px !important;
+        width: 300px;
     }
 }

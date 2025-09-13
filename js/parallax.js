@@ -12,6 +12,7 @@ window.addEventListener('scroll', () => {
             images[4].style.transform = `translateY(-${scrollY / 11}px)`;
             images[5].style.transform = `translateY(-${scrollY / 13}px)`;
             images[6].style.transform = `translateY(-${scrollY / 15}px)`;
+            images[7].style.transform = `translateY(-${scrollY / 17}px)`;
             ticking = false;
         });
         ticking = true;

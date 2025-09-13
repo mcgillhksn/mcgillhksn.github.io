@@ -5,14 +5,14 @@ window.addEventListener('scroll', () => {
     if (!ticking) {
         window.requestAnimationFrame(() => {
             const scrollY = window.scrollY;
-            images[0].style.transform = `translateY(-${scrollY / 3}px)`;
-            images[1].style.transform = `translateY(-${scrollY / 5}px)`;
-            images[2].style.transform = `translateY(-${scrollY / 7}px)`;
-            images[3].style.transform = `translateY(-${scrollY / 9}px)`;
-            images[4].style.transform = `translateY(-${scrollY / 11}px)`;
-            images[5].style.transform = `translateY(-${scrollY / 13}px)`;
-            images[6].style.transform = `translateY(-${scrollY / 15}px)`;
-            images[7].style.transform = `translateY(-${scrollY / 17}px)`;
+            images[0].style.transform = `translateY(-${scrollY / 3.25}px)`;
+            images[1].style.transform = `translateY(-${scrollY / 3.5}px)`;
+            images[2].style.transform = `translateY(-${scrollY / 4}px)`;
+            images[3].style.transform = `translateY(-${scrollY / 5}px)`;
+            images[4].style.transform = `translateY(-${scrollY / 6}px)`;
+            images[5].style.transform = `translateY(-${scrollY / 7}px)`;
+            images[6].style.transform = `translateY(-${scrollY / 9}px)`;
+            images[7].style.transform = `translateY(-${scrollY / 11}px)`;
             ticking = false;
         });
         ticking = true;

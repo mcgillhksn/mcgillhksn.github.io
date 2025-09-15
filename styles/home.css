@@ -34,7 +34,7 @@ header::before {
     overflow: hidden;
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 130%;
     height: 100%;
     object-fit: cover;
     user-select: none;

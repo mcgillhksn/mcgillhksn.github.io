@@ -105,19 +105,9 @@
         "image": "Placeholder.jpg"
     },
     {
-        "name": "Alexander Lam",
-        "position": "Senior Advisor",
-        "image": "Alexander.jpg"
-    },
-    {
-        "name": "Josh Wang",
-        "position": "Senior Advisor",
-        "image": "Josh.jpg"
-    },
-    {
-        "name": "Chester Chau",
-        "position": "Senior Advisor",
-        "image": "Placeholder.jpg"
+        "name": "Malcom Mak",
+        "position": "VP Graphics",
+        "image": "Malcom.jpg"
     },
     {
         "name": "Matthew Ho",
@@ -150,13 +140,23 @@
         "image": "Chloe.jpg"
     },
     {
-        "name": "Malcom Mak",
-        "position": "VP Graphics",
-        "image": "Malcom.jpg"
-    },
-    {
         "name": "Raine Tse",
         "position": "Senior Advisor",
         "image": "Raine.jpg"
+    },
+    {
+        "name": "Alexander Lam",
+        "position": "Senior Advisor",
+        "image": "Alexander.jpg"
+    },
+    {
+        "name": "Josh Wang",
+        "position": "Senior Advisor",
+        "image": "Josh.jpg"
+    },
+    {
+        "name": "Chester Chau",
+        "position": "Senior Advisor",
+        "image": "Placeholder.jpg"
     }
 ]

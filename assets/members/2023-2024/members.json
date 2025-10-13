@@ -25,6 +25,16 @@
         "image": "Shawn.jpeg"
     },
     {
+        "name": "Gordon Ng",
+        "position": "VP External",
+        "image": "Gordon.jpeg"
+    },
+    {
+        "name": "Yedda Lam",
+        "position": "VP External",
+        "image": "Placeholder.jpg"
+    },
+    {
         "name": "Ian Pan",
         "position": "VP External",
         "image": "Ian.jpeg"
@@ -86,12 +96,12 @@
     },
     {
         "name": "Kelly Tam",
-        "position": "Graphic Designers",
+        "position": "VP Graphics",
         "image": "Kelly.jpeg"
     },
     {
         "name": "Sonia Cao",
-        "position": "Graphic Designers",
+        "position": "VP Graphics",
         "image": "Sonia.jpeg"
     },
     {
@@ -106,47 +116,37 @@
     },
     {
         "name": "Emilie Lespinasse",
-        "position": "First Year Representatives",
+        "position": "First Year Rep",
         "image": "Emilie.jpeg"
     },
     {
         "name": "Janet He",
-        "position": "First Year Representatives",
+        "position": "First Year Rep",
         "image": "Janet.jpeg"
     },
     {
         "name": "Jessica Sun",
-        "position": "First Year Representatives",
+        "position": "First Year Rep",
         "image": "JessicaS.jpeg"
     },
     {
         "name": "Nicole Lui",
-        "position": "First Year Representatives",
+        "position": "First Year Rep",
         "image": "Nicole.jpeg"
     },
     {
-        "name": "Gordon Ng",
-        "position": "External",
-        "image": "Gordon.jpeg"
-    },
-    {
-        "name": "Yedda Lam",
-        "position": "External",
-        "image": "Placeholder.jpg"
-    },
-    {
         "name": "Chester Chau",
-        "position": "Senior Advisors",
+        "position": "Senior Advisor",
         "image": "Chester.jpeg"
     },
     {
         "name": "Isaac Wong",
-        "position": "Senior Advisors",
+        "position": "Senior Advisor",
         "image": "Isaac.jpeg"
     },
     {
         "name": "Raine Tse",
-        "position": "Senior Advisors",
+        "position": "Senior Advisor",
         "image": "Raine.jpeg"
     }
 ]

@@ -36,12 +36,19 @@
             </div>
 
             <div class="col-12 col-lg-7 text-center">
-                <img src="../assets/members/2025-2026/groupPhoto.jpeg" alt="About HKSN" class="img-fluid rounded shadow-sm" loading="lazy">
+                <img id="group-photo" alt="HKSN group photo" class="img-fluid rounded shadow-sm" loading="lazy">
             </div>
         </div>
 
         <h1 class="display-5 fw-bold text-center mt-5 mb-2">Meet Our Team</h1>
-        <h3 class="fw-bold text-center mb-5">2025 - 2026</h3>
+        <div class="dropdown text-center mb-5">
+            <button class="btn btn-secondary dropdown-toggle fw-bold" type="button" id="year-selector-button" data-bs-toggle="dropdown" aria-expanded="false">
+                Select Year
+            </button>
+            <ul class="dropdown-menu gap-1 p-2 rounded-3 shadow" id="year-selector-menu" aria-labelledby="year-selector-button">
+                <!-- Year options will be inserted here by JavaScript -->
+            </ul>
+        </div>
 
         <div class="row align-items-center gx-5 mb-4 mb-lg-5" id="about-container">
            <!-- Images are inserted from members.json here via the loaderMembers.js file -->

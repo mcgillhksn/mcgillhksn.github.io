@@ -5,7 +5,7 @@
     const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
     const basePath = isInSubdirectory ? '../' : './';
     
-    const res = await fetch(`${basePath}assets/data/2025-2026/events.json`);
+    const res = await fetch(`${basePath}assets/data/2024-2025/events.json`);
     const events = await res.json();
 
     const grid = document.getElementById('events-grid');

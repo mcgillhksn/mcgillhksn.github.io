@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Coco Wang",
+        "position": "Co-President",
+        "image": "coco.jpg"
+    },
+    {
+        "name": "James Ting",
+        "position": "Co-President",
+        "image": "james.jpg"
+    },
+    {
+        "name": "Angela Chan",
+        "position": "VP Events",
+        "image": "angela.jpg"
+    },
+    {
+        "name": "Kristie Fong",
+        "position": "VP Events",
+        "image": "kristie.jpg"
+    },
+    {
+        "name": "Tomoka Kurita",
+        "position": "VP Events",
+        "image": "tomoka.jpg"
+    },
+    {
+        "name": "Celine Xu",
+        "position": "VP Internal",
+        "image": "celine.jpg"
+    },
+    {
+        "name": "Kar Yan Chin",
+        "position": "VP Internal",
+        "image": "karyan.jpg"
+    },
+    {
+        "name": "Eric Li",
+        "position": "VP Culture",
+        "image": "eric.jpg"
+    },
+    {
+        "name": "Michelle Dang",
+        "position": "VP Culture",
+        "image": "michelle.jpg"
+    },
+    {
+        "name": "Geoffrey Kim",
+        "position": "VP Finance",
+        "image": "geoffrey.png"
+    },
+    {
+        "name": "Zoe Ho",
+        "position": "VP Finance",
+        "image": "zoe.png"
+    },
+    {
+        "name": "Hanna Paik",
+        "position": "VP External",
+        "image": "hanna.jpg"
+    },
+    {
+        "name": "Kelly Yeung",
+        "position": "VP Public Relations",
+        "image": "kelly.jpg"
+    },
+    {
+        "name": "Tyler Young",
+        "position": "VP Communications",
+        "image": "tyler.jpg"
+    },
+    {
+        "name": "Catherine Leung",
+        "position": "Graphic Designer",
+        "image": "catherine.jpg"
+    },
+    {
+        "name": "Mikako Isobe",
+        "position": "Graphic Designer",
+        "image": "mikako.jpg"
+    },
+    {
+        "name": "Vanna Chang",
+        "position": "Photographer",
+        "image": "vanna.jpg"
+    },
+    {
+        "name": "Nathasha Nguyen",
+        "position": "Senior Advisor",
+        "image": "nathasha.png"
+    },
+    {
+        "name": "Raymond Diamonds",
+        "position": "Senior Advisor",
+        "image": "raymond.jpg"
+    },
+    {
+        "name": "Yan Li",
+        "position": "Senior Advisor",
+        "image": "yan.jpg"
+    }
+]

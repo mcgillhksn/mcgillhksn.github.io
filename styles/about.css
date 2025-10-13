@@ -28,3 +28,11 @@ color: var(--primary-color);
 .member-role {
   font-size: 16px;
 }
+
+@media (max-width: 767.98px) {
+  #year-selector-menu {
+    transform: translateX(-33%) translateY(+32%)!important;
+    left: 50% !important;
+    right: auto !important;
+  }
+}

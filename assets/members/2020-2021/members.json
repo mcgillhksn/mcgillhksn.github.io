@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Coco Wang",
+        "position": "Co-President",
+        "image": "COCO02.jpg"
+    },
+    {
+        "name": "James Ting",
+        "position": "Co-President",
+        "image": "James01.jpg"
+    },
+    {
+        "name": "Angela Chan",
+        "position": "VP Events",
+        "image": "Angela01.jpg"
+    },
+    {
+        "name": "Kristie Fong",
+        "position": "VP Events",
+        "image": "Kristie01.jpg"
+    },
+    {
+        "name": "Tomoka Kurita",
+        "position": "VP Events",
+        "image": "Tomoka01.jpg"
+    },
+    {
+        "name": "Celine Xu",
+        "position": "VP Internal",
+        "image": "Celine01.jpg"
+    },
+    {
+        "name": "Kar Yan Chin",
+        "position": "VP Internal",
+        "image": "Karyan02.jpg"
+    },
+    {
+        "name": "Eric Li",
+        "position": "VP Culture",
+        "image": "Eric01.jpg"
+    },
+    {
+        "name": "Geoffrey Taerim Kim",
+        "position": "VP Finance",
+        "image": "Geoffrey02.jpg"
+    },
+    {
+        "name": "Zoe Ho",
+        "position": "VP Finance",
+        "image": "Zoe01.jpg"
+    },
+    {
+        "name": "Alexander Lam",
+        "position": "VP External",
+        "image": "Alexander01.jpg"
+    },
+    {
+        "name": "Danny Xie",
+        "position": "VP External",
+        "image": "Danny01.jpg"
+    },
+    {
+        "name": "Kelly Xiang",
+        "position": "VP External",
+        "image": "Kelly01.jpg"
+    },
+    {
+        "name": "Kelly Yeung",
+        "position": "VP Public Relations",
+        "image": "Kelly02.jpg"
+    },
+    {
+        "name": "Tyler Young",
+        "position": "VP Communications",
+        "image": "Tyler01.jpg"
+    },
+    {
+        "name": "Catherine Leung",
+        "position": "Graphic Designer",
+        "image": "Catherine01.jpg"
+    },
+    {
+        "name": "Mikako Isobe",
+        "position": "Graphic Designer",
+        "image": "Mikako01.jpg"
+    },
+    {
+        "name": "Vanna Chang",
+        "position": "Photographer",
+        "image": "Placeholder.jpg"
+    },
+    {
+        "name": "Candice Choi",
+        "position": "First Year Representative",
+        "image": "Candice01.jpg"
+    },
+    {
+        "name": "Chester Chau",
+        "position": "First Year Representative",
+        "image": "Chester02.jpg"
+    },
+    {
+        "name": "Isaac Wong",
+        "position": "First Year Representative",
+        "image": "Isaac02.jpg"
+    },
+    {
+        "name": "Raine Tse",
+        "position": "First Year Representative",
+        "image": "Raine01.jpg"
+    },
+    {
+        "name": "Nathasha Nguyen",
+        "position": "Senior Advisor",
+        "image": "Nathasha01.jpg"
+    },
+    {
+        "name": "Yan Li",
+        "position": "Senior Advisor",
+        "image": "Yan01.jpg"
+    }
+]

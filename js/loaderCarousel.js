@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const carouselContainer = document.querySelector("#eventCarousel .carousel-inner");
-    const year = "2025-2026";
+    const year = "2024-2025";
     
     // Determine if we're in a subdirectory or root
     const currentPath = window.location.pathname;

@@ -2,97 +2,107 @@
     {
         "name": "Alexander Lam",
         "position": "Co-President",
-        "image": "Alex.jpeg"
+        "image": "AlexanderLam.jpeg"
     },
     {
         "name": "Mansie Tam",
         "position": "Co-President",
-        "image": "Mansie.jpeg"
+        "image": "MansieTam.jpeg"
     },
     {
         "name": "Casey Luk",
         "position": "VP Internal",
-        "image": "Casey.jpeg"
+        "image": "CaseyLuk.jpeg"
     },
     {
         "name": "Joey Liu",
         "position": "VP Internal",
-        "image": "Joey.jpeg"
+        "image": "JoeyLiu.jpeg"
     },
     {
         "name": "Shawn Yat Sin",
         "position": "VP Internal",
-        "image": "Shawn.jpeg"
+        "image": "ShawnYatSin.jpeg"
+    },
+    {
+        "name": "Gordon Ng",
+        "position": "VP External",
+        "image": "GordonNg.jpeg"
+    },
+    {
+        "name": "Yedda Lam",
+        "position": "VP External",
+        "image": "Placeholder.jpg"
     },
     {
         "name": "Ian Pan",
         "position": "VP External",
-        "image": "Ian.jpeg"
+        "image": "IanPan.jpeg"
     },
     {
         "name": "Sylvia Jia",
         "position": "VP External",
-        "image": "Sylvia.jpeg"
+        "image": "SylviaJia.jpeg"
     },
     {
         "name": "Jenna Muston",
         "position": "VP Events",
-        "image": "Jenna.jpeg"
+        "image": "JennaMuston.jpeg"
     },
     {
         "name": "Michelle Ho",
         "position": "VP Events",
-        "image": "Michelle.jpeg"
+        "image": "MichelleHo.jpeg"
     },
     {
         "name": "Orion Mok",
         "position": "VP Events",
-        "image": "Orion.jpeg"
+        "image": "OrionMok.jpeg"
     },
     {
         "name": "Sarah Fooking Yuan",
         "position": "VP Events",
-        "image": "Sarah.jpeg"
+        "image": "SarahFookingYuan.jpeg"
     },
     {
         "name": "Baptiste Maury",
         "position": "VP Finance",
-        "image": "Baptiste.jpeg"
+        "image": "BaptisteMaury.jpeg"
     },
     {
         "name": "Josh Wang",
         "position": "VP Finance",
-        "image": "Josh.jpeg"
+        "image": "JoshWang.jpeg"
     },
     {
         "name": "Aigiarn Cheuk",
         "position": "VP Marketing",
-        "image": "Aigiarn.jpeg"
+        "image": "AigiarnCheuk.jpeg"
     },
     {
         "name": "Andrae Wang",
         "position": "VP Marketing",
-        "image": "Andrae.jpeg"
+        "image": "AndraeWang.jpeg"
     },
     {
         "name": "Celia Cai",
         "position": "VP Marketing",
-        "image": "Celia.jpeg"
+        "image": "CeliaCai.jpeg"
     },
     {
         "name": "Sallyy Shiu",
         "position": "VP Communications",
-        "image": "Sally.jpeg"
+        "image": "SallyyShiu.jpeg"
     },
     {
         "name": "Kelly Tam",
-        "position": "Graphic Designers",
-        "image": "Kelly.jpeg"
+        "position": "VP Graphics",
+        "image": "KellyTam.jpeg"
     },
     {
         "name": "Sonia Cao",
-        "position": "Graphic Designers",
-        "image": "Sonia.jpeg"
+        "position": "VP Graphics",
+        "image": "SoniaCao.jpeg"
     },
     {
         "name": "Matthew Ho",
@@ -106,47 +116,37 @@
     },
     {
         "name": "Emilie Lespinasse",
-        "position": "First Year Representatives",
-        "image": "Emilie.jpeg"
+        "position": "First Year Rep",
+        "image": "EmilieLespinasse.jpeg"
     },
     {
         "name": "Janet He",
-        "position": "First Year Representatives",
-        "image": "Janet.jpeg"
+        "position": "First Year Rep",
+        "image": "JanetHe.jpeg"
     },
     {
         "name": "Jessica Sun",
-        "position": "First Year Representatives",
-        "image": "JessicaS.jpeg"
+        "position": "First Year Rep",
+        "image": "JessicaSun.jpeg"
     },
     {
         "name": "Nicole Lui",
-        "position": "First Year Representatives",
-        "image": "Nicole.jpeg"
-    },
-    {
-        "name": "Gordon Ng",
-        "position": "External",
-        "image": "Gordon.jpeg"
-    },
-    {
-        "name": "Yedda Lam",
-        "position": "External",
-        "image": "Placeholder.jpg"
+        "position": "First Year Rep",
+        "image": "NicoleLui.jpeg"
     },
     {
         "name": "Chester Chau",
-        "position": "Senior Advisors",
-        "image": "Chester.jpeg"
+        "position": "Senior Advisor",
+        "image": "ChesterChau.jpeg"
     },
     {
         "name": "Isaac Wong",
-        "position": "Senior Advisors",
-        "image": "Isaac.jpeg"
+        "position": "Senior Advisor",
+        "image": "IsaacWong.jpeg"
     },
     {
         "name": "Raine Tse",
-        "position": "Senior Advisors",
-        "image": "Raine.jpeg"
+        "position": "Senior Advisor",
+        "image": "RaineTse.jpeg"
     }
 ]

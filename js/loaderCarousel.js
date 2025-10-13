@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const carouselContainer = document.querySelector("#eventCarousel .carousel-inner");
-    const year = siteConfig.contentYear;
+    const year = siteConfig.homePageContentYear;
     const basePath = siteConfig.getBasePath();
 
     fetch(`${basePath}assets/data/${year}/carousel.json`)

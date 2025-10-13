@@ -1,6 +1,7 @@
 const siteConfig = {
-  contentYear: "2024-2025", // The home page and the events uses this
-  allYears: ["2024-2025", "2023-2024", "2019-2020"],
+  homePageContentYear: "2024-2025",
+  eventsContentYear: "2024-2025",
+  allYears: ["2024-2025", "2023-2024", "2022-2023", "2021-2022", "2020-2021", "2019-2020", "2018-2019", "2017-2018", "2016-2017", "2014-2015", "2013-2014"],
 
   // Helper to determine asset paths based on page location
   getBasePath: function() {

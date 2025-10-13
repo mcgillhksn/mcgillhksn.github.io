@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Kelvin Ip",
+        "position": "Co-President",
+        "image": "KelvinIp.jpg"
+    },
+    {
+        "name": "Mandy Lam",
+        "position": "VP Internal",
+        "image": "MandyLam.jpg"
+    },
+    {
+        "name": "Jen Xiong",
+        "position": "VP Finance",
+        "image": "JenXiong.jpg"
+    },
+    {
+        "name": "Stephanie Leung",
+        "position": "VP Events",
+        "image": "StephanieLeung.jpg"
+    },
+    {
+        "name": "Jennifer Chew",
+        "position": "VP Events",
+        "image": "JenniferChew.jpg"
+    },
+    {
+        "name": "Annie Kwok",
+        "position": "VP External",
+        "image": "AnnieKwok.jpg"
+    },
+    {
+        "name": "Elizabeth Kwan",
+        "position": "VP External",
+        "image": "ElizabethKwan.jpg"
+    },
+    {
+        "name": "Kristy Zhang",
+        "position": "VP External",
+        "image": "KristyZhang.jpg"
+    },
+    {
+        "name": "Jollee Fung",
+        "position": "VP Academics",
+        "image": "JolleeFung.jpg"
+    },
+    {
+        "name": "Michele Ng",
+        "position": "VP Academics",
+        "image": "MicheleNg.jpg"
+    },
+    {
+        "name": "Michael Han",
+        "position": "Senior Creative Director",
+        "image": "MichaelHan.jpg"
+    },
+    {
+        "name": "Rodger Liu",
+        "position": "VP Public Relations",
+        "image": "RodgerLiu.jpg"
+    },
+    {
+        "name": "Nancy Lu",
+        "position": "VP Communications",
+        "image": "NancyLu.jpg"
+    },
+    {
+        "name": "Claus Choy",
+        "position": "Webmaster / Tech Director",
+        "image": "ClausChoy.jpg"
+    },
+    {
+        "name": "Anthony Ho",
+        "position": "Tech Director",
+        "image": "AnthonyHo.jpg"
+    },
+    {
+        "name": "Kenny Liu",
+        "position": "Tech Director",
+        "image": "KennyLiu.jpg"
+    },
+    {
+        "name": "Jency Zhen",
+        "position": "First Year Representative",
+        "image": "JencyZhen.jpg"
+    },
+    {
+        "name": "Ginny Tan",
+        "position": "First Year Representative",
+        "image": "GinnyTan.jpg"
+    },
+    {
+        "name": "Sam Min",
+        "position": "First Year Representative",
+        "image": "SamMin.jpg"
+    },
+    {
+        "name": "Kevin Tam",
+        "position": "First Year Representative",
+        "image": "KevinTam.jpg"
+    }
+]

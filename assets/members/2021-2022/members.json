@@ -1,0 +1,117 @@
+[
+    {
+        "name": "Celine Xu",
+        "position": "Co-President",
+        "image": "CelineXu.jpg"
+    },
+    {
+        "name": "Kelly Yeung",
+        "position": "Co-President",
+        "image": "KellyYeung.jpg"
+    },
+    {
+        "name": "Angela Chan",
+        "position": "VP Events",
+        "image": "AngelaChan.jpg"
+    },
+    {
+        "name": "Chester Chau",
+        "position": "VP Events",
+        "image": "ChesterChau.jpg"
+    },
+    {
+        "name": "Catherine Leung",
+        "position": "VP Internal",
+        "image": "CatherineLeung.jpg"
+    },
+    {
+        "name": "Eric Li",
+        "position": "VP Culture",
+        "image": "EricLi.jpg"
+    },
+    {
+        "name": "Candice Choi",
+        "position": "VP Culture",
+        "image": "CandiceChoi.jpg"
+    },
+    {
+        "name": "Kar Yan Chin",
+        "position": "VP Finance",
+        "image": "KarYanChin.jpg"
+    },
+    {
+        "name": "Arielle Lok",
+        "position": "VP Finance",
+        "image": "ArielleLok.jpg"
+    },
+    {
+        "name": "Josh Wang",
+        "position": "VP Finance",
+        "image": "JoshWang.jpg"
+    },
+    {
+        "name": "Issac Wong",
+        "position": "VP External",
+        "image": "IssacWong.jpg"
+    },
+    {
+        "name": "Alaina Ge",
+        "position": "VP External",
+        "image": "AlainaGe.jpg"
+    },
+    {
+        "name": "Janice To",
+        "position": "VP External",
+        "image": "JaniceTo.jpg"
+    },
+    {
+        "name": "Alexander Lam",
+        "position": "VP External",
+        "image": "AlexanderLam.jpg"
+    },
+    {
+        "name": "Amanda Wong",
+        "position": "VP Marketing",
+        "image": "AmandaWong.jpg"
+    },
+    {
+        "name": "Raine Tse",
+        "position": "VP Marketing",
+        "image": "RaineTse.jpg"
+    },
+    {
+        "name": "Ashley Hum",
+        "position": "VP Communications",
+        "image": "AshleyHum.jpg"
+    },
+    {
+        "name": "Ruolin Zhang",
+        "position": "Graphic Designer",
+        "image": "RuolinZhang.jpg"
+    },
+    {
+        "name": "Celine Chen",
+        "position": "Graphic Designer",
+        "image": "CelineChen.jpg"
+    },
+    {
+        "name": "Naomi Shi",
+        "position": "Graphic Designer",
+        "image": "NaomiShi.jpg"
+    },
+    {
+        "name": "Vanna Chang",
+        "position": "Photographer",
+        "image": "Placeholder.jpg"
+    },
+    {
+        "name": "Mansie Tam",
+        "position": "Videographer",
+        "image": "MansieTam.jpg"
+    },
+    {
+        "name": "James Ting",
+        "position": "Senior Advisor",
+        "image": "JamesTing.jpg"
+    }
+]

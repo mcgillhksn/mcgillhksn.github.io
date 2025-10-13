@@ -2,7 +2,7 @@
   try {
     const basePath = siteConfig.getBasePath();
     
-    const res = await fetch(`${basePath}assets/data/${siteConfig.contentYear}/events.json`);
+    const res = await fetch(`${basePath}assets/data/${siteConfig.eventsContentYear}/events.json`);
     const events = await res.json();
 
     const grid = document.getElementById('events-grid');

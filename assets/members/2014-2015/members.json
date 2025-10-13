@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Mandy Lam",
+        "position": "Co-President",
+        "image": "MandyLam.jpg"
+    },
+    {
+        "name": "Annie Kwok",
+        "position": "Co-President",
+        "image": "AnnieKwok.jpg"
+    },
+    {
+        "name": "Ginny Tan",
+        "position": "VP Internal",
+        "image": "GinnyTan.jpg"
+    },
+    {
+        "name": "Jeremy Lee",
+        "position": "VP External",
+        "image": "JeremyLee.jpg"
+    },
+    {
+        "name": "Kristy Zhang",
+        "position": "VP External",
+        "image": "KristyZhang.jpg"
+    },
+    {
+        "name": "Jennifer Chew",
+        "position": "VP Events",
+        "image": "JenniferChew.jpg"
+    },
+    {
+        "name": "Kevin Tam",
+        "position": "VP Events",
+        "image": "KevinTam.jpg"
+    },
+    {
+        "name": "Elizabeth Kwan",
+        "position": "VP Events",
+        "image": "ElizabethKwan.jpg"
+    },
+    {
+        "name": "Claus Choy",
+        "position": "VP Finance",
+        "image": "ClausChoy.jpg"
+    },
+    {
+        "name": "Nancy Lu",
+        "position": "VP Academics",
+        "image": "NancyLu.jpg"
+    },
+    {
+        "name": "Sam Min",
+        "position": "VP Academics",
+        "image": "SamMin.jpg"
+    },
+    {
+        "name": "Jency Zhen",
+        "position": "VP Communications",
+        "image": "JencyZhen.jpg"
+    },
+    {
+        "name": "Anthony Ho",
+        "position": "Tech Director",
+        "image": "AnthonyHo.jpg"
+    },
+    {
+        "name": "Liann Sun",
+        "position": "Tech Director",
+        "image": "LiannSun.jpg"
+    },
+    {
+        "name": "Ian Gu",
+        "position": "Creative Director",
+        "image": "IanGu.jpg"
+    },
+    {
+        "name": "Michael Ho",
+        "position": "Webmaster",
+        "image": "MichaelHo.jpg"
+    },
+    {
+        "name": "Nina Qi",
+        "position": "First Year Representative",
+        "image": "NinaQi.jpg"
+    },
+    {
+        "name": "Andrea Chu",
+        "position": "First Year Representative",
+        "image": "AndreaChu.jpg"
+    },
+    {
+        "name": "Natalie Wong",
+        "position": "First Year Representative",
+        "image": "NatalieWong.jpg"
+    },
+    {
+        "name": "Kai Luo",
+        "position": "First Year Representative",
+        "image": "KaiLuo.jpg"
+    },
+    {
+        "name": "Jollee Fung",
+        "position": "Senior Advisor",
+        "image": "JolleeFung.jpg"
+    },
+    {
+        "name": "Stephanie Leung",
+        "position": "Senior Advisor",
+        "image": "StephanieLeung.jpg"
+    }
+]

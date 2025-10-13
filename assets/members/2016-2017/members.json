@@ -1,0 +1,142 @@
+[
+    {
+        "name": "Nancy Lu",
+        "position": "Co-President",
+        "image": "NancyLu.jpg"
+    },
+    {
+        "name": "Natalie Wong",
+        "position": "Co-President",
+        "image": "NatalieWong.jpg"
+    },
+    {
+        "name": "Emily Huang",
+        "position": "VP Internal",
+        "image": "EmilyHuang.jpg"
+    },
+    {
+        "name": "Chloe Li",
+        "position": "VP External",
+        "image": "ChloeLi.jpg"
+    },
+    {
+        "name": "Danielle Amir",
+        "position": "VP External",
+        "image": "DanielleAmir.jpg"
+    },
+    {
+        "name": "Richard Ni",
+        "position": "VP Events",
+        "image": "RichardNi.jpg"
+    },
+    {
+        "name": "Kai Luo",
+        "position": "VP Events",
+        "image": "KaiLuo.jpg"
+    },
+    {
+        "name": "Raymond Diamonds",
+        "position": "VP Events",
+        "image": "RaymondDiamonds.jpg"
+    },
+    {
+        "name": "Vanessa Wong",
+        "position": "VP Events",
+        "image": "VanessaWong.jpg"
+    },
+    {
+        "name": "Jack Yang",
+        "position": "VP Finance",
+        "image": "JackYang.jpg"
+    },
+    {
+        "name": "Audrey Lai",
+        "position": "VP Media",
+        "image": "AudreyLai.jpg"
+    },
+    {
+        "name": "Anthony Ho",
+        "position": "VP Media",
+        "image": "AnthonyHo.jpg"
+    },
+    {
+        "name": "Kenneth Kaneko",
+        "position": "VP Media",
+        "image": "KennethKaneko.jpg"
+    },
+    {
+        "name": "Claudia Shek",
+        "position": "VP Communications",
+        "image": "ClaudiaShek.jpg"
+    },
+    {
+        "name": "Katrina Li",
+        "position": "VP Academics",
+        "image": "KatrinaLi.jpg"
+    },
+    {
+        "name": "Fiona Lo",
+        "position": "SR VP Public Relations",
+        "image": "FionaLo.jpg"
+    },
+    {
+        "name": "Emily Yun",
+        "position": "JR VP Public Relations",
+        "image": "EmilyYun.jpg"
+    },
+    {
+        "name": "Kevin Wang",
+        "position": "Creative Director & Graphic Designer",
+        "image": "KevinWang.jpg"
+    },
+    {
+        "name": "Martin Zhang",
+        "position": "Webmaster & App Developer",
+        "image": "MartinZhang.jpg"
+    },
+    {
+        "name": "Michael Ho",
+        "position": "Webmaster & App Developer",
+        "image": "MichaelHo.jpg"
+    },
+    {
+        "name": "Nina Qi",
+        "position": "Webmaster & App Developer",
+        "image": "NinaQi.jpg"
+    },
+    {
+        "name": "Colin Kwok",
+        "position": "First Year Representative",
+        "image": "ColinKwok.jpg"
+    },
+    {
+        "name": "Lily Lai",
+        "position": "First Year Representative",
+        "image": "LilyLai.jpg"
+    },
+    {
+        "name": "Siyun Pan",
+        "position": "First Year Representative",
+        "image": "SiyunPan.jpg"
+    },
+    {
+        "name": "Karming Chin",
+        "position": "First Year Representative",
+        "image": "KarmingChin.jpg"
+    },
+    {
+        "name": "Jeremy Lee",
+        "position": "Senior Advisor",
+        "image": "JeremyLee.jpg"
+    },
+    {
+        "name": "Sam Min",
+        "position": "Senior Advisor",
+        "image": "SamMin.jpg"
+    },
+    {
+        "name": "Jency Zhen",
+        "position": "Senior Advisor",
+        "image": "JencyZhen.jpg"
+    }
+]

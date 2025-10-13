@@ -8,14 +8,16 @@ Most of the website's content is loaded dynamically from JSON files and configur
 
 ### Setting the Current Year for Content
 
-The website uses a specific year to display events and the homepage carousel. To change the year that is actively displayed on the site:
+The website can display content from different years. You can configure the year for the homepage carousel and the events page separately.
 
 1.  Open `js/config.js`.
-2.  Modify the `contentYear` variable to the desired year (e.g., "2025-2026").
+2.  Modify `homePageContentYear` to set the year for the home page carousel.
+3.  Modify `eventsContentYear` to set the year for the events page.
 
 ```javascript
 const siteConfig = {
-  contentYear: "2025-2026", // Change this value
+  homePageContentYear: "2025-2026", // Change this value for the home page
+  eventsContentYear: "2025-2026",   // Change this value for the events page
   // ...
 };
 ```
@@ -61,7 +63,7 @@ To add a new team of executive members for an academic year:
 
 ### Updating Home Page Carousel and Events for a New Year
 
-The home page carousel and the events page content are loaded based on the `contentYear` set in `js/config.js`. To add content for a new year:
+The home page carousel and the events page content are loaded based on the `homePageContentYear` and `eventsContentYear` set in `js/config.js`. To add content for a new year:
 
 1.  **Create a new directory** under `assets/data/` with the name of the new academic year (e.g., `2025-2026`).
 

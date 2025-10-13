@@ -2,121 +2,126 @@
     {
         "name": "Coco Wang",
         "position": "Co-President",
-        "image": "COCO02.jpg"
+        "image": "CocoWang.jpg"
     },
     {
         "name": "James Ting",
         "position": "Co-President",
-        "image": "James01.jpg"
+        "image": "JamesTing.jpg"
     },
     {
         "name": "Angela Chan",
         "position": "VP Events",
-        "image": "Angela01.jpg"
+        "image": "AngelaChan.jpg"
     },
     {
         "name": "Kristie Fong",
         "position": "VP Events",
-        "image": "Kristie01.jpg"
+        "image": "KristieFong.jpg"
     },
     {
         "name": "Tomoka Kurita",
         "position": "VP Events",
-        "image": "Tomoka01.jpg"
+        "image": "TomokaKurita.jpg"
     },
     {
         "name": "Celine Xu",
         "position": "VP Internal",
-        "image": "Celine01.jpg"
+        "image": "CelineXu.jpg"
     },
     {
         "name": "Kar Yan Chin",
         "position": "VP Internal",
-        "image": "Karyan02.jpg"
+        "image": "KarYanChin.jpg"
     },
     {
         "name": "Eric Li",
         "position": "VP Culture",
-        "image": "Eric01.jpg"
+        "image": "EricLi.jpg"
+    },
+    {
+        "name": "Michelle Dang",
+        "position": "VP Culture",
+        "image": "MichelleDang.jpg"
     },
     {
         "name": "Geoffrey Taerim Kim",
         "position": "VP Finance",
-        "image": "Geoffrey02.jpg"
+        "image": "GeoffreyTaerimKim.jpg"
     },
     {
         "name": "Zoe Ho",
         "position": "VP Finance",
-        "image": "Zoe01.jpg"
+        "image": "ZoeHo.jpg"
     },
     {
         "name": "Alexander Lam",
         "position": "VP External",
-        "image": "Alexander01.jpg"
+        "image": "AlexanderLam.jpg"
     },
     {
         "name": "Danny Xie",
         "position": "VP External",
-        "image": "Danny01.jpg"
+        "image": "DannyXie.jpg"
     },
     {
         "name": "Kelly Xiang",
         "position": "VP External",
-        "image": "Kelly01.jpg"
+        "image": "KellyXiang.jpg"
     },
     {
         "name": "Kelly Yeung",
         "position": "VP Public Relations",
-        "image": "Kelly02.jpg"
+        "image": "KellyYeung.jpg"
     },
     {
         "name": "Tyler Young",
         "position": "VP Communications",
-        "image": "Tyler01.jpg"
+        "image": "TylerYoung.jpg"
     },
     {
         "name": "Catherine Leung",
         "position": "Graphic Designer",
-        "image": "Catherine01.jpg"
+        "image": "CatherineLeung.jpg"
     },
     {
         "name": "Mikako Isobe",
         "position": "Graphic Designer",
-        "image": "Mikako01.jpg"
+        "image": "MikakoIsobe.jpg"
     },
     {
         "name": "Vanna Chang",
         "position": "Photographer",
-        "image": "Placeholder.jpg"
+        "image": "VannaChang.jpg"
     },
     {
         "name": "Candice Choi",
         "position": "First Year Representative",
-        "image": "Candice01.jpg"
+        "image": "CandiceChoi.jpg"
     },
     {
         "name": "Chester Chau",
         "position": "First Year Representative",
-        "image": "Chester02.jpg"
+        "image": "ChesterChau.jpg"
     },
     {
         "name": "Isaac Wong",
         "position": "First Year Representative",
-        "image": "Isaac02.jpg"
+        "image": "IsaacWong.jpg"
     },
     {
         "name": "Raine Tse",
         "position": "First Year Representative",
-        "image": "Raine01.jpg"
+        "image": "RaineTse.jpg"
     },
     {
         "name": "Nathasha Nguyen",
         "position": "Senior Advisor",
-        "image": "Nathasha01.jpg"
+        "image": "NathashaNguyen.jpg"
     },
     {
         "name": "Yan Li",
         "position": "Senior Advisor",
-        "image": "Yan01.jpg"
+        "image": "YanLi.jpg"
     }
 ]

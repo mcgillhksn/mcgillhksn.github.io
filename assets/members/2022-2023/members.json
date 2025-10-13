@@ -1,0 +1,147 @@
+[
+    {
+        "name": "Isaac Wong",
+        "position": "Co-President",
+        "image": "IsaacWong.jpg"
+    },
+    {
+        "name": "Raine Tse",
+        "position": "Co-President",
+        "image": "RaineTse.jpg"
+    },
+    {
+        "name": "Alexander Lam",
+        "position": "VP Internal",
+        "image": "AlexanderLam.jpg"
+    },
+    {
+        "name": "Alice Fang",
+        "position": "VP Internal",
+        "image": "AliceFang.jpg"
+    },
+    {
+        "name": "Casey Luk",
+        "position": "VP Internal",
+        "image": "CaseyLuk.jpg"
+    },
+    {
+        "name": "Shania Wan-Bok-Nale",
+        "position": "VP External",
+        "image": "ShaniaWan-Bok-Nale.jpg"
+    },
+    {
+        "name": "Baptiste Maury",
+        "position": "VP External",
+        "image": "BaptisteMaury.jpg"
+    },
+    {
+        "name": "Audrey Ng",
+        "position": "VP External",
+        "image": "AudreyNg.jpg"
+    },
+    {
+        "name": "Bo Lau",
+        "position": "VP External",
+        "image": "BoLau.jpg"
+    },
+    {
+        "name": "Jenna Muston",
+        "position": "VP Events",
+        "image": "JennaMuston.jpg"
+    },
+    {
+        "name": "Chester Chau",
+        "position": "VP Events",
+        "image": "ChesterChau.jpg"
+    },
+    {
+        "name": "Sarah Yuan",
+        "position": "VP Events",
+        "image": "SarahYuan.jpg"
+    },
+    {
+        "name": "Felicity Leung",
+        "position": "VP Events",
+        "image": "FelicityLeung.jpg"
+    },
+    {
+        "name": "Josh Wang",
+        "position": "VP Finance",
+        "image": "JoshWang.jpg"
+    },
+    {
+        "name": "Joyce Liu",
+        "position": "VP Finance",
+        "image": "JoyceLiu.jpg"
+    },
+    {
+        "name": "Andrae Wang",
+        "position": "VP Marketing",
+        "image": "AndraeWang.jpg"
+    },
+    {
+        "name": "Lucy Geng",
+        "position": "VP Marketing",
+        "image": "LucyGeng.jpg"
+    },
+    {
+        "name": "Amanda Wong",
+        "position": "VP Marketing",
+        "image": "AmandaWong.jpg"
+    },
+    {
+        "name": "Katherine Choi",
+        "position": "VP Communications",
+        "image": "KatherineChoi.jpg"
+    },
+    {
+        "name": "Candice Choi",
+        "position": "VP Culture",
+        "image": "CandiceChoi.jpg"
+    },
+    {
+        "name": "Mansie Tam",
+        "position": "VP Culture",
+        "image": "MansieTam.jpg"
+    },
+    {
+        "name": "Kelly Tam",
+        "position": "Graphic Designer",
+        "image": "KellyTam.jpg"
+    },
+    {
+        "name": "Sonia Cao",
+        "position": "Graphic Designer",
+        "image": "SoniaCao.jpg"
+    },
+    {
+        "name": "Jessica Taylor",
+        "position": "Graphic Designer",
+        "image": "JessicaTaylor.jpg"
+    },
+    {
+        "name": "Orion Mok",
+        "position": "Photographer",
+        "image": "OrionMok.jpg"
+    },
+    {
+        "name": "Michelle Ho",
+        "position": "First-Year Rep",
+        "image": "MichelleHo.jpg"
+    },
+    {
+        "name": "Sally",
+        "position": "First-Year Rep",
+        "image": "Sally.jpg"
+    },
+    {
+        "name": "Valerie Hung",
+        "position": "First-Year Rep",
+        "image": "ValerieHung.jpg"
+    },
+    {
+        "name": "Gordon Ng",
+        "position": "First-Year Rep",
+        "image": "GordonNg.jpg"
+    }
+]

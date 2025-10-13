@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const currentPath = window.location.pathname;
-    const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
-    const basePath = isInSubdirectory ? '../' : './';
-
-    const years = ["2024-2025", "2023-2024", "2019-2020"]; // Manually listed from folder structure
+    const basePath = siteConfig.getBasePath();
+    const years = siteConfig.allYears;
     const yearSelectorMenu = document.getElementById('year-selector-menu');
     const yearSelectorButton = document.getElementById('year-selector-button');
     const container = document.getElementById('about-container');

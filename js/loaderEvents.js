@@ -1,11 +1,8 @@
 (async function loadEventCards() {
   try {
-    // Determine if we're in a subdirectory or root
-    const currentPath = window.location.pathname;
-    const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
-    const basePath = isInSubdirectory ? '../' : './';
+    const basePath = siteConfig.getBasePath();
     
-    const res = await fetch(`${basePath}assets/data/2024-2025/events.json`);
+    const res = await fetch(`${basePath}assets/data/${siteConfig.contentYear}/events.json`);
     const events = await res.json();
 
     const grid = document.getElementById('events-grid');

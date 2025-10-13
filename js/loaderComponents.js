@@ -5,22 +5,19 @@
       { targetId: "include-footer", file: "footer.html"},
     ];
   
-    // Determine if we're in a subdirectory or root
-    const currentPath = window.location.pathname;
-    const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
-    const basePath = isInSubdirectory ? '../components/' : './components/';
-    const assetBasePath = isInSubdirectory ? '../' : './';
+    const basePath = siteConfig.getBasePath();
+    const componentBasePath = `${basePath}components/`;
   
     await Promise.all(
       parts.map(async ({ targetId, file }) => {
-        const res  = await fetch(`${basePath}${file}`);
+        const res  = await fetch(`${componentBasePath}${file}`);
         const html = await res.text();
         document.getElementById(targetId).innerHTML = html;
       })
     );
 
     // Fix asset paths and navigation links in navbar if we're in a subdirectory
-    if (isInSubdirectory) {
+    if (basePath === '../') {
         const navbarLogo = document.querySelector('#include-navbar img[src="./assets/logo/logoText.png"]');
         if (navbarLogo) {
             navbarLogo.src = '../assets/logo/logoText.png';
@@ -50,7 +47,7 @@
 
     // Highlight active navbar link
     const navLinks = document.querySelectorAll("#include-navbar .nav-link");
-    
+    const currentPath = window.location.pathname;
     navLinks.forEach(link => {
         const linkHref = link.getAttribute("href");
 

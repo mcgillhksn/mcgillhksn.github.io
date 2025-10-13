@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const carouselContainer = document.querySelector("#eventCarousel .carousel-inner");
-    const year = "2024-2025";
-    
-    // Determine if we're in a subdirectory or root
-    const currentPath = window.location.pathname;
-    const isInSubdirectory = currentPath.includes('/events') || currentPath.includes('/about') || currentPath.includes('/store');
-    const basePath = isInSubdirectory ? '../' : './';
+    const year = siteConfig.contentYear;
+    const basePath = siteConfig.getBasePath();
 
     fetch(`${basePath}assets/data/${year}/carousel.json`)
         .then(response => response.json())

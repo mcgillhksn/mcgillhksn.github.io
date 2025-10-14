@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     function loadMembers(year) {
+        yearSelectorButton.textContent = year;
+        groupPhoto.style.visibility = 'visible';
+        groupPhoto.src = `${basePath}assets/members/${year}/groupPhoto.jpg`;
+
         fetch(`${basePath}assets/members/${year}/members.json`)
             .then(response => {
                 if (!response.ok) {
@@ -36,10 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     `;
                     container.appendChild(memberDiv);
                 });
-                yearSelectorButton.textContent = year;
-
-                groupPhoto.style.visibility = 'visible';
-                groupPhoto.src = `${basePath}assets/members/${year}/groupPhoto.jpg`;
             })
             .catch(error => {
                 console.error('Error loading about members:', error);

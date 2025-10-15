@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Jency Zhen",
+        "position": "Co-President",
+        "image": "JencyZhen.jpg"
+    },
+    {
+        "name": "Jeremy Lee",
+        "position": "Co-President",
+        "image": "JeremyLee.jpg"
+    },
+    {
+        "name": "Natalie Wong",
+        "position": "VP Internal",
+        "image": "NatalieWong.jpg"
+    },
+    {
+        "name": "Katrina Li",
+        "position": "VP External",
+        "image": "KatrinaLi.jpg"
+    },
+    {
+        "name": "Jack Yang",
+        "position": "VP External",
+        "image": "JackYang.jpg"
+    },
+    {
+        "name": "Nina Qi",
+        "position": "VP Events",
+        "image": "NinaQi.jpg"
+    },
+    {
+        "name": "Kai Luo",
+        "position": "VP Events",
+        "image": "KaiLuo.jpg"
+    },
+    {
+        "name": "Kristy Zhang",
+        "position": "VP Events",
+        "image": "KristyZhang.jpg"
+    },
+    {
+        "name": "Nancy Lu",
+        "position": "VP Finance",
+        "image": "NancyLu.jpg"
+    },
+    {
+        "name": "Audrey Lai",
+        "position": "Creative Director",
+        "image": "AudreyLai.jpg"
+    },
+    {
+        "name": "Emily Huang",
+        "position": "First Year Representative",
+        "image": "EmilyHuang.jpg"
+    },
+    {
+        "name": "Claudia Shek",
+        "position": "First Year Representative",
+        "image": "ClaudiaShek.jpg"
+    },
+    {
+        "name": "Richard Ni",
+        "position": "First Year Representative",
+        "image": "RichardNi.jpg"
+    },
+    {
+        "name": "Raymond Diamonds",
+        "position": "First Year Representative",
+        "image": "RaymondDiamonds.jpg"
+    },
+    {
+        "name": "Fiona Lo",
+        "position": "Secretary",
+        "image": "FionaLo.jpg"
+    },
+    {
+        "name": "Sam Min",
+        "position": "VP Academics",
+        "image": "SamMin.jpg"
+    },
+    {
+        "name": "Carla Achcar",
+        "position": "VP Academics",
+        "image": "CarlaAchcar.jpg"
+    },
+    {
+        "name": "Danielle Amir",
+        "position": "VP Public Relations",
+        "image": "DanielleAmir.jpg"
+    },
+    {
+        "name": "Martin Zhang",
+        "position": "App Developer",
+        "image": "MartinZhang.jpg"
+    },
+    {
+        "name": "Anthony Ho",
+        "position": "Tech Director",
+        "image": "AnthonyHo.jpg"
+    }
+]

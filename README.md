@@ -124,3 +124,36 @@ The information for the discount card on the "Store" page is hardcoded. To updat
     </div>
     ```
 3.  To change the images for the membership card or the sponsor list, replace the image files in the `assets/membershipCard/` directory. The filenames are `front.jpg`, `back.jpg`, and `sponsorlist.png`.
+
+## Developer Tools and Workflow
+
+### Image Processing Workflow
+
+Before adding new member or event photos to the repository, please process them as follows:
+
+1.  **Crop Photos**: Crop all photos to a 500x500 resolution. A recommended free tool for macOS is **Bulk Cropper**, which can intelligently crop to faces.
+2.  **Optimize Images**: Run all new images through an optimizer to reduce their file size. **ImageOptim** is a great free tool for this on macOS.
+
+This workflow ensures that the website loads quickly and that all images are consistent.
+
+### Helper Scripts
+
+The `scripts/` directory contains Python scripts to help manage member photos.
+
+#### `rename_member_photos.py`
+
+-   **Purpose**: To standardize member photo filenames. This script renames photo files based on the member's `name` in `members.json` and updates the `image` field in the JSON file accordingly.
+-   **Usage**:
+    ```bash
+    python scripts/rename_member_photos.py assets/members/<year-directory>/
+    ```
+    *Example:* `python scripts/rename_member_photos.py assets/members/2025-2026/`
+
+#### `cleanup_members_photos.py`
+
+-   **Purpose**: To remove unused photos from the repository. This script will delete any photos in a member directory that are not listed in that directory's `members.json` file. `groupPhoto.jpg` is always preserved.
+-   **Usage**:
+    ```bash
+    python scripts/cleanup_members_photos.py assets/members/<year-directory>/
+    ```
+    *Example:* `python scripts/cleanup_members_photos.py assets/members/2025-2026/`

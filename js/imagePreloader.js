@@ -3,6 +3,32 @@
     const FALLBACK_TIMEOUT = 3000; // 3 seconds max wait time
     const MIN_DISPLAY_TIME = 500;  // Minimum time before showing (for smooth fade)
     const startTime = Date.now();
+    const HAS_LOADED_KEY = 'hksn_has_loaded_this_session';
+
+    // Check if already loaded in this session
+    const hasLoadedThisSession = sessionStorage.getItem(HAS_LOADED_KEY) === 'true';
+
+    // If already loaded this session, skip preloader immediately
+    if (hasLoadedThisSession) {
+        const header = document.querySelector('header');
+        const spinner = document.getElementById('preloader-spinner');
+        
+        if (header) {
+            header.classList.remove('preloading');
+            header.classList.add('preloaded');
+            header.style.opacity = '1';
+            header.style.visibility = 'visible';
+        }
+        
+        if (spinner) {
+            spinner.remove();
+        }
+        
+        return; // Exit early, no need to preload
+    }
+
+    // Mark as loaded for this session
+    sessionStorage.setItem(HAS_LOADED_KEY, 'true');
 
     // List of critical images to preload
     const criticalImages = [

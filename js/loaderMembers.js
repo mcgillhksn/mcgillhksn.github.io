@@ -1,7 +1,7 @@
 (function setupTeamArchive() {
     const selector = document.getElementById("year-selector");
     const container = document.getElementById("about-container");
-    const groupPhoto = document.getElementById("group-photo");
+    let groupPhoto = document.getElementById("group-photo");
     const groupFigure = document.querySelector(".team-group");
     const status = document.getElementById("team-status");
     const previousYear = document.getElementById("previous-year");
@@ -20,6 +20,8 @@
     let request = 0;
     let historyRequest = 0;
     let selectedMember = "";
+    let groupYear = container.dataset.year;
+    let reuseSnapshot = true;
 
     function getMembers(year) {
         if (!memberRequests.has(year)) {
@@ -33,47 +35,39 @@
     }
 
     function hasPortrait(member) {
-        return Boolean(member.image && !/placeholder/i.test(member.image));
+        return siteTemplates.hasPortrait(member);
     }
 
-    function createPortrait(member, year, onError) {
-        const portrait = document.createElement("div");
-        portrait.className = "member-portrait";
-        const placeholder = document.createElement("div");
-        placeholder.className = "member-placeholder";
-        placeholder.setAttribute("aria-hidden", "true");
-        const initials = document.createElement("span");
-        initials.textContent = member.name.split(/\s+/).filter(Boolean).map(part => part[0]).slice(0, 2).join("");
-        placeholder.append(initials);
-        const noPhoto = document.createElement("span");
-        noPhoto.className = "visually-hidden";
-        noPhoto.textContent = `No photo available for ${member.name} in ${siteContent.formatYear(year)}.`;
-        noPhoto.hidden = hasPortrait(member);
-        portrait.append(placeholder, noPhoto);
-
-        if (hasPortrait(member)) {
-            const image = document.createElement("img");
-            image.alt = `${member.name}, ${member.position}, ${siteContent.formatYear(year)}`;
-            image.loading = "lazy";
-            image.decoding = "async";
-            image.width = 500;
-            image.height = 500;
-            image.addEventListener("load", () => { placeholder.hidden = true; });
-            image.addEventListener("error", () => {
+    function preparePortrait(portrait, onError) {
+        const image = portrait.querySelector("img");
+        const placeholder = portrait.querySelector(".member-placeholder");
+        const noPhoto = portrait.querySelector(".visually-hidden");
+        if (image) {
+            const loaded = () => { placeholder.hidden = true; };
+            image.addEventListener("load", loaded);
+            const failed = () => {
                 image.hidden = true;
                 placeholder.hidden = false;
                 noPhoto.hidden = false;
                 if (onError) onError();
-            });
-            image.src = new URL(`assets/members/${year}/${member.image}`, siteConfig.getBasePath());
-            portrait.append(image);
+            };
+            image.addEventListener("error", failed);
+            if (image.complete && image.naturalWidth) loaded();
+            else if (image.complete && image.getAttribute("src") && !image.dataset.fallback) queueMicrotask(failed);
         }
         return portrait;
+    }
+
+    function createPortrait(member, year) {
+        const template = document.createElement("template");
+        template.innerHTML = siteTemplates.portrait(member, year, true);
+        return preparePortrait(template.content.firstElementChild);
     }
 
     async function loadMemberHistory(name) {
         const currentRequest = ++historyRequest;
         const memberKey = name.normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
+        siteImages.release(memberHistory);
         memberHistory.replaceChildren();
         memberHistory.setAttribute("aria-busy", "true");
         memberHistoryStatus.textContent = "Loading team years…";
@@ -129,6 +123,7 @@
         memberModal.addEventListener("hidden.bs.modal", () => {
             historyRequest++;
             selectedMember = "";
+            siteImages.release(memberHistory);
             memberHistory.replaceChildren();
             memberHistory.setAttribute("aria-busy", "false");
         });
@@ -156,28 +151,48 @@
         });
     }
 
-    groupPhoto.addEventListener("load", () => {
-        groupFigure.classList.remove("is-unavailable");
-    });
-    groupPhoto.addEventListener("error", () => {
-        groupFigure.classList.add("is-unavailable");
-    });
+    function prepareGroupPhoto(image, year) {
+        image.addEventListener("load", () => {
+            if (image === groupPhoto && year === groupYear && image.naturalWidth) groupFigure.classList.remove("is-unavailable");
+        });
+        image.addEventListener("error", () => {
+            if (image === groupPhoto && year === groupYear) groupFigure.classList.add("is-unavailable");
+        });
+        if (image.complete && !image.naturalWidth && !image.dataset.fallback) groupFigure.classList.add("is-unavailable");
+    }
+    prepareGroupPhoto(groupPhoto, groupYear);
 
     async function loadMembers(year) {
         const currentRequest = ++request;
         container.setAttribute("aria-busy", "true");
         status.textContent = `Loading the ${siteContent.formatYear(year)} team.`;
-        groupFigure.classList.add("is-unavailable");
-        groupPhoto.alt = `The ${siteContent.formatYear(year)} HKSN team at McGill`;
-        groupPhoto.src = new URL(`assets/members/${year}/groupPhoto.jpg`, siteConfig.getBasePath());
+        if (groupYear !== year || (groupPhoto.complete && !groupPhoto.naturalWidth)) {
+            groupYear = year;
+            groupFigure.classList.add("is-unavailable");
+            // Give each selection its own element so a queued load event from
+            // an older year cannot reveal the wrong photograph during a switch.
+            const previousPhoto = groupPhoto;
+            groupPhoto = document.createElement("img");
+            groupPhoto.id = "group-photo";
+            groupPhoto.decoding = "async";
+            groupPhoto.fetchPriority = "high";
+            prepareGroupPhoto(groupPhoto, year);
+            groupPhoto.alt = `The ${siteContent.formatYear(year)} HKSN team at McGill`;
+            siteImages.set(groupPhoto, `assets/members/${year}/groupPhoto.jpg`, "(max-width: 767px) calc(100vw - 40px), (max-width: 1280px) 53vw, 625px");
+            siteImages.release(previousPhoto);
+            previousPhoto.replaceWith(groupPhoto);
+        }
 
         try {
             const members = await getMembers(year);
             if (currentRequest !== request) return;
+            const reuse = reuseSnapshot && container.dataset.year === year && container.dataset.contentKey === siteTemplates.key(members);
+            reuseSnapshot = false;
+            const existing = reuse ? [...container.children] : [];
             const memberCards = members.map(member => ({
                 member,
                 hasPhoto: hasPortrait(member),
-                element: null
+                element: existing.find(card => card.querySelector(".member-trigger")?.dataset.memberName === member.name) || null
             }));
             function renderMembers() {
                 // Always partition the original order, even when images fail out of order.
@@ -185,37 +200,27 @@
                     ...memberCards.filter(card => card.hasPhoto),
                     ...memberCards.filter(card => !card.hasPhoto)
                 ];
-                container.replaceChildren(...orderedCards.map(card => card.element));
+                const elements = orderedCards.map(card => card.element);
+                if (elements.some((element, index) => container.children[index] !== element) || container.childElementCount !== elements.length) {
+                    [...container.children].filter(element => !elements.includes(element)).forEach(element => siteImages.release(element));
+                    container.replaceChildren(...elements);
+                }
             }
             memberCards.forEach(card => {
                 const { member } = card;
-                const article = document.createElement("article");
-                article.className = "member";
-                card.element = article;
-                const portrait = createPortrait(member, year, () => {
+                if (!card.element) {
+                    const template = document.createElement("template");
+                    template.innerHTML = siteTemplates.member(member, year);
+                    card.element = template.content.firstElementChild;
+                }
+                preparePortrait(card.element.querySelector(".member-portrait"), () => {
                     card.hasPhoto = false;
                     if (currentRequest === request) renderMembers();
                 });
-                const name = document.createElement("h3");
-                name.className = "member-name";
-                const trigger = document.createElement("a");
-                trigger.href = siteModalLinks.href(siteModalLinks.slug(member.name));
-                trigger.className = "member-trigger";
-                trigger.dataset.modalLink = "";
-                trigger.dataset.memberName = member.name;
-                trigger.setAttribute("aria-haspopup", "dialog");
-                trigger.setAttribute("aria-controls", "member-modal");
-                trigger.setAttribute("aria-label", `View all team years for ${member.name}`);
-                const memberName = document.createElement("span");
-                memberName.textContent = member.name;
-                trigger.append(memberName);
-                name.append(trigger);
-                const role = document.createElement("p");
-                role.className = "member-role";
-                role.textContent = member.position;
-                article.append(portrait, name, role);
             });
             renderMembers();
+            container.dataset.year = year;
+            container.dataset.contentKey = siteTemplates.key(members);
             status.textContent = `Showing ${members.length} members of the ${siteContent.formatYear(year)} team.`;
         } catch (error) {
             if (currentRequest !== request) return;

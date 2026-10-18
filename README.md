@@ -163,6 +163,27 @@ Confirm each offer with the partner before publishing it. Check the directory's 
 
 ## Developer Tools and Workflow
 
+### Keeping the Website Fast
+
+The website keeps original uploads and serves smaller copies suited to each screen. After adding or replacing photos, ask the website maintainer to refresh the optimized assets before publishing. Originals should not be deleted.
+
+Navigation and content previews are also included in each page so visitors do not see an empty layout while waiting for downloads. Team, event, and partner lists still check their JSON files for updates; the previews can be refreshed with the optimized assets. Edit the content files described above rather than the generated previews or files ending in `.min.css` or `.min.js`.
+
+**Before publishing changes:** the maintainer should run the following from the website folder (with Node.js installed):
+
+```bash
+npm ci
+npm run build
+```
+
+`npm ci` installs the build tools; it is needed on a new checkout or when `package-lock.json` changes. After that, use `npm run build` whenever adding or replacing images, changing navigation/footer components, updating content previews, or editing source CSS/JavaScript. Publish the generated files along with the source changes.
+
+- New image paths still work without rebuilding, but use the larger original files until optimized copies are generated.
+- Replacing an image at an existing path requires a rebuild; otherwise, visitors may still see its previous optimized copy.
+- Source CSS/JavaScript changes require a rebuild because the pages load the generated `.min.css` and `.min.js` files.
+
+This is a publishing step, not something visitors or the server run on each page visit.
+
 ### Image Processing Workflow
 
 Before adding new member or event photos to the repository, please process them as follows:

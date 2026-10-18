@@ -4,24 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#111720">
+    <meta name="color-scheme" content="dark">
     <meta name="description" content="Browse HKSN’s past events and photo galleries, from welcome parties and dim sum to hikes and our annual semi-formal.">
     <title>Events — HKSN</title>
     <link rel="icon" type="image/png" href="../assets/logo/logo.png">
     <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/permanent-marker-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/global.css?v=logo-accent-1">
-    <link rel="stylesheet" href="../styles/navbar.css?v=focus-style-1">
-    <link rel="stylesheet" href="../styles/buttons.css?v=logo-accent-1">
-    <link rel="stylesheet" href="../styles/links.css?v=logo-accent-1">
-    <link rel="stylesheet" href="../styles/events.css?v=events-layout-10">
-    <link rel="stylesheet" href="../styles/eventPolaroids.css?v=polaroids-6">
-    <link rel="stylesheet" href="../styles/modals.css?v=focus-style-1">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <style>html,body{background:#111720;color-scheme:dark}</style>
+    <link rel="stylesheet" href="../styles/site.min.css?v=bba5784b5f01">
+    <link rel="stylesheet" href="../styles/events.min.css?v=9bc8dbf22e63">
+
 </head>
 <body id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div id="include-navbar"></div>
+    <!-- navigation:start -->
+<div id="include-navbar"><div id="navigationBar">
+    <nav class="navbar navbar-expand-md site-navbar site-container" aria-label="Main navigation">
+        <a href="../" data-site-path="" class="navbar-brand" aria-label="HKSN home">
+            <img src="../assets/optimized/logo/logoText-244.webp" srcset="../assets/optimized/logo/logoText-244.webp 244w" sizes="122px" width="3380" height="857" data-fallback="../assets/logo/logoText.png" alt="HKSN" decoding="async" data-fade >
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Open navigation">
+            <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="../" data-site-path="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about/" data-site-path="about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../events/" data-site-path="events/" class="nav-link" aria-current="page">Events</a></li>
+                <li class="nav-item"><a href="../store/" data-site-path="store/" class="nav-link">Member Card</a></li>
+                <li class="nav-item dropdown">
+                    <button type="button" class="nav-link socials-toggle" id="socials-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Socials <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end site-dropdown" aria-labelledby="socials-toggle">
+                        <li><a class="dropdown-item" href="https://www.instagram.com/hksnmcgill/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#instagram" data-site-icon="assets/icons/socials.svg#instagram"/></svg>Instagram</a></li>
+                        <li><a class="dropdown-item" href="https://www.tiktok.com/@mcgillhksn" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#tiktok" data-site-icon="assets/icons/socials.svg#tiktok"/></svg>TikTok</a></li>
+                        <li><a class="dropdown-item" href="https://www.facebook.com/mcgillhksn/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#facebook" data-site-icon="assets/icons/socials.svg#facebook"/></svg>Facebook</a></li>
+                        <li><a class="dropdown-item" href="https://open.spotify.com/user/id8ix3cojrfwbn26040k0mh7k" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#spotify" data-site-icon="assets/icons/socials.svg#spotify"/></svg>Spotify</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</div>
+<!-- navigation:end -->
     <main id="main-content" class="page-main">
         <header class="section site-container events-header">
             <div class="section-copy">
@@ -48,19 +76,36 @@
             </div>
             <p id="polaroid-instructions" class="visually-hidden">Press Enter to open photos. Use the arrow keys to move a Polaroid, or hold Shift to move it farther.</p>
             <p id="polaroid-status" class="visually-hidden" role="status" aria-live="polite"></p>
-            <div id="events-grid" class="events-grid polaroid-board" data-event-grid data-polaroid-board aria-busy="true"><p class="content-status" role="status">Loading the event archive…</p></div>
+            <!-- event-cards:start -->
+<div id="events-grid" class="events-grid polaroid-board" data-event-grid data-polaroid-board data-content-key="5v8kms" data-year="2024-2025" aria-busy="false"><article class="event-card" data-category="Nights out"><a href="#semi-formal" class="event-card-trigger" data-modal-link aria-haspopup="dialog" aria-controls="event-semiFormal-modal" aria-label="View Semi Formal recap" aria-describedby="polaroid-instructions" draggable="false"><div class="event-card-media"><img src="../assets/optimized/events/semiFormal/1-1000.webp" srcset="../assets/optimized/events/semiFormal/1-480.webp 480w, ../assets/optimized/events/semiFormal/1-640.webp 640w, ../assets/optimized/events/semiFormal/1-960.webp 960w, ../assets/optimized/events/semiFormal/1-1000.webp 1000w" sizes="(max-width: 479px) calc((100vw - 40px) * .6552), (max-width: 599px) min(274.32px, calc((100vw - 128px) * .819)), (max-width: 767px) calc((100vw - 128px) * .3694), (max-width: 1039px) min(274.32px, calc((100vw - 168px) * .3694)), min(274.32px, calc((100vw - 168px) * .2592))" width="1000" height="750" data-fallback="../assets/events/semiFormal/1.jpg" alt="Friends celebrating at the HKSN semi-formal" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3>Semi Formal</h3></div></a></article><article class="event-card" data-category="Community"><a href="#mid-autumn-hike" class="event-card-trigger" data-modal-link aria-haspopup="dialog" aria-controls="event-midAutumnHike-modal" aria-label="View Mid Autumn Hike recap" aria-describedby="polaroid-instructions" draggable="false"><div class="event-card-media"><img src="../assets/optimized/events/midAutumnHike/1-1000.webp" srcset="../assets/optimized/events/midAutumnHike/1-480.webp 480w, ../assets/optimized/events/midAutumnHike/1-640.webp 640w, ../assets/optimized/events/midAutumnHike/1-960.webp 960w, ../assets/optimized/events/midAutumnHike/1-1000.webp 1000w" sizes="(max-width: 479px) calc((100vw - 40px) * .6552), (max-width: 599px) min(274.32px, calc((100vw - 128px) * .819)), (max-width: 767px) calc((100vw - 128px) * .3694), (max-width: 1039px) min(274.32px, calc((100vw - 168px) * .3694)), min(274.32px, calc((100vw - 168px) * .2592))" width="1000" height="1333" data-fallback="../assets/events/midAutumnHike/1.jpg" alt="The moon above the Montréal skyline" decoding="async" data-fade loading="lazy" draggable="false" style="object-position: 50% 65%"></div><div class="event-card-body"><h3>Mid Autumn Hike</h3></div></a></article><article class="event-card" data-category="Community"><a href="#welcome-party" class="event-card-trigger" data-modal-link aria-haspopup="dialog" aria-controls="event-welcomeParty-modal" aria-label="View Welcome Party recap" aria-describedby="polaroid-instructions" draggable="false"><div class="event-card-media poster-media"><img src="../assets/optimized/events/welcomeParty/1-1080.webp" srcset="../assets/optimized/events/welcomeParty/1-480.webp 480w, ../assets/optimized/events/welcomeParty/1-640.webp 640w, ../assets/optimized/events/welcomeParty/1-960.webp 960w, ../assets/optimized/events/welcomeParty/1-1080.webp 1080w" sizes="(max-width: 479px) calc((100vw - 40px) * .6552), (max-width: 599px) min(274.32px, calc((100vw - 128px) * .819)), (max-width: 767px) calc((100vw - 128px) * .3694), (max-width: 1039px) min(274.32px, calc((100vw - 168px) * .3694)), min(274.32px, calc((100vw - 168px) * .2592))" width="1080" height="1080" data-fallback="../assets/events/welcomeParty/1.jpg" alt="Welcome Party" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3>Welcome Party</h3></div></a></article><article class="event-card" data-category="Culture"><a href="#lny" class="event-card-trigger" data-modal-link aria-haspopup="dialog" aria-controls="event-lny-modal" aria-label="View Lunar New Year recap" aria-describedby="polaroid-instructions" draggable="false"><div class="event-card-media poster-media"><img src="../assets/optimized/events/lny/1-1080.webp" srcset="../assets/optimized/events/lny/1-480.webp 480w, ../assets/optimized/events/lny/1-640.webp 640w, ../assets/optimized/events/lny/1-960.webp 960w, ../assets/optimized/events/lny/1-1080.webp 1080w" sizes="(max-width: 479px) calc((100vw - 40px) * .6552), (max-width: 599px) min(274.32px, calc((100vw - 128px) * .819)), (max-width: 767px) calc((100vw - 128px) * .3694), (max-width: 1039px) min(274.32px, calc((100vw - 168px) * .3694)), min(274.32px, calc((100vw - 168px) * .2592))" width="1080" height="1346" data-fallback="../assets/events/lny/1.jpg" alt="Lunar New Year" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3>Lunar New Year</h3></div></a></article><article class="event-card" data-category="Community"><a href="#retreat" class="event-card-trigger" data-modal-link aria-haspopup="dialog" aria-controls="event-retreat-modal" aria-label="View Retreat recap" aria-describedby="polaroid-instructions" draggable="false"><div class="event-card-media poster-media"><img src="../assets/optimized/events/retreat/1-1080.webp" srcset="../assets/optimized/events/retreat/1-480.webp 480w, ../assets/optimized/events/retreat/1-640.webp 640w, ../assets/optimized/events/retreat/1-960.webp 960w, ../assets/optimized/events/retreat/1-1080.webp 1080w" sizes="(max-width: 479px) calc((100vw - 40px) * .6552), (max-width: 599px) min(274.32px, calc((100vw - 128px) * .819)), (max-width: 767px) calc((100vw - 128px) * .3694), (max-width: 1039px) min(274.32px, calc((100vw - 168px) * .3694)), min(274.32px, calc((100vw - 168px) * .2592))" width="1080" height="1080" data-fallback="../assets/events/retreat/1.jpg" alt="Retreat" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3>Retreat</h3></div></a></article><article class="event-card" data-category="Nights out"><a href="#halloween" class="event-card-trigger" data-modal-link aria-haspopup="dialog" aria-controls="event-halloween-modal" aria-label="View Halloween recap" aria-describedby="polaroid-instructions" draggable="false"><div class="event-card-media poster-media"><img src="../assets/optimized/events/halloween/1-1080.webp" srcset="../assets/optimized/events/halloween/1-480.webp 480w, ../assets/optimized/events/halloween/1-640.webp 640w, ../assets/optimized/events/halloween/1-960.webp 960w, ../assets/optimized/events/halloween/1-1080.webp 1080w" sizes="(max-width: 479px) calc((100vw - 40px) * .6552), (max-width: 599px) min(274.32px, calc((100vw - 128px) * .819)), (max-width: 767px) calc((100vw - 128px) * .3694), (max-width: 1039px) min(274.32px, calc((100vw - 168px) * .3694)), min(274.32px, calc((100vw - 168px) * .2592))" width="1080" height="1080" data-fallback="../assets/events/halloween/1.jpg" alt="Halloween" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3>Halloween</h3></div></a></article></div>
+<!-- event-cards:end -->
             <noscript><p class="noscript-notice">Enable JavaScript to browse the photo archive, or find our event recaps on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
         </section>
     </main>
     <div id="events-modals"></div>
-    <div id="include-footer"></div>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script defer src="../js/config.js"></script>
-    <script defer src="../js/content.js"></script>
-    <script defer src="../js/modalLinks.js?v=modal-links-2"></script>
-    <script defer src="../js/loaderComponents.js"></script>
-    <script defer src="../js/loaderEventModals.js?v=gallery-3"></script>
-    <script defer src="../js/eventPolaroids.js?v=polaroids-2"></script>
-    <script defer src="../js/loaderEvents.js?v=link-arrows-1"></script>
+    <!-- footer:start -->
+<div id="include-footer"><footer class="site-footer">
+    <div class="site-container">
+        <div class="footer-main">
+            <a class="footer-brand" href="../" data-site-path="" aria-label="HKSN home"><img src="../assets/optimized/logo/logoTextWhite-800.webp" srcset="../assets/optimized/logo/logoTextWhite-244.webp 244w, ../assets/optimized/logo/logoTextWhite-800.webp 800w" sizes="112px" width="3380" height="857" data-fallback="../assets/logo/logoTextWhite.png" alt="HKSN" decoding="async" data-fade loading="lazy"></a>
+            <p class="footer-slogan">A home away from home</p>
+            <nav class="footer-socials" aria-label="Keep in touch">
+                <a href="https://www.instagram.com/hksnmcgill/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#instagram" data-site-icon="assets/icons/socials.svg#instagram"/></svg></a>
+                <a href="https://www.tiktok.com/@mcgillhksn" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#tiktok" data-site-icon="assets/icons/socials.svg#tiktok"/></svg></a>
+                <a href="https://www.facebook.com/mcgillhksn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#facebook" data-site-icon="assets/icons/socials.svg#facebook"/></svg></a>
+                <a href="https://open.spotify.com/user/id8ix3cojrfwbn26040k0mh7k" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#spotify" data-site-icon="assets/icons/socials.svg#spotify"/></svg></a>
+                <a href="mailto:mcgillhksn@gmail.com" aria-label="Email"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="../assets/icons/socials.svg#email" data-site-icon="assets/icons/socials.svg#email"/></svg></a>
+            </nav>
+            <a class="footer-return-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- footer:end -->
+<!-- content-snapshots:start -->
+<script type="application/json" data-content-path="assets/data/2024-2025/events.json">[{"id":"semiFormal","title":"Semi Formal","category":"Nights out","cover":"semiFormal/1.jpg","coverAlt":"Friends celebrating at the HKSN semi-formal","homeFeatured":true,"images":["semiFormal/1.jpg","semiFormal/2.jpg","semiFormal/3.jpg","semiFormal/4.jpg","semiFormal/5.jpg"],"displayInfoOnCard":true,"alignImageLeft":false},{"id":"midAutumnHike","title":"Mid Autumn Hike","category":"Community","cover":"midAutumnHike/1.jpg","coverAlt":"The moon above the Montréal skyline","coverPosition":"50% 65%","images":["midAutumnHike/1.jpg","midAutumnHike/2.jpg","midAutumnHike/3.jpg","midAutumnHike/4.jpg"],"displayInfoOnCard":true,"alignImageLeft":false},{"id":"welcomeParty","title":"Welcome Party","category":"Community","coverIsPoster":true,"homeFeatured":true,"images":["welcomeParty/1.jpg","welcomeParty/2.jpg","welcomeParty/3.jpg","welcomeParty/4.jpg"],"displayInfoOnCard":false,"alignImageLeft":true},{"id":"lny","title":"Lunar New Year","category":"Culture","coverIsPoster":true,"homeFeatured":true,"images":["lny/1.jpg","lny/2.jpg","lny/3.jpg","lny/4.jpg"],"displayInfoOnCard":false,"alignImageLeft":false},{"id":"retreat","title":"Retreat","category":"Community","coverIsPoster":true,"images":["retreat/1.jpg","retreat/2.jpg","retreat/3.jpg","retreat/4.jpg","retreat/5.jpg"],"displayInfoOnCard":false,"alignImageLeft":true},{"id":"halloween","title":"Halloween","category":"Nights out","coverIsPoster":true,"images":["halloween/1.jpg","halloween/2.jpg","halloween/3.jpg","halloween/4.jpg"],"displayInfoOnCard":false,"alignImageLeft":true}]</script>
+<!-- content-snapshots:end -->
+    <script defer src="../js/site.min.js?v=3c31b8d31286"></script>
+    <script defer src="../js/events.min.js?v=07620e2b9822"></script>
 </body>
 </html>

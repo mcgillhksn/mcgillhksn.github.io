@@ -3,18 +3,23 @@
     if (!container) return;
     const year = document.body.classList.contains("home-page") ? siteConfig.homePageContentYear : siteConfig.eventsContentYear;
     const escape = siteContent.escapeHTML;
+    function disposeModal(modal) {
+        siteImages.release(modal);
+        bootstrap.Modal.getInstance(modal)?.dispose();
+        modal.remove();
+    }
 
     try {
         const events = await siteContent.getEvents(year);
-        container.innerHTML = events.map(event => {
+        function createModal(event) {
             const modalId = `event-${event.id}-modal`;
             const images = event.images || (event.image ? [event.image] : []);
             const gallery = images.map((image, index) => {
-                const imageURL = new URL(`assets/events/${image}`, siteConfig.getBasePath()).href;
-                return `<figure><img src="${escape(imageURL)}" alt="${escape(event.title)} — photo ${index + 1} of ${images.length}" loading="lazy" decoding="async"></figure>`;
+                return `<figure>${siteImages.markup(`assets/events/${image}`, `${event.title} — photo ${index + 1} of ${images.length}`, "(max-width: 767px) calc(100vw - 40px), (max-width: 1200px) calc((100vw - 86px) / 2), 528px", 'loading="lazy"')}</figure>`;
             }).join("");
 
-            return `
+            const template = document.createElement("template");
+            template.innerHTML = `
                 <div class="modal fade" id="${escape(modalId)}" tabindex="-1" aria-labelledby="${escape(modalId)}-title" aria-hidden="true">
                     <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-md-down">
                         <div class="modal-content">
@@ -28,14 +33,22 @@
                         </div>
                     </div>
                 </div>`;
-        }).join("");
+            const modal = template.content.firstElementChild;
+            container.append(modal);
+            modal.addEventListener("hidden.bs.modal", () => {
+                // Do not retain decoded galleries or Bootstrap instances after closing.
+                queueMicrotask(() => disposeModal(modal));
+            }, { once: true });
+            return modal;
+        }
         siteModalLinks.register(id => {
             const event = events.find(event => siteModalLinks.slug(event.id) === id);
             if (!event) return null;
-            const modal = document.getElementById(`event-${event.id}-modal`);
+            const modal = createModal(event);
             return {
                 modal,
                 title: event.title,
+                dispose() { disposeModal(modal); },
                 prepare() { modal.querySelector(".modal-body").scrollTop = 0; },
                 focusTarget: () => [...document.querySelectorAll(".event-card-trigger")]
                     .find(link => link.hash.slice(1) === id)

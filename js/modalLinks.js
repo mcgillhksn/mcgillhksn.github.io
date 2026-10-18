@@ -70,7 +70,10 @@ const siteModalLinks = (function setupModalLinks() {
             if (!id || document.getElementById(id)) return;
 
             const entry = await resolveModal(id);
-            if (currentRequest !== request) return;
+            if (currentRequest !== request) {
+                entry?.dispose?.();
+                return;
+            }
             if (!entry) {
                 showNotice("This gallery link couldn’t be found. Please choose another.");
                 return;

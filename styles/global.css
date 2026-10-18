@@ -84,6 +84,10 @@ a:focus-visible, button:focus-visible { color: var(--accent-color); }
 button, input, select { font: inherit; }
 button, a, input, select { -webkit-tap-highlight-color: transparent; }
 img { display: block; max-width: 100%; }
+/* Intrinsic dimensions reserve space; reveal complete images instead of flashing
+   partial scans or a previous modal's image. No JavaScript still shows images. */
+.images-ready img[data-fade] { transition: opacity 160ms ease; }
+.images-ready img[data-fade]:not(.is-loaded) { opacity: 0; }
 h1, h2, h3, p, figure { margin: 0; }
 
 h1, h2, h3 {

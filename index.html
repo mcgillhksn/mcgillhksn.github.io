@@ -4,42 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#111720">
+    <meta name="color-scheme" content="dark">
     <meta name="description" content="Hong Kong Student Network at McGill University. A home away from home since 2006, with Hong Kong cultural events and a student member card.">
     <title>HKSN — Hong Kong Student Network</title>
     <link rel="icon" type="image/png" href="./assets/logo/logo.png">
     <link rel="sitemap" type="application/xml" href="./assets/data/sitemap.xml">
     <link rel="preload" href="./assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/global.css?v=logo-accent-1">
-    <link rel="stylesheet" href="./styles/navbar.css?v=focus-style-1">
-    <link rel="stylesheet" href="./styles/buttons.css?v=logo-accent-1">
-    <link rel="stylesheet" href="./styles/links.css?v=logo-accent-1">
-    <link rel="stylesheet" href="./styles/home.css">
-    <link rel="stylesheet" href="./styles/events.css?v=events-layout-10">
-    <link rel="stylesheet" href="./styles/modals.css?v=focus-style-1">
-    <link rel="stylesheet" href="./styles/footer.css">
+    <style>html,body{background:#111720;color-scheme:dark}</style>
+    <link rel="stylesheet" href="./styles/site.min.css?v=bba5784b5f01">
+    <link rel="stylesheet" href="./styles/home.min.css?v=b29a1c5753ea">
+
 </head>
 <body id="top" class="home-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div id="include-navbar"></div>
+    <!-- navigation:start -->
+<div id="include-navbar"><div id="navigationBar">
+    <nav class="navbar navbar-expand-md site-navbar site-container" aria-label="Main navigation">
+        <a href="./" data-site-path="" class="navbar-brand" aria-label="HKSN home">
+            <img src="./assets/optimized/logo/logoText-244.webp" srcset="./assets/optimized/logo/logoText-244.webp 244w" sizes="122px" width="3380" height="857" data-fallback="./assets/logo/logoText.png" alt="HKSN" decoding="async" data-fade >
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Open navigation">
+            <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="./" data-site-path="" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="./about/" data-site-path="about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="./events/" data-site-path="events/" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="./store/" data-site-path="store/" class="nav-link">Member Card</a></li>
+                <li class="nav-item dropdown">
+                    <button type="button" class="nav-link socials-toggle" id="socials-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Socials <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end site-dropdown" aria-labelledby="socials-toggle">
+                        <li><a class="dropdown-item" href="https://www.instagram.com/hksnmcgill/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#instagram" data-site-icon="assets/icons/socials.svg#instagram"/></svg>Instagram</a></li>
+                        <li><a class="dropdown-item" href="https://www.tiktok.com/@mcgillhksn" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#tiktok" data-site-icon="assets/icons/socials.svg#tiktok"/></svg>TikTok</a></li>
+                        <li><a class="dropdown-item" href="https://www.facebook.com/mcgillhksn/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#facebook" data-site-icon="assets/icons/socials.svg#facebook"/></svg>Facebook</a></li>
+                        <li><a class="dropdown-item" href="https://open.spotify.com/user/id8ix3cojrfwbn26040k0mh7k" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#spotify" data-site-icon="assets/icons/socials.svg#spotify"/></svg>Spotify</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</div>
+<!-- navigation:end -->
 
     <header class="hero" aria-labelledby="hero-title">
-        <picture class="hero-base" aria-hidden="true">
-            <source srcset="./assets/home/bg.webp" type="image/webp">
-            <img src="./assets/home/bg.png" alt="" width="2000" height="1334" fetchpriority="high" draggable="false">
-        </picture>
+        <picture class="hero-base" aria-hidden="true"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" srcset="./assets/optimized/home/bg-portrait-384.webp 384w, ./assets/optimized/home/bg-portrait-552.webp 552w" sizes="max(100vw, 52svh)" type="image/webp"><source srcset="./assets/optimized/home/bg-1280.webp 1280w, ./assets/optimized/home/bg-1600.webp 1600w, ./assets/optimized/home/bg-2070.webp 2070w" sizes="max(100vw, 195svh)" type="image/webp"><img src="./assets/home/bg.png" alt="" width="2070" height="1381" fetchpriority="high" decoding="async" draggable="false"></picture>
         <div class="images" aria-hidden="true">
-            <picture class="parallax-layer img8" data-depth="0.07"><source data-srcset="./assets/home/layer8.webp" type="image/webp"><img data-src="./assets/home/layer8.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img7" data-depth="0.09"><source data-srcset="./assets/home/layer7.webp" type="image/webp"><img data-src="./assets/home/layer7.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img6" data-depth="0.11"><source data-srcset="./assets/home/layer6.webp" type="image/webp"><img data-src="./assets/home/layer6.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img5" data-depth="0.14"><source data-srcset="./assets/home/layer5.webp" type="image/webp"><img data-src="./assets/home/layer5.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img4" data-depth="0.17"><source data-srcset="./assets/home/layer4.webp" type="image/webp"><img data-src="./assets/home/layer4.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img3" data-depth="0.21"><source data-srcset="./assets/home/layer3.webp" type="image/webp"><img data-src="./assets/home/layer3.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img2" data-depth="0.25"><source data-srcset="./assets/home/layer2.webp" type="image/webp"><img data-src="./assets/home/layer2.png" alt="" width="2000" height="1334" draggable="false"></picture>
-            <picture class="parallax-layer img1" data-depth="0.28"><source data-srcset="./assets/home/layer1.webp" type="image/webp"><img data-src="./assets/home/layer1.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img8" data-depth="0.07"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer8-trim-portrait-384.webp 384w, ./assets/optimized/home/layer8-trim-portrait-552.webp 552w" sizes="max(100vw, 52svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer8-trim-1280.webp 1280w, ./assets/optimized/home/layer8-trim-1600.webp 1600w, ./assets/optimized/home/layer8-trim-2070.webp 2070w" sizes="max(100vw, 195svh)" type="image/webp"><img data-src="./assets/home/layer8.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img7" data-depth="0.09"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer7-trim-portrait-384.webp 384w, ./assets/optimized/home/layer7-trim-portrait-552.webp 552w" sizes="max(100vw, 52svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer7-trim-1280.webp 1280w, ./assets/optimized/home/layer7-trim-1600.webp 1600w, ./assets/optimized/home/layer7-trim-2070.webp 2070w" sizes="max(100vw, 195svh)" type="image/webp"><img data-src="./assets/home/layer7.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img6" data-depth="0.11"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer6-trim-portrait-384.webp 383w, ./assets/optimized/home/layer6-trim-portrait-552.webp 551w" sizes="max(99.81884057971014vw, 51.905797101449274svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer6-trim-1280.webp 1266w, ./assets/optimized/home/layer6-trim-1600.webp 1582w, ./assets/optimized/home/layer6-trim-2070.webp 2047w" sizes="max(98.88888888888889vw, 192.83333333333334svh)" type="image/webp"><img data-src="./assets/home/layer6.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img5" data-depth="0.14"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer5-trim-portrait-384.webp 1w" sizes="max(0.18115942028985507vw, 0.09420289855072464svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer5-trim-1280.webp 1201w, ./assets/optimized/home/layer5-trim-1600.webp 1501w, ./assets/optimized/home/layer5-trim-2070.webp 1942w" sizes="max(93.81642512077295vw, 182.94202898550725svh)" type="image/webp"><img data-src="./assets/home/layer5.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img4" data-depth="0.17"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer4-trim-portrait-384.webp 364w, ./assets/optimized/home/layer4-trim-portrait-552.webp 523w" sizes="max(94.7463768115942vw, 49.268115942028984svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer4-trim-1280.webp 1064w, ./assets/optimized/home/layer4-trim-1600.webp 1329w, ./assets/optimized/home/layer4-trim-2070.webp 1720w" sizes="max(83.09178743961353vw, 162.02898550724638svh)" type="image/webp"><img data-src="./assets/home/layer4.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img3" data-depth="0.21"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer3-trim-portrait-384.webp 384w, ./assets/optimized/home/layer3-trim-portrait-552.webp 552w" sizes="max(100vw, 52svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer3-trim-1280.webp 847w, ./assets/optimized/home/layer3-trim-1600.webp 1059w, ./assets/optimized/home/layer3-trim-2070.webp 1370w" sizes="max(66.18357487922705vw, 129.05797101449275svh)" type="image/webp"><img data-src="./assets/home/layer3.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img2" data-depth="0.25"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer2-trim-portrait-384.webp 384w, ./assets/optimized/home/layer2-trim-portrait-552.webp 552w" sizes="max(100vw, 52svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer2-trim-1280.webp 581w, ./assets/optimized/home/layer2-trim-1600.webp 727w, ./assets/optimized/home/layer2-trim-2070.webp 940w" sizes="max(45.410628019323674vw, 88.55072463768116svh)" type="image/webp"><img data-src="./assets/home/layer2.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
+            <picture class="parallax-layer img1" data-depth="0.28"><source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" data-srcset="./assets/optimized/home/layer1-trim-portrait-384.webp 384w, ./assets/optimized/home/layer1-trim-portrait-552.webp 552w" sizes="max(100vw, 52svh)" type="image/webp"><source data-srcset="./assets/optimized/home/layer1-trim-1280.webp 1280w, ./assets/optimized/home/layer1-trim-1600.webp 1600w, ./assets/optimized/home/layer1-trim-2070.webp 2070w" sizes="max(100vw, 195svh)" type="image/webp"><img data-src="./assets/home/layer1.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>
         </div>
         <h1 id="hero-title" class="hero-mark">
-            <img src="./assets/logo/logoTextWhite.png" alt="Hong Kong Student Network (HKSN)" width="2000" height="507" draggable="false">
+            <img src="./assets/optimized/logo/logoTextWhite-800.webp" srcset="./assets/optimized/logo/logoTextWhite-244.webp 244w, ./assets/optimized/logo/logoTextWhite-800.webp 800w" sizes="(max-width: 767px) min(76vw, 300px), 400px" width="3380" height="857" data-fallback="./assets/logo/logoTextWhite.png" alt="Hong Kong Student Network (HKSN)" decoding="async" data-fade draggable="false">
         </h1>
         <a href="#community" class="hero-scroll">Get to know HKSN <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
     </header>
@@ -60,7 +85,7 @@
                     <div class="community-gallery">
                         <div id="eventCarousel" class="carousel slide" aria-label="Life with HKSN" aria-roledescription="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active"><img src="./assets/events/semiFormal/1.jpg" alt="Friends celebrating at the HKSN semi-formal" width="1000" height="750" loading="lazy"></div>
+                                <div class="carousel-item active"><img src="./assets/optimized/events/semiFormal/1-1000.webp" srcset="./assets/optimized/events/semiFormal/1-480.webp 480w, ./assets/optimized/events/semiFormal/1-640.webp 640w, ./assets/optimized/events/semiFormal/1-960.webp 960w, ./assets/optimized/events/semiFormal/1-1000.webp 1000w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1280px) 53vw, 630px" width="1000" height="750" data-fallback="./assets/events/semiFormal/1.jpg" alt="Semi Formal" decoding="async" data-fade loading="lazy"></div>
                             </div>
                         </div>
                         <div class="gallery-toolbar">
@@ -81,7 +106,9 @@
                 <div class="section-heading">
                     <h2 id="memories-title">Past events</h2>
                 </div>
-                <div class="events-grid" data-event-grid data-featured="true" aria-busy="true"><p class="content-status" role="status">Loading events…</p></div>
+                <!-- event-cards:start -->
+<div class="events-grid" data-event-grid data-featured="true" data-content-key="5v8kms" data-year="2024-2025" aria-busy="false"><article class="event-card" data-category="Nights out"><div class="event-card-media"><img src="./assets/optimized/events/semiFormal/1-1000.webp" srcset="./assets/optimized/events/semiFormal/1-480.webp 480w, ./assets/optimized/events/semiFormal/1-640.webp 640w, ./assets/optimized/events/semiFormal/1-960.webp 960w, ./assets/optimized/events/semiFormal/1-1000.webp 1000w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc((100vw - 104px) / 2), 384px" width="1000" height="750" data-fallback="./assets/events/semiFormal/1.jpg" alt="Friends celebrating at the HKSN semi-formal" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3><a href="./events/#semi-formal" class="event-card-trigger" aria-label="View Semi Formal recap on the Events page">Semi Formal <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></h3></div></article><article class="event-card" data-category="Community"><div class="event-card-media poster-media"><img src="./assets/optimized/events/welcomeParty/1-1080.webp" srcset="./assets/optimized/events/welcomeParty/1-480.webp 480w, ./assets/optimized/events/welcomeParty/1-640.webp 640w, ./assets/optimized/events/welcomeParty/1-960.webp 960w, ./assets/optimized/events/welcomeParty/1-1080.webp 1080w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc((100vw - 104px) / 2), 384px" width="1080" height="1080" data-fallback="./assets/events/welcomeParty/1.jpg" alt="Welcome Party" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3><a href="./events/#welcome-party" class="event-card-trigger" aria-label="View Welcome Party recap on the Events page">Welcome Party <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></h3></div></article><article class="event-card" data-category="Culture"><div class="event-card-media poster-media"><img src="./assets/optimized/events/lny/1-1080.webp" srcset="./assets/optimized/events/lny/1-480.webp 480w, ./assets/optimized/events/lny/1-640.webp 640w, ./assets/optimized/events/lny/1-960.webp 960w, ./assets/optimized/events/lny/1-1080.webp 1080w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 991px) calc((100vw - 104px) / 2), 384px" width="1080" height="1346" data-fallback="./assets/events/lny/1.jpg" alt="Lunar New Year" decoding="async" data-fade loading="lazy" draggable="false"></div><div class="event-card-body"><h3><a href="./events/#lny" class="event-card-trigger" aria-label="View Lunar New Year recap on the Events page">Lunar New Year <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></h3></div></article></div>
+<!-- event-cards:end -->
                 <noscript><p class="noscript-notice">Our photo recaps need JavaScript. Find event photos on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
             </div>
         </section>
@@ -89,7 +116,7 @@
         <section class="section home-card-section" aria-labelledby="card-title">
             <div class="site-container split-layout">
                 <div class="home-card-art">
-                    <img src="./assets/membershipCard/2026-2027/front.png" alt="The 2026–27 joint member card, illustrated with rabbits, a crescent moon, and lanterns" width="1200" height="802" loading="lazy">
+                    <img src="./assets/optimized/membershipCard/2026-2027/front-1200.webp" srcset="./assets/optimized/membershipCard/2026-2027/front-480.webp 480w, ./assets/optimized/membershipCard/2026-2027/front-1200.webp 1200w" sizes="(max-width: 767px) calc(100vw - 90px), (max-width: 1280px) 40vw, 550px" width="1200" height="802" data-fallback="./assets/membershipCard/2026-2027/front.png" alt="The 2026–27 joint member card, illustrated with rabbits, a crescent moon, and lanterns" decoding="async" data-fade loading="lazy">
                     <span class="small-label">2026–27 edition</span>
                 </div>
                 <div class="section-copy">
@@ -103,16 +130,30 @@
     </main>
 
     <div id="events-modals"></div>
-    <div id="include-footer"></div>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script defer src="./js/config.js"></script>
-    <script defer src="./js/content.js"></script>
-    <script defer src="./js/modalLinks.js?v=modal-links-2"></script>
-    <script defer src="./js/loaderComponents.js"></script>
-    <script defer src="./js/imagePreloader.js"></script>
-    <script defer src="./js/parallax.js"></script>
-    <script defer src="./js/loaderCarousel.js?v=autoplay-2"></script>
-    <script defer src="./js/loaderEventModals.js?v=gallery-3"></script>
-    <script defer src="./js/loaderEvents.js?v=link-arrows-1"></script>
+    <!-- footer:start -->
+<div id="include-footer"><footer class="site-footer">
+    <div class="site-container">
+        <div class="footer-main">
+            <a class="footer-brand" href="./" data-site-path="" aria-label="HKSN home"><img src="./assets/optimized/logo/logoTextWhite-800.webp" srcset="./assets/optimized/logo/logoTextWhite-244.webp 244w, ./assets/optimized/logo/logoTextWhite-800.webp 800w" sizes="112px" width="3380" height="857" data-fallback="./assets/logo/logoTextWhite.png" alt="HKSN" decoding="async" data-fade loading="lazy"></a>
+            <p class="footer-slogan">A home away from home</p>
+            <nav class="footer-socials" aria-label="Keep in touch">
+                <a href="https://www.instagram.com/hksnmcgill/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#instagram" data-site-icon="assets/icons/socials.svg#instagram"/></svg></a>
+                <a href="https://www.tiktok.com/@mcgillhksn" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#tiktok" data-site-icon="assets/icons/socials.svg#tiktok"/></svg></a>
+                <a href="https://www.facebook.com/mcgillhksn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#facebook" data-site-icon="assets/icons/socials.svg#facebook"/></svg></a>
+                <a href="https://open.spotify.com/user/id8ix3cojrfwbn26040k0mh7k" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#spotify" data-site-icon="assets/icons/socials.svg#spotify"/></svg></a>
+                <a href="mailto:mcgillhksn@gmail.com" aria-label="Email"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#email" data-site-icon="assets/icons/socials.svg#email"/></svg></a>
+            </nav>
+            <a class="footer-return-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- footer:end -->
+<!-- content-snapshots:start -->
+<script type="application/json" data-content-path="assets/data/2024-2025/events.json">[{"id":"semiFormal","title":"Semi Formal","category":"Nights out","cover":"semiFormal/1.jpg","coverAlt":"Friends celebrating at the HKSN semi-formal","homeFeatured":true,"images":["semiFormal/1.jpg","semiFormal/2.jpg","semiFormal/3.jpg","semiFormal/4.jpg","semiFormal/5.jpg"],"displayInfoOnCard":true,"alignImageLeft":false},{"id":"midAutumnHike","title":"Mid Autumn Hike","category":"Community","cover":"midAutumnHike/1.jpg","coverAlt":"The moon above the Montréal skyline","coverPosition":"50% 65%","images":["midAutumnHike/1.jpg","midAutumnHike/2.jpg","midAutumnHike/3.jpg","midAutumnHike/4.jpg"],"displayInfoOnCard":true,"alignImageLeft":false},{"id":"welcomeParty","title":"Welcome Party","category":"Community","coverIsPoster":true,"homeFeatured":true,"images":["welcomeParty/1.jpg","welcomeParty/2.jpg","welcomeParty/3.jpg","welcomeParty/4.jpg"],"displayInfoOnCard":false,"alignImageLeft":true},{"id":"lny","title":"Lunar New Year","category":"Culture","coverIsPoster":true,"homeFeatured":true,"images":["lny/1.jpg","lny/2.jpg","lny/3.jpg","lny/4.jpg"],"displayInfoOnCard":false,"alignImageLeft":false},{"id":"retreat","title":"Retreat","category":"Community","coverIsPoster":true,"images":["retreat/1.jpg","retreat/2.jpg","retreat/3.jpg","retreat/4.jpg","retreat/5.jpg"],"displayInfoOnCard":false,"alignImageLeft":true},{"id":"halloween","title":"Halloween","category":"Nights out","coverIsPoster":true,"images":["halloween/1.jpg","halloween/2.jpg","halloween/3.jpg","halloween/4.jpg"],"displayInfoOnCard":false,"alignImageLeft":true}]</script>
+<script type="application/json" data-content-path="assets/data/2024-2025/carousel.json">[{"title":"Semi Formal","image":"./assets/events/semiFormal/1.jpg","alt":"Semi Formal"},{"title":"Lunar New Year","image":"./assets/events/lny/2.jpg","alt":"Lunar New Year event poster","poster":true},{"title":"Welcome Party","image":"./assets/events/welcomeParty/1.jpg","alt":"Welcome Party event poster","poster":true}]</script>
+<!-- content-snapshots:end -->
+    <script defer src="./js/site.min.js?v=3c31b8d31286"></script>
+    <script defer src="./js/home.min.js?v=571bbcbb9356"></script>
 </body>
 </html>

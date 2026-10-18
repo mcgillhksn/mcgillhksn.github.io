@@ -8,6 +8,9 @@
     ].map(async ({ target, file }) => {
         const container = document.getElementById(target);
         if (!container) return;
+        // The asset build includes these fragments in the HTML: navigation is
+        // usable at first paint, even on a slow connection or without JavaScript.
+        if (container.firstElementChild) return;
         try {
             const response = await fetch(new URL(`components/${file}`, basePath));
             if (!response.ok) throw new Error(`Could not load ${file}`);
@@ -68,7 +71,12 @@
         }
     });
 
-    const updateNavigation = () => document.body.classList.toggle("nav-scrolled", window.scrollY > 32);
+    let scrolled;
+    const updateNavigation = () => {
+        const next = window.scrollY > 32;
+        if (next !== scrolled) document.body.classList.toggle("nav-scrolled", next);
+        scrolled = next;
+    };
     updateNavigation();
     window.addEventListener("scroll", updateNavigation, { passive: true });
     document.dispatchEvent(new Event("fragmentsLoaded"));

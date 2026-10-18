@@ -28,7 +28,6 @@
                         <h3><button type="button" class="event-card-trigger" data-bs-toggle="modal" data-bs-target="#${escape(modalId)}" aria-haspopup="dialog" aria-controls="${escape(modalId)}" aria-label="View ${escape(event.title)} recap">
                             ${escape(event.title)} <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>
                         </button></h3>
-                        ${featured ? "" : '<p class="event-card-cta">View the recap</p>'}
                     </div>
                 </article>`;
         }).join("");

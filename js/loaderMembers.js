@@ -44,9 +44,7 @@
         placeholder.setAttribute("aria-hidden", "true");
         const initials = document.createElement("span");
         initials.textContent = member.name.split(/\s+/).filter(Boolean).map(part => part[0]).slice(0, 2).join("");
-        const label = document.createElement("small");
-        label.textContent = "HKSN TEAM";
-        placeholder.append(initials, label);
+        placeholder.append(initials);
         const noPhoto = document.createElement("span");
         noPhoto.className = "visually-hidden";
         noPhoto.textContent = `No photo available for ${member.name} in ${siteContent.formatYear(year)}.`;
@@ -151,7 +149,6 @@
         groupFigure.classList.add("is-unavailable");
         groupPhoto.alt = `The ${siteContent.formatYear(year)} HKSN team at McGill`;
         groupPhoto.src = new URL(`assets/members/${year}/groupPhoto.jpg`, siteConfig.getBasePath());
-        document.getElementById("group-photo-caption").textContent = `The ${siteContent.formatYear(year)} team`;
 
         try {
             const members = await getMembers(year);
@@ -192,7 +189,6 @@
                 const memberName = document.createElement("span");
                 memberName.textContent = member.name;
                 trigger.append(memberName);
-                trigger.insertAdjacentHTML("beforeend", '<svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg>');
                 name.append(trigger);
                 const role = document.createElement("p");
                 role.className = "member-role";

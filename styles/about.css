@@ -1,7 +1,7 @@
 .about-intro .split-layout { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
 .about-intro .section-copy > .muted { font-size: 0.875rem; line-height: 1.85; }
 .team-group { min-width: 0; }
-/* Keep the photo and caption's footprint so year navigation stays in place. */
+/* Keep the photo's footprint so year navigation stays in place. */
 .team-group.is-unavailable { visibility: hidden; }
 .group-photo-frame { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--radius); background: var(--surface-color); }
 .group-photo-frame > img { width: 100%; height: 100%; object-fit: cover; }
@@ -36,17 +36,15 @@
 .member { position: relative; min-width: 0; }
 .member-portrait { position: relative; aspect-ratio: 1; overflow: hidden; margin-bottom: 16px; border-radius: var(--radius); background: var(--surface-color); }
 .member-portrait img { width: 100%; height: 100%; object-fit: cover; }
-.member-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; border: 1px solid var(--border-color); }
+.member-placeholder { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; border: 1px solid var(--border-color); }
 .member-placeholder > span { color: var(--secondary-text-color); font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; letter-spacing: -0.05em; }
-.member-placeholder > small { color: var(--muted-text-color); font-size: 0.6rem; letter-spacing: 0.18em; }
 .member-name { margin-bottom: 4px; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; }
 .member-role { color: var(--secondary-text-color); font-size: 0.75rem; line-height: 1.5; }
-.member-trigger { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; transition: color 150ms ease; }
+.member-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; transition: color 150ms ease; }
 .member-trigger::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
-.member-trigger .arrow-icon { align-self: center; width: 14px; height: 14px; color: var(--muted-text-color); }
 .member-trigger:focus-visible { outline: none; }
 .member-trigger:focus-visible::after { outline: 2px solid var(--accent-color); outline-offset: 6px; }
-.member:hover .member-trigger, .member-trigger:focus-visible, .member:hover .member-trigger .arrow-icon { color: var(--accent-color); }
+.member:hover .member-trigger, .member-trigger:focus-visible { color: var(--accent-color); }
 
 .member-history-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 28px 24px; }
 .member-history-year { min-width: 0; }
@@ -58,12 +56,10 @@
 @media (max-width: 991.98px) {
     .about-intro .split-layout { gap: 36px; }
     .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .team-group .image-caption { flex-direction: column; gap: 4px; }
 }
 
 @media (max-width: 767.98px) {
     .about-intro .split-layout { grid-template-columns: 1fr; }
-    .team-group .image-caption { flex-direction: row; font-size: 0.65rem; }
     .team-section .section-heading { flex-direction: column; align-items: flex-start; gap: 24px; }
     .team-section .section-heading h2 { font-size: 1.75rem; }
     .year-control { width: 100%; max-width: 320px; }

@@ -1,31 +1,39 @@
 .about-intro .split-layout { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
 .about-intro .section-copy > .muted { font-size: 0.875rem; line-height: 1.85; }
 .team-group { min-width: 0; }
+/* Keep the photo and caption's footprint so year navigation stays in place. */
+.team-group.is-unavailable { visibility: hidden; }
 .group-photo-frame { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--radius); background: var(--surface-color); }
 .group-photo-frame > img { width: 100%; height: 100%; object-fit: cover; }
-#group-photo-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 32px; color: var(--secondary-text-color); text-align: center; }
-#group-photo-fallback .eyebrow { margin-bottom: 16px; }
-#group-photo-fallback p { font-size: 0.8rem; }
 .team-section { padding-top: 0; }
-.team-count { margin-top: 16px; }
+.team-section .section-heading { padding-top: 32px; border-top: 1px solid var(--border-color); }
 .year-control { display: flex; flex-direction: column; gap: 8px; }
-.year-control label { color: var(--secondary-text-color); font-size: 0.65rem; }
+.year-navigation { display: flex; align-items: center; gap: 8px; }
+.year-navigation .icon-button { width: 46px; height: 46px; flex: 0 0 auto; }
+.year-dropdown { min-width: 0; }
+.year-menu { max-height: min(360px, calc((100dvh - var(--nav-height) - 64px) / 2)); overflow-y: auto; overscroll-behavior: contain; }
 
-.year-control select {
+.year-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
     min-width: 176px;
     min-height: 46px;
-    padding: 10px 40px 10px 16px;
-    appearance: none;
+    padding: 10px 16px;
     border: 1px solid var(--border-strong-color);
     border-radius: var(--radius);
-    background: var(--surface-color) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a5afbc' stroke-width='1.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;
+    background: var(--surface-color);
     color: var(--text-color);
     font-size: 0.8rem;
     cursor: pointer;
 }
 
+.year-selector .arrow-icon { width: 14px; height: 14px; }
+
 .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px 24px; }
-.member { min-width: 0; }
+.member { position: relative; min-width: 0; }
 .member-portrait { position: relative; aspect-ratio: 1; overflow: hidden; margin-bottom: 16px; border-radius: var(--radius); background: var(--surface-color); }
 .member-portrait img { width: 100%; height: 100%; object-fit: cover; }
 .member-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; border: 1px solid var(--border-color); }
@@ -33,6 +41,19 @@
 .member-placeholder > small { color: var(--muted-text-color); font-size: 0.6rem; letter-spacing: 0.18em; }
 .member-name { margin-bottom: 4px; font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; }
 .member-role { color: var(--secondary-text-color); font-size: 0.75rem; line-height: 1.5; }
+.member-trigger { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; transition: color 150ms ease; }
+.member-trigger::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.member-trigger .arrow-icon { align-self: center; width: 14px; height: 14px; color: var(--muted-text-color); }
+.member-trigger:focus-visible { outline: none; }
+.member-trigger:focus-visible::after { outline: 2px solid var(--accent-color); outline-offset: 6px; }
+.member:hover .member-trigger, .member-trigger:focus-visible, .member:hover .member-trigger .arrow-icon { color: var(--accent-color); }
+
+.member-history-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 28px 24px; }
+.member-history-year { min-width: 0; }
+.member-history-year .member-portrait { margin-bottom: 12px; }
+.member-history-label { margin-bottom: 4px; font-size: 0.95rem; }
+#member-history-status { padding: 0; }
+#member-history-retry { margin-block: 16px 24px; }
 
 @media (max-width: 991.98px) {
     .about-intro .split-layout { gap: 36px; }
@@ -43,13 +64,14 @@
 @media (max-width: 767.98px) {
     .about-intro .split-layout { grid-template-columns: 1fr; }
     .team-group .image-caption { flex-direction: row; font-size: 0.65rem; }
-    .team-section .section-topline { flex-direction: column; gap: 6px; }
-    .team-section .section-heading { flex-direction: row; align-items: flex-start; gap: 16px; }
+    .team-section .section-heading { flex-direction: column; align-items: flex-start; gap: 24px; }
     .team-section .section-heading h2 { font-size: 1.75rem; }
-    .year-control { flex: 0 0 auto; }
-    .year-control select { min-width: 132px; padding-left: 12px; padding-right: 30px; font-size: 0.75rem; }
+    .year-control { width: 100%; max-width: 320px; }
+    .year-dropdown { flex: 1; }
+    .year-selector { min-width: 0; gap: 12px; }
     .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
     .member-portrait { margin-bottom: 12px; }
     .member-name { font-size: 0.875rem; }
     .member-role { font-size: 0.7rem; }
+    .member-history-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
 }

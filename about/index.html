@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/links.css">
-    <link rel="stylesheet" href="../styles/about.css">
+    <link rel="stylesheet" href="../styles/modals.css">
+    <link rel="stylesheet" href="../styles/about.css?v=member-history-4">
     <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body id="top">
@@ -23,40 +24,61 @@
         <section class="section about-intro" aria-labelledby="about-title">
             <div class="site-container split-layout">
                 <div class="section-copy">
-                    <p class="eyebrow">Our community · Established 2006</p>
-                    <h1 id="about-title">Home is<br>a feeling.</h1>
-                    <p class="body-large">A familiar language. A shared meal. People who make a new city feel a little more like your own.</p>
-                    <p class="muted">That’s what the Hong Kong Student Network is here for. Founded in 2006 under the Students’ Society of McGill University, we celebrate Hong Kong’s rich culture and create a home away from home.</p>
+                    <h1 id="about-title">About HKSN</h1>
+                    <p class="body-large">Founded in 2006 under the Students’ Society of McGill University, the Hong Kong Student Network celebrates Hong Kong’s rich culture and creates a home away from home.</p>
                     <p class="muted">Through Cantonese mini-classes, dim sum outings, and mahjong competitions, we make room for friendship, connection, and a sense of belonging.</p>
                     <a href="#team" class="text-link">Meet the people behind it <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
                 </div>
                 <figure class="team-group">
                     <div class="group-photo-frame">
                         <img id="group-photo" src="../assets/members/2025-2026/groupPhoto.jpg" alt="The 2025–26 HKSN team at McGill" width="2000" height="1333" fetchpriority="high">
-                        <div id="group-photo-fallback" hidden><span class="eyebrow">The HKSN family</span><p>A group photo isn’t available for this year.</p></div>
                     </div>
-                    <figcaption class="image-caption"><span id="group-photo-caption">The 2025–26 team</span><span>McGill University, Montréal</span></figcaption>
+                    <figcaption class="image-caption"><span id="group-photo-caption">The 2025–26 team</span></figcaption>
                 </figure>
             </div>
         </section>
         <section id="team" class="section team-section" aria-labelledby="team-title">
             <div class="site-container">
-                <div class="section-topline"><p class="eyebrow">The people who make it happen.</p><span class="small-label">The HKSN family</span></div>
                 <div class="section-heading">
-                    <div><h2 id="team-title">Meet the team.</h2><p id="team-count" class="team-count small-label" aria-live="polite"></p></div>
-                    <div class="year-control"><label for="year-selector">Team archive</label><select id="year-selector" aria-controls="about-container" disabled><option>Loading years…</option></select></div>
+                    <h2 id="team-title">Meet the team.</h2>
+                    <div class="year-control">
+                        <span id="year-label" class="visually-hidden">Team year</span>
+                        <div class="year-navigation">
+                            <button type="button" id="previous-year" class="icon-button" aria-label="Previous year" aria-controls="about-container" title="Previous year" hidden><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+                            <button type="button" id="next-year" class="icon-button" aria-label="Next year" aria-controls="about-container" title="Next year" hidden><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+                            <div class="dropdown year-dropdown">
+                                <button type="button" id="year-selector" class="year-selector" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="year-label year-selection" aria-controls="year-menu about-container" disabled><span id="year-selection">Loading years…</span><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                                <ul id="year-menu" class="dropdown-menu dropdown-menu-end site-dropdown year-menu" aria-labelledby="year-label"></ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p id="team-status" class="visually-hidden" role="status" aria-live="polite"></p>
-                <div id="about-container" class="team-grid" aria-busy="true"><p class="content-status">Getting the team together…</p></div>
+                <div id="about-container" class="team-grid" aria-busy="true"><p class="content-status">Loading the team…</p></div>
                 <noscript><p class="noscript-notice">Enable JavaScript to explore our team archive. You can also meet us on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
             </div>
         </section>
     </main>
+    <div class="modal fade" id="member-modal" tabindex="-1" aria-labelledby="member-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="member-modal-title">Team member</h2>
+                    <button type="button" class="icon-button modal-close" data-bs-dismiss="modal" aria-label="Close member photos"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+                </div>
+                <div class="modal-body" tabindex="0" role="region" aria-label="Member photos by team year">
+                    <p id="member-history-status" class="content-status" role="status" aria-live="polite"></p>
+                    <button type="button" id="member-history-retry" class="btn btn-outline" hidden>Try again</button>
+                    <div id="member-history" class="member-history-grid" aria-busy="false"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="include-footer"></div>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../js/config.js"></script>
     <script defer src="../js/content.js"></script>
     <script defer src="../js/loaderComponents.js"></script>
-    <script defer src="../js/loaderMembers.js"></script>
+    <script defer src="../js/loaderMembers.js?v=member-history-5"></script>
 </body>
 </html>

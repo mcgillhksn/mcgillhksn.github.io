@@ -41,8 +41,7 @@
     },
     {
         "name": "Prisca Tang",
-        "position": "VP External",
-        "image": "Placeholder.jpg"
+        "position": "VP External"
     },
     {
         "name": "Michelle Meng",
@@ -91,8 +90,7 @@
     },
     {
         "name": "Kevin Wang",
-        "position": "Webmaster",
-        "image": "Placeholder.jpg"
+        "position": "Webmaster"
     },
     {
         "name": "Anthony Ho",
@@ -131,12 +129,10 @@
     },
     {
         "name": "Karming Chin",
-        "position": "Consultant",
-        "image": "Placeholder.jpg"
+        "position": "Consultant"
     },
     {
         "name": "Emily Huang (Calg)",
-        "position": "Sustainability Advisor",
-        "image": "Placeholder.jpg"
+        "position": "Sustainability Advisor"
     }
 ]

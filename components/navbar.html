@@ -3,7 +3,6 @@
         <a href="./" data-site-path="" class="navbar-brand" aria-label="HKSN home">
             <img src="./assets/logo/logoTextWhite.png" data-site-asset="assets/logo/logoTextWhite.png" alt="HKSN" width="122" height="31">
         </a>
-        <span class="nav-location">Hong Kong roots.<br>Montréal connections.</span>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Open navigation">
             <span class="menu-icon" aria-hidden="true"></span>
@@ -14,10 +13,16 @@
                 <li class="nav-item"><a href="./about/" data-site-path="about/" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="./events/" data-site-path="events/" class="nav-link">Events</a></li>
                 <li class="nav-item"><a href="./store/" data-site-path="store/" class="nav-link">Discount card</a></li>
-                <li class="nav-item">
-                    <a href="https://www.instagram.com/hksnmcgill/" target="_blank" rel="noopener noreferrer" class="nav-social">
-                        Say hello <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>
-                    </a>
+                <li class="nav-item dropdown">
+                    <button type="button" class="nav-link socials-toggle" id="socials-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Socials <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end site-dropdown" aria-labelledby="socials-toggle">
+                        <li><a class="dropdown-item" href="https://www.instagram.com/hksnmcgill/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#instagram" data-site-icon="assets/icons/socials.svg#instagram"/></svg>Instagram</a></li>
+                        <li><a class="dropdown-item" href="https://www.tiktok.com/@mcgillhksn" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#tiktok" data-site-icon="assets/icons/socials.svg#tiktok"/></svg>TikTok</a></li>
+                        <li><a class="dropdown-item" href="https://www.facebook.com/mcgillhksn/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#facebook" data-site-icon="assets/icons/socials.svg#facebook"/></svg>Facebook</a></li>
+                        <li><a class="dropdown-item" href="https://open.spotify.com/user/id8ix3cojrfwbn26040k0mh7k" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="./assets/icons/socials.svg#spotify" data-site-icon="assets/icons/socials.svg#spotify"/></svg>Spotify</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

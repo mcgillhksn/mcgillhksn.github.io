@@ -20,7 +20,10 @@
             template.content.querySelectorAll("[data-site-asset]").forEach(image => {
                 image.src = new URL(image.dataset.siteAsset, basePath).href;
             });
-            template.content.querySelectorAll(".nav-link").forEach(link => {
+            template.content.querySelectorAll("[data-site-icon]").forEach(icon => {
+                icon.setAttribute("href", new URL(icon.dataset.siteIcon, basePath).href);
+            });
+            template.content.querySelectorAll("a.nav-link").forEach(link => {
                 if (normalizePath(new URL(link.href).pathname) === normalizePath(location.pathname)) {
                     link.setAttribute("aria-current", "page");
                 }
@@ -54,8 +57,11 @@
     menu?.addEventListener("hidden.bs.collapse", () => {
         navigation.classList.remove("menu-open");
         toggler.setAttribute("aria-label", "Open navigation");
+        const socials = navigation.querySelector(".socials-toggle");
+        if (socials && window.bootstrap) bootstrap.Dropdown.getInstance(socials)?.hide();
     });
     navigation?.addEventListener("keydown", event => {
+        if (event.target.closest(".dropdown")?.querySelector(".dropdown-menu.show")) return;
         if (event.key === "Escape" && menu.classList.contains("show") && window.bootstrap) {
             bootstrap.Collapse.getOrCreateInstance(menu).hide();
             toggler.focus();

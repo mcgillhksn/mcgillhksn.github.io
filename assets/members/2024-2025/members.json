@@ -51,8 +51,7 @@
     },
     {
         "name": "Sylvia Jia",
-        "position": "VP Events",
-        "image": "Placeholder.jpg"
+        "position": "VP Events"
     },
     {
         "name": "Michelle Ho",
@@ -101,8 +100,7 @@
     },
     {
         "name": "Kelly Tam",
-        "position": "VP Graphics",
-        "image": "Placeholder.jpg"
+        "position": "VP Graphics"
     },
     {
         "name": "Malcom Mak",
@@ -116,8 +114,7 @@
     },
     {
         "name": "Kinson Chiu",
-        "position": "Videographer",
-        "image": "Placeholder.jpg"
+        "position": "Videographer"
     },
     {
         "name": "Emma Chan",
@@ -156,7 +153,6 @@
     },
     {
         "name": "Chester Chau",
-        "position": "Senior Advisor",
-        "image": "Placeholder.jpg"
+        "position": "Senior Advisor"
     }
 ]

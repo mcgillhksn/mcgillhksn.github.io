@@ -1,39 +1,27 @@
 .site-footer { border-top: 1px solid var(--border-color); }
 
-.footer-invitation {
-    display: flex;
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "brand socials" "slogan top";
     align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    padding-block: 64px;
-    border-bottom: 1px solid var(--border-color);
+    column-gap: 32px;
+    padding-block: 40px;
 }
 
-.footer-invitation .eyebrow { margin-bottom: 12px; }
-.footer-main { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-block: 40px; }
+.footer-brand { grid-area: brand; justify-self: start; }
 .footer-brand img { width: 112px; height: auto; }
-.footer-brand p { margin-top: 12px; color: var(--secondary-text-color); font-size: 0.75rem; }
-.footer-socials { display: flex; flex-wrap: wrap; column-gap: 28px; row-gap: 4px; }
-.footer-socials a, .footer-bottom a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 0.75rem; }
+.footer-slogan { grid-area: slogan; color: var(--secondary-text-color); font-size: 0.75rem; }
+.footer-socials { grid-area: socials; display: flex; flex-wrap: wrap; gap: 8px; }
+.footer-socials a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
+.footer-socials .social-icon { width: 24px; height: 24px; }
 
-.footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding-block: 16px;
-    border-top: 1px solid var(--border-color);
-    color: var(--muted-text-color);
-    font-size: 0.65rem;
-}
-
-.footer-bottom a { color: var(--secondary-text-color); font-size: 0.65rem; }
-.footer-bottom a:hover { color: var(--accent-color); }
+/* Avoid class names that content blockers use to hide floating scroll widgets. */
+.footer-return-link { grid-area: top; justify-self: end; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--secondary-text-color); font-size: 0.8rem; font-weight: 500; }
+.footer-return-link:hover { color: var(--accent-color); }
 
 @media (max-width: 767.98px) {
-    .footer-invitation { align-items: flex-start; flex-direction: column; padding-block: 48px; gap: 24px; }
-    .footer-main { align-items: flex-start; flex-direction: column; gap: 24px; padding-block: 32px; }
-    .footer-socials { column-gap: 24px; }
-    .footer-bottom { align-items: flex-start; }
-    .footer-bottom p { max-width: 200px; padding-block: 12px; }
+    .footer-main { grid-template-columns: 1fr; grid-template-areas: "brand" "slogan" "socials" "top"; justify-items: center; row-gap: 12px; padding-block: 32px; text-align: center; }
+    .footer-brand, .footer-return-link { justify-self: center; }
+    .footer-socials { margin-top: 12px; }
 }

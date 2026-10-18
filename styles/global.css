@@ -192,6 +192,26 @@ h3 {
     stroke-linejoin: miter;
 }
 
+.social-icon { width: 16px; height: 16px; flex: 0 0 auto; fill: currentColor; }
+
+.site-dropdown {
+    --bs-dropdown-bg: var(--surface-color);
+    --bs-dropdown-color: var(--text-color);
+    --bs-dropdown-link-color: var(--text-color);
+    --bs-dropdown-link-hover-bg: var(--primary-color);
+    --bs-dropdown-link-hover-color: var(--primary-text-color);
+    --bs-dropdown-link-active-bg: var(--primary-color);
+    --bs-dropdown-link-active-color: var(--primary-text-color);
+    min-width: 190px;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid var(--border-strong-color);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 24px #00000030;
+}
+
+.site-dropdown .dropdown-item { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 12px; border-radius: var(--radius); font-size: 0.8rem; }
+
 .skip-link {
     position: fixed;
     top: 12px;

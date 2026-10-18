@@ -65,9 +65,9 @@ Change only the year values; leave the rest of the file in place. The matching `
 ```
 
 4. In `js/config.js`, find `allYears`. Add the academic year at the beginning of the list, inside quotation marks and followed by a comma. Keep the other listed years in place.
-5. Visit the About page and check the team archive selector. The first year in `allYears` is the team shown when the page opens.
+5. Visit the About page and check the team archive selector and its previous/next year arrows. The first year in `allYears` is the team shown when the page opens.
 
-If a portrait is not available, use `"image": "Placeholder.jpg"`. The website will show that person's initials.
+Click a person to see their photos and roles across all their team years. Keep a returning person's name consistent from year to year so their photos stay together. If there is no portrait, leave out the `image` entry; the website will show their initials instead.
 
 ### Updating Events
 
@@ -153,7 +153,7 @@ Open `assets/data/discount-card.json`. Update `academicYear` and edit the partne
 
 Keep the category list near the top of the file in place. Separate partner entries with commas, and do not put a comma after the final entry.
 
-Confirm each offer with the partner before publishing it. Check the directory's year labels in `store/index.html` against the card and offer sheet, then test the search and category buttons on the website.
+Confirm each offer with the partner before publishing it. Check the directory's year labels in `store/index.html` against the card and offer sheet, then test the category buttons on the website.
 
 ## Developer Tools and Workflow
 

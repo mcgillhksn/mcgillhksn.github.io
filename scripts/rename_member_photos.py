@@ -26,7 +26,7 @@ def rename_photos(directory):
             old_image_name = member['image']
             member_name = member['name']
             
-            if old_image_name.lower() in ['groupphoto.jpg', 'placeholder.jpg']:
+            if old_image_name.lower() == 'groupphoto.jpg':
                 continue
 
             old_image_path = os.path.join(directory, old_image_name)

@@ -28,15 +28,15 @@
                         <h3><button type="button" class="event-card-trigger" data-bs-toggle="modal" data-bs-target="#${escape(modalId)}" aria-haspopup="dialog" aria-controls="${escape(modalId)}" aria-label="View ${escape(event.title)} recap">
                             ${escape(event.title)} <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>
                         </button></h3>
-                        <p class="event-card-cta">View the recap</p>
+                        ${featured ? "" : '<p class="event-card-cta">View the recap</p>'}
                     </div>
                 </article>`;
         }).join("");
 
-        if (!visibleEvents.length) grid.innerHTML = '<p class="content-status">More memories are on their way. Follow us on Instagram for the latest.</p>';
+        if (!visibleEvents.length) grid.innerHTML = '<p class="content-status">No events listed for this year. Follow us on Instagram for announcements.</p>';
         const count = document.getElementById("events-count");
         const updateCount = number => {
-            if (count) count.textContent = `${number} ${number === 1 ? "memory" : "memories"}`;
+            if (count) count.textContent = `${number} ${number === 1 ? "event" : "events"}`;
         };
         updateCount(visibleEvents.length);
 

@@ -1,69 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - HKSN</title>
-
-    <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111720">
+    <meta name="description" content="Meet McGill’s Hong Kong Student Network. Sharing culture, building friendships, and creating a home away from home since 2006.">
+    <title>About — HKSN</title>
+    <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+    <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="stylesheet" href="../styles/home.css">
-    <link rel="stylesheet" href="../styles/links.css">
     <link rel="stylesheet" href="../styles/buttons.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/links.css">
     <link rel="stylesheet" href="../styles/about.css">
-    <link rel="stylesheet" href="../styles/animations.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
-<body>
+<body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div id="include-navbar"></div>
-
-    <div class="mainBody container">
-        <div class="row align-items-center gx-5 mb-5">
-            <div class="col-12 col-lg-5 text-center text-lg-start">
-                <h1 class="display-5 fw-bold mb-3">About Us</h1>
-                <p class="lead mb-4">
-                    <strong>Hong Kong Student Network (HKSN)</strong> was founded in 2006 under the Students’ Society of McGill University (SSMU) to promote Hong Kong culture at McGill University. 
-                    Our mission is to create a <em>home away from home</em> for students through the celebration of Hong Kong's rich and diverse culture. 
-                    <br><br>
-                    Through Cantonese mini-classes, dim sum outings, or mahjong competitions, we strive for every student to feel a sense of belonging and connection as a part of the HKSN family.
-                </p>
-                <a href="https://www.instagram.com/hksnmcgill/" target="_blank" class="btn btn-primary btn-lg fw-bold mb-4">Join Us!</a>
+    <main id="main-content" class="page-main">
+        <section class="section about-intro" aria-labelledby="about-title">
+            <div class="site-container split-layout">
+                <div class="section-copy">
+                    <p class="eyebrow">Our community · Established 2006</p>
+                    <h1 id="about-title">Home is<br>a feeling.</h1>
+                    <p class="body-large">A familiar language. A shared meal. People who make a new city feel a little more like your own.</p>
+                    <p class="muted">That’s what the Hong Kong Student Network is here for. Founded in 2006 under the Students’ Society of McGill University, we celebrate Hong Kong’s rich culture and create a home away from home.</p>
+                    <p class="muted">Through Cantonese mini-classes, dim sum outings, and mahjong competitions, we make room for friendship, connection, and a sense of belonging.</p>
+                    <a href="#team" class="text-link">Meet the people behind it <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
+                </div>
+                <figure class="team-group">
+                    <div class="group-photo-frame">
+                        <img id="group-photo" src="../assets/members/2025-2026/groupPhoto.jpg" alt="The 2025–26 HKSN team at McGill" width="2000" height="1333" fetchpriority="high">
+                        <div id="group-photo-fallback" hidden><span class="eyebrow">The HKSN family</span><p>A group photo isn’t available for this year.</p></div>
+                    </div>
+                    <figcaption class="image-caption"><span id="group-photo-caption">The 2025–26 team</span><span>McGill University, Montréal</span></figcaption>
+                </figure>
             </div>
-
-            <div class="col-12 col-lg-7 text-center">
-                <img id="group-photo" alt="HKSN group photo" class="img-fluid rounded shadow-sm" loading="lazy">
+        </section>
+        <section id="team" class="section team-section" aria-labelledby="team-title">
+            <div class="site-container">
+                <div class="section-topline"><p class="eyebrow">The people who make it happen.</p><span class="small-label">The HKSN family</span></div>
+                <div class="section-heading">
+                    <div><h2 id="team-title">Meet the team.</h2><p id="team-count" class="team-count small-label" aria-live="polite"></p></div>
+                    <div class="year-control"><label for="year-selector">Team archive</label><select id="year-selector" aria-controls="about-container" disabled><option>Loading years…</option></select></div>
+                </div>
+                <p id="team-status" class="visually-hidden" role="status" aria-live="polite"></p>
+                <div id="about-container" class="team-grid" aria-busy="true"><p class="content-status">Getting the team together…</p></div>
+                <noscript><p class="noscript-notice">Enable JavaScript to explore our team archive. You can also meet us on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
             </div>
-        </div>
-
-        <h1 class="display-5 fw-bold text-center mt-5 mb-2">Meet Our Team</h1>
-        <div class="dropdown text-center mb-5">
-            <button class="btn btn-secondary dropdown-toggle fw-bold" type="button" id="year-selector-button" data-bs-toggle="dropdown" aria-expanded="false">
-                Select Year
-            </button>
-            <ul class="dropdown-menu gap-1 p-2 rounded-3 shadow" id="year-selector-menu" aria-labelledby="year-selector-button">
-                <!-- Year options will be inserted here by JavaScript -->
-            </ul>
-        </div>
-
-        <div class="row align-items-center gx-5 mb-4 mb-lg-5" id="about-container">
-           <!-- Images are inserted from members.json here via the loaderMembers.js file -->
-        </div>
-    </div>
-
+        </section>
+    </main>
     <div id="include-footer"></div>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../js/config.js"></script>
+    <script defer src="../js/content.js"></script>
     <script defer src="../js/loaderComponents.js"></script>
     <script defer src="../js/loaderMembers.js"></script>
-    <script defer src="../js/parallax.js"></script>
-    <script defer src="../js/animations.js"></script>
-    <script defer src="../js/lazyLoader.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

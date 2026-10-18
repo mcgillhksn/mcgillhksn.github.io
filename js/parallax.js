@@ -1,30 +1,32 @@
-const images = document.querySelectorAll('.images img');
-let ticking = false;
+(function setupParallax() {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
 
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            images[0].style.transform = `translateY(-${scrollY / 3.25}px)`;
-            images[1].style.transform = `translateY(-${scrollY / 3.5}px)`;
-            images[2].style.transform = `translateY(-${scrollY / 4}px)`;
-            images[3].style.transform = `translateY(-${scrollY / 5}px)`;
-            images[4].style.transform = `translateY(-${scrollY / 6}px)`;
-            images[5].style.transform = `translateY(-${scrollY / 7}px)`;
-            images[6].style.transform = `translateY(-${scrollY / 9}px)`;
-            images[7].style.transform = `translateY(-${scrollY / 11}px)`;
-            ticking = false;
+    const layers = [...hero.querySelectorAll(".parallax-layer")];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let ticking = false;
+    let inView = true;
+
+    function render() {
+        const scroll = Math.min(Math.max(0, -hero.getBoundingClientRect().top), hero.offsetHeight);
+        layers.forEach(layer => {
+            layer.style.transform = reducedMotion.matches ? "" : `translate3d(0, -${scroll * Number(layer.dataset.depth)}px, 0)`;
         });
-        ticking = true;
+        ticking = false;
     }
-});
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting){
-            entry.target.classList.add("description-animation")
-        }
-    })
-})
+    function requestRender() {
+        if (ticking || !inView || !hero.classList.contains("parallax-ready")) return;
+        ticking = true;
+        requestAnimationFrame(render);
+    }
 
-observer.observe(document.querySelector(".description"))
+    new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        requestRender();
+    }).observe(hero);
+    window.addEventListener("scroll", requestRender, { passive: true });
+    window.addEventListener("resize", requestRender, { passive: true });
+    hero.addEventListener("parallaxReady", requestRender);
+    reducedMotion.addEventListener("change", render);
+})();

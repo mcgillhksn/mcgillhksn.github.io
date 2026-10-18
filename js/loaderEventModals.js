@@ -1,48 +1,37 @@
 (async function loadEventModals() {
-  try {
-    const basePath = siteConfig.getBasePath();
-    
-    const res = await fetch(`${basePath}assets/data/${siteConfig.eventsContentYear}/events.json`);
-    const events = await res.json();
-
-    const container = document.getElementById('events-modals');
+    const container = document.getElementById("events-modals");
     if (!container) return;
+    const year = document.body.classList.contains("home-page") ? siteConfig.homePageContentYear : siteConfig.eventsContentYear;
+    const escape = siteContent.escapeHTML;
 
-    const html = events.map(ev => {
-      const modalId = `event-${ev.id}-modal`;
-      const subtitle = ev.subtitle ? `<p class="mb-2 text-muted">${ev.subtitle}</p>` : '';
-      const description = ev.description ? `<p>${ev.description}</p>` : '';
-      const images = ev.images || [];
+    try {
+        const events = await siteContent.getEvents(year);
+        container.innerHTML = events.map(event => {
+            const modalId = `event-${event.id}-modal`;
+            const images = event.images || (event.image ? [event.image] : []);
+            const gallery = images.map((image, index) => {
+                const imageURL = new URL(`assets/events/${image}`, siteConfig.getBasePath()).href;
+                return `<figure><img src="${escape(imageURL)}" alt="${escape(event.title)} — photo ${index + 1} of ${images.length}" loading="lazy" decoding="async"></figure>`;
+            }).join("");
 
-      const imageGallery = images.map(img => `
-        <div class="col-12 col-lg-6 mb-4">
-          <img src="${basePath}assets/events/${img}" alt="${ev.title}" class="img-fluid rounded" loading="lazy" />
-        </div>
-      `).join('');
-
-      return `
-      <div class="modal fade darkModeText" id="${modalId}" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-fullscreen-md-down">
-          <div class="modal-content rounded-4 px-5 py-5">
-            <div class="modal-header d-flex justify-content-between align-items-start">
-              <h3 class="mb-4 display-6 lh-1 fw-bold">${ev.title}</h3>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body px-0">
-              <h3 class="mb-0 fs-4 pb-2">Description</h3>
-              ${description}
-              <h3 class="mb-3 mt-4 fs-4 pb-2">Gallery</h3>
-              <div class="row">
-                ${imageGallery}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>`;
-    }).join('');
-
-    container.innerHTML = html;
-  } catch (e) {
-    console.error('Failed to load event modals', e);
-  }
+            return `
+                <div class="modal fade" id="${escape(modalId)}" tabindex="-1" aria-labelledby="${escape(modalId)}-title" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-md-down">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div><p class="eyebrow">${escape(event.category || "Community")} · ${escape(siteContent.formatYear(year))}</p><h2 class="modal-title" id="${escape(modalId)}-title">${escape(event.title)}</h2></div>
+                                <button type="button" class="icon-button modal-close" data-bs-dismiss="modal" aria-label="Close ${escape(event.title)} recap"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+                            </div>
+                            <div class="modal-body" tabindex="0" role="region" aria-label="${escape(event.title)} recap and photos">
+                                <p class="body-large modal-description">${escape(event.description || event.subtitle || "A little look back at a good time with HKSN.")}</p>
+                                <div class="modal-gallery-heading"><h3>A look back.</h3><span class="small-label">${images.length} ${images.length === 1 ? "photo" : "photos"}</span></div>
+                                <div class="event-gallery">${gallery}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+        }).join("");
+    } catch (error) {
+        console.error("Could not load event galleries", error);
+    }
 })();

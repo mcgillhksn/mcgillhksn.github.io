@@ -1,110 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hong Kong Student Network (HKSN) was founded in 2006 to promote Hong Kong culture at McGill University.">
-  <title>HKSN - Hong Kong Student Network</title>
-
-  <link rel="icon" type="image/x-icon" href="./assets/logo/logo.png" />
-  <link rel="sitemap" type="application/xml" href="./assets/data/sitemap.xml" />
-
-  <link rel="stylesheet" href="./styles/global.css" />
-  <link rel="stylesheet" href="./styles/navbar.css" />
-  <link rel="stylesheet" href="./styles/home.css" />
-  <link rel="stylesheet" href="./styles/links.css" />
-  <link rel="stylesheet" href="./styles/buttons.css" />
-  <link rel="stylesheet" href="./styles/footer.css" />
-  <link rel="stylesheet" href="./styles/animations.css" />
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111720">
+    <meta name="description" content="Hong Kong roots. Montréal connections. Discover the Hong Kong Student Network at McGill: a home away from home since 2006.">
+    <title>HKSN — Your home away from home</title>
+    <link rel="icon" type="image/png" href="./assets/logo/logo.png">
+    <link rel="sitemap" type="application/xml" href="./assets/data/sitemap.xml">
+    <link rel="preload" href="./assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/buttons.css">
+    <link rel="stylesheet" href="./styles/links.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/events.css">
+    <link rel="stylesheet" href="./styles/modals.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 </head>
+<body id="top" class="home-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="include-navbar"></div>
 
-<body class="home-page">
-  <!-- Preloader Spinner -->
-  <div id="preloader-spinner" class="preloader-overlay">
-    <div class="spinner-border text-light" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-
-  <div id="include-navbar"></div>
-
-  <header class="hiddenBlur preloading">
-    <img src="./assets/home/bg.png" id="MaskingImage" draggable="false" loading="eager" />
-    <div class="images">
-      <img src="./assets/home/layer1.png" class="img1" alt="Image 1" style="margin-top: -7px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer2.png" class="img2" alt="Image 2" style="margin-top: -6px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer3.png" class="img3" alt="Image 3" style="margin-top: -5px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer4.png" class="img4" alt="Image 4" style="margin-top: -4px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer5.png" class="img5" alt="Image 5" style="margin-top: -3px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer6.png" class="img6" alt="Image 6" style="margin-top: -2px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer7.png" class="img7" alt="Image 7" style="margin-top: -1px" draggable="false" loading="eager" />
-      <img src="./assets/home/layer8.png" class="img8" alt="Image 8" draggable="false" loading="eager" />
-    </div>
-    <img src="./assets/logo/logoTextWhite.png" class="title" draggable="false" loading="eager" />
-  </header>
-
-  <div class="container mainBody">
-    <div class="description mb-5">
-      <div class="row align-items-center">
-        <div class="col-md-5 text-center text-md-start">
-          <!-- <img src="./assets/logo/logoTextWhite.png" alt="HKSN Logo" class="img-fluid mb-3" style="max-width: 250px;"> -->
-          <h1 class="display-5 fw-bold mb-4">Hong Kong Student Network</h1>
-          <p class="lead mb-4">
-            Your <em>home away from home</em>. From char siu packages to our welcome party, discover more about our community and our many Hong Kong centered events!
-          </p>
-          <a href="./events" class="btn btn-primary btn-lg fw-bold mb-4">Learn More</a>
+    <header class="hero" aria-labelledby="hero-title">
+        <picture class="hero-base" aria-hidden="true">
+            <source srcset="./assets/home/bg.webp" type="image/webp">
+            <img src="./assets/home/bg.png" alt="" width="2000" height="1334" fetchpriority="high" draggable="false">
+        </picture>
+        <div class="images" aria-hidden="true">
+            <picture class="parallax-layer img8" data-depth="0.07"><source data-srcset="./assets/home/layer8.webp" type="image/webp"><img data-src="./assets/home/layer8.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img7" data-depth="0.09"><source data-srcset="./assets/home/layer7.webp" type="image/webp"><img data-src="./assets/home/layer7.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img6" data-depth="0.11"><source data-srcset="./assets/home/layer6.webp" type="image/webp"><img data-src="./assets/home/layer6.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img5" data-depth="0.14"><source data-srcset="./assets/home/layer5.webp" type="image/webp"><img data-src="./assets/home/layer5.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img4" data-depth="0.17"><source data-srcset="./assets/home/layer4.webp" type="image/webp"><img data-src="./assets/home/layer4.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img3" data-depth="0.21"><source data-srcset="./assets/home/layer3.webp" type="image/webp"><img data-src="./assets/home/layer3.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img2" data-depth="0.25"><source data-srcset="./assets/home/layer2.webp" type="image/webp"><img data-src="./assets/home/layer2.png" alt="" width="2000" height="1334" draggable="false"></picture>
+            <picture class="parallax-layer img1" data-depth="0.28"><source data-srcset="./assets/home/layer1.webp" type="image/webp"><img data-src="./assets/home/layer1.png" alt="" width="2000" height="1334" draggable="false"></picture>
         </div>
-        <div class="col-md-7">
-          <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Images injected here -->
+        <div class="hero-mark">
+            <img src="./assets/logo/logoTextWhite.png" alt="HKSN" width="2000" height="507" draggable="false">
+            <span>Hong Kong Student Network</span>
+        </div>
+        <div class="hero-content site-container">
+            <div class="hero-copy">
+                <p class="eyebrow">McGill University · Montréal</p>
+                <h1 id="hero-title">Your home<br>away from home.</h1>
+                <p>A little Hong Kong. A whole lot of good company.</p>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+            <div class="hero-actions">
+                <a href="./events/" class="btn btn-primary">Explore our events <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+                <a href="#community" class="hero-scroll">Get to know HKSN <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
+            </div>
         </div>
-      </div>
-    </div>
+        <div class="hero-edge site-container" aria-hidden="true">
+            <span><span lang="zh-Hant">香港</span> <span class="hero-route">→</span> Montréal</span>
+            <span>Student-led. Since 2006.</span>
+        </div>
+    </header>
 
-    <div class="row align-items-center">
-      <div class="col-md-7 mb-5">
-        <img src="assets/membershipCard/front.jpg" class="img-fluid rounded" alt="HKSN Membership Card" />
-      </div>
-      <div class="col-md-5 text-center text-md-start">
-        <!-- <img src="./assets/logo/logoTextWhite.png" alt="HKSN Logo" class="img-fluid mb-3" style="max-width: 250px;"> -->
-        <h1 class="display-5 fw-bold mb-4">Discount Card</h1>
-        <p class="lead mb-4">
-          Get your discount card for the 10-20% off on your favourite restaurants, drinks and desserts! 
-          Support your favourite club (us ofc) and get discounts at 30+ locations.
-        </p>
-        <a href="./store" class="btn btn-primary btn-lg fw-bold mb-4">Get Yours!</a>
-      </div>
-    </div>
-  </div>
+    <main id="main-content" class="home-main">
+        <section id="community" class="section" aria-labelledby="community-title">
+            <div class="site-container">
+                <div class="section-topline"><p class="eyebrow">Rooted in Hong Kong.</p><span class="small-label">At home in Montréal.</span></div>
+                <div class="split-layout">
+                    <div class="section-copy">
+                        <h2 id="community-title">Different stories.<br>One community.</h2>
+                        <p class="body-large">Familiar flavours, new friendships, and a place to belong. We bring Hong Kong culture to life at McGill, one shared experience at a time.</p>
+                        <p class="muted">From char siu packages to Cantonese mini-classes, dim sum outings to mahjong nights—there’s always a reason to get together.</p>
+                        <a href="./about/" class="text-link">Meet HKSN <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+                    </div>
+                    <div class="community-gallery">
+                        <div id="eventCarousel" class="carousel slide" aria-label="Life with HKSN" aria-roledescription="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="./assets/events/semiFormal/1.jpg" alt="Friends celebrating at the HKSN semi-formal" width="1000" height="750" loading="lazy"></div>
+                            </div>
+                        </div>
+                        <div class="gallery-toolbar">
+                            <div><span class="eyebrow">Life with HKSN</span><p id="carousel-caption" aria-live="polite">Semi Formal</p></div>
+                            <div class="gallery-controls" id="carousel-controls" hidden>
+                                <span id="carousel-count" class="small-label" aria-hidden="true">01 / 04</span>
+                                <button class="icon-button" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev" aria-label="Previous community photo"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button>
+                                <button class="icon-button" type="button" data-bs-target="#eventCarousel" data-bs-slide="next" aria-label="Next community photo"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="community-values">
+                    <div><span class="value-marker" aria-hidden="true">01</span><h3>A taste of home.</h3><p>Good food tastes even better together.</p></div>
+                    <div><span class="value-marker" aria-hidden="true">02</span><h3>Culture, shared.</h3><p>Traditions to celebrate. Stories to exchange.</p></div>
+                    <div><span class="value-marker" aria-hidden="true">03</span><h3>Your kind of people.</h3><p>Come for an event. Stay for the friendships.</p></div>
+                </div>
+            </div>
+        </section>
 
-  <div id="include-footer"></div>
+        <section class="section section-tinted" aria-labelledby="memories-title">
+            <div class="site-container">
+                <div class="section-heading">
+                    <div><p class="eyebrow">Out of the group chat. Into good times.</p><h2 id="memories-title">Made for the memories.</h2></div>
+                    <a href="./events/" class="text-link">Explore the archive <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+                </div>
+                <div class="events-grid" data-event-grid data-featured="true" aria-busy="true"><p class="content-status" role="status">Loading a few good memories…</p></div>
+                <noscript><p class="noscript-notice">Our photo recaps need JavaScript. Find more memories on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
+            </div>
+        </section>
 
-  <script defer src="./js/config.js"></script>
-  <script defer src="./js/animations.js"></script>
-  <script defer src="./js/loaderComponents.js"></script>
-  <script defer src="./js/imagePreloader.js"></script>
-  <script defer src="./js/parallax.js"></script>
-  <script defer src="./js/loaderCarousel.js"></script>
-  <script defer src="./js/lazyLoader.js"></script>
+        <section class="section home-card-section" aria-labelledby="card-title">
+            <div class="site-container split-layout">
+                <div class="home-card-art">
+                    <span class="eyebrow">A little card. A lot to discover.</span>
+                    <img src="./assets/membershipCard/front.jpg" alt="The colourful 2025–26 joint student-association discount card" width="2000" height="1271" loading="lazy">
+                    <span class="small-label">2025–26 edition shown</span>
+                </div>
+                <div class="section-copy">
+                    <p class="eyebrow">The discount card</p>
+                    <h2 id="card-title">Good food.<br>Better deals.</h2>
+                    <p class="body-large">Your next favourite spot might be just around the corner. Discover savings on restaurants, drinks, and desserts across Montréal.</p>
+                    <div class="card-benefits"><div><strong>$5</strong><span>per card</span></div><div><strong>30+</strong><span>partner locations</span></div><div><strong>10–20%</strong><span>discounts & offers</span></div></div>
+                    <a href="./store/" class="text-link">Discover the card <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+                    <p class="availability-note">Check with us for current availability and offers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <div id="events-modals"></div>
+    <div id="include-footer"></div>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script defer src="./js/config.js"></script>
+    <script defer src="./js/content.js"></script>
+    <script defer src="./js/loaderComponents.js"></script>
+    <script defer src="./js/imagePreloader.js"></script>
+    <script defer src="./js/parallax.js"></script>
+    <script defer src="./js/loaderCarousel.js"></script>
+    <script defer src="./js/loaderEventModals.js"></script>
+    <script defer src="./js/loaderEvents.js"></script>
 </body>
-
 </html>

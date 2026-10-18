@@ -1,71 +1,69 @@
-// Load common HTML fragments (navbar, footer) into the page
 (async function loadFragments() {
-    const parts = [
-      { targetId: "include-navbar", file: "navbar.html"},
-      { targetId: "include-footer", file: "footer.html"},
-    ];
-  
     const basePath = siteConfig.getBasePath();
-    const componentBasePath = `${basePath}components/`;
-  
-    await Promise.all(
-      parts.map(async ({ targetId, file }) => {
-        const res  = await fetch(`${componentBasePath}${file}`);
-        const html = await res.text();
-        document.getElementById(targetId).innerHTML = html;
-      })
-    );
+    const normalizePath = path => path.replace(/\/index\.html$/, "/").replace(/\/+$/, "") || "/";
 
-    // Fix asset paths and navigation links in navbar if we're in a subdirectory
-    if (basePath === '../') {
-        const navbarLogo = document.querySelector('#include-navbar img[src="./assets/logo/logoText.png"]');
-        if (navbarLogo) {
-            navbarLogo.src = '../assets/logo/logoText.png';
+    await Promise.all([
+        { target: "include-navbar", file: "navbar.html" },
+        { target: "include-footer", file: "footer.html" }
+    ].map(async ({ target, file }) => {
+        const container = document.getElementById(target);
+        if (!container) return;
+        try {
+            const response = await fetch(new URL(`components/${file}`, basePath));
+            if (!response.ok) throw new Error(`Could not load ${file}`);
+            // Resolve fragment URLs before insertion to avoid incorrect image requests on nested pages.
+            const template = document.createElement("template");
+            template.innerHTML = await response.text();
+            template.content.querySelectorAll("[data-site-path]").forEach(link => {
+                link.href = new URL(link.dataset.sitePath, basePath).href;
+            });
+            template.content.querySelectorAll("[data-site-asset]").forEach(image => {
+                image.src = new URL(image.dataset.siteAsset, basePath).href;
+            });
+            template.content.querySelectorAll(".nav-link").forEach(link => {
+                if (normalizePath(new URL(link.href).pathname) === normalizePath(location.pathname)) {
+                    link.setAttribute("aria-current", "page");
+                }
+            });
+            container.replaceChildren(template.content);
+        } catch (error) {
+            console.error(error);
+            if (target === "include-navbar") {
+                const nav = document.createElement("nav");
+                nav.className = "site-container";
+                nav.setAttribute("aria-label", "Main navigation");
+                [["", "Home"], ["about/", "About"], ["events/", "Events"], ["store/", "Discount card"]].forEach(([path, title]) => {
+                    const link = document.createElement("a");
+                    link.href = new URL(path, basePath);
+                    link.className = "text-link me-4";
+                    link.textContent = title;
+                    nav.append(link);
+                });
+                container.append(nav);
+            }
         }
-        
-        // Fix ALL navigation links to use correct relative paths from subdirectory
-        const homeLinks = document.querySelectorAll('#include-navbar a[href="./"]');
-        homeLinks.forEach(link => {
-            link.href = '../';
-        });
-        
-        const aboutLinks = document.querySelectorAll('#include-navbar a[href="./about"]');
-        aboutLinks.forEach(link => {
-            link.href = '../about/';
-        });
-        
-        const eventsLinks = document.querySelectorAll('#include-navbar a[href="./events"]');
-        eventsLinks.forEach(link => {
-            link.href = '../events/';
-        });
-        
-        const storeLinks = document.querySelectorAll('#include-navbar a[href="./store"]');
-        storeLinks.forEach(link => {
-            link.href = '../store/';
-        });
-    }
+    }));
 
-    // Highlight active navbar link
-    const navLinks = document.querySelectorAll("#include-navbar .nav-link");
-    const currentPath = window.location.pathname;
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute("href");
-
-        // Handle subdirectory pages - check for both original and updated hrefs
-        if (currentPath.includes("/events") && (linkHref === "./events" || linkHref === "../events/")) {
-            link.classList.remove("richLink");
-            link.classList.add("richLinkHighlight");
-        }
-        else if (currentPath.includes("/about") && (linkHref === "./about" || linkHref === "../about/")) {
-            link.classList.remove("richLink");
-            link.classList.add("richLinkHighlight");
-        }
-        else if (currentPath.includes("/store") && (linkHref === "./store" || linkHref === "../store/")) {
-            link.classList.remove("richLink");
-            link.classList.add("richLinkHighlight");
+    const navigation = document.getElementById("navigationBar");
+    const menu = document.getElementById("navbarNav");
+    const toggler = navigation?.querySelector(".navbar-toggler");
+    menu?.addEventListener("show.bs.collapse", () => {
+        navigation.classList.add("menu-open");
+        toggler.setAttribute("aria-label", "Close navigation");
+    });
+    menu?.addEventListener("hidden.bs.collapse", () => {
+        navigation.classList.remove("menu-open");
+        toggler.setAttribute("aria-label", "Open navigation");
+    });
+    navigation?.addEventListener("keydown", event => {
+        if (event.key === "Escape" && menu.classList.contains("show") && window.bootstrap) {
+            bootstrap.Collapse.getOrCreateInstance(menu).hide();
+            toggler.focus();
         }
     });
-  
-    console.log("Fragments loaded, dispatching event...");
+
+    const updateNavigation = () => document.body.classList.toggle("nav-scrolled", window.scrollY > 32);
+    updateNavigation();
+    window.addEventListener("scroll", updateNavigation, { passive: true });
     document.dispatchEvent(new Event("fragmentsLoaded"));
 })();

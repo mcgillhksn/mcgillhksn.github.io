@@ -1,46 +1,62 @@
 (async function loadEventCards() {
-  try {
-    const basePath = siteConfig.getBasePath();
-    
-    const res = await fetch(`${basePath}assets/data/${siteConfig.eventsContentYear}/events.json`);
-    const events = await res.json();
-
-    const grid = document.getElementById('events-grid');
+    const grid = document.querySelector("[data-event-grid]");
     if (!grid) return;
 
-    // No date fields for past events; keep original JSON order
-    const cards = events.map(ev => {
-      const modalId = `event-${ev.id}-modal`;
-      const subtitle = ev.subtitle ?? '';
-      const image = ev.images ? ev.images[0] : ev.image;
-      const displayInfo = ev.displayInfoOnCard;
+    const featured = grid.dataset.featured === "true";
+    const year = featured ? siteConfig.homePageContentYear : siteConfig.eventsContentYear;
+    const escape = siteContent.escapeHTML;
+    document.querySelectorAll("[data-events-year]").forEach(label => {
+        label.textContent = siteContent.formatYear(year);
+    });
 
-      const cardText = displayInfo ? `
-        <h3 class="display-6 lh-1 fw-bold mb-1 mt-auto">${ev.title}</h3>
-        ${subtitle ? `<div class="small">${subtitle}</div>` : ''}
-      ` : '';
+    try {
+        const events = await siteContent.getEvents(year);
+        const selected = featured ? events.filter(event => event.homeFeatured).slice(0, 3) : events;
+        const visibleEvents = featured && !selected.length ? events.slice(0, 3) : selected;
+        grid.innerHTML = visibleEvents.map(event => {
+            const image = event.cover || event.images?.[0] || event.image;
+            const category = event.category || "Community";
+            const modalId = `event-${event.id}-modal`;
+            const imageURL = new URL(`assets/events/${image}`, siteConfig.getBasePath()).href;
+            return `
+                <article class="event-card" data-category="${escape(category)}">
+                    <div class="event-card-media${event.coverIsPoster ? " poster-media" : ""}">
+                        <img src="${escape(imageURL)}" alt="${escape(event.coverAlt || event.title)}" loading="lazy" decoding="async"${event.coverPosition ? ` style="object-position: ${escape(event.coverPosition)}"` : ""}>
+                    </div>
+                    <div class="event-card-body">
+                        <p class="event-card-meta"><span>${escape(category)}</span><span>${escape(siteContent.formatYear(year))}</span></p>
+                        <h3><button type="button" class="event-card-trigger" data-bs-toggle="modal" data-bs-target="#${escape(modalId)}" aria-haspopup="dialog" aria-controls="${escape(modalId)}" aria-label="View ${escape(event.title)} recap">
+                            ${escape(event.title)} <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                        </button></h3>
+                        <p class="event-card-cta">View the recap</p>
+                    </div>
+                </article>`;
+        }).join("");
 
-      return `
-        <div class="col default-col" data-bs-toggle="modal" data-bs-target="#${modalId}">
-          <div class="position-relative h-100 overflow-hidden rounded hoverable">
-            <img src="${basePath}assets/events/${image}" alt="${ev.title}" loading="lazy" style="object-fit: cover; width: 100%; height: 100%; position: absolute; inset: 0; z-index: -1; ${ev.alignImageLeft ? 'object-position: left;' : ''}" />
-            <div class="position-absolute top-0 start-0 w-100 h-100"></div>
-            <div class="d-flex flex-column h-100 p-5 text-white" style="position: relative; z-index: 1;">
-              ${cardText}
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
+        if (!visibleEvents.length) grid.innerHTML = '<p class="content-status">More memories are on their way. Follow us on Instagram for the latest.</p>';
+        const count = document.getElementById("events-count");
+        const updateCount = number => {
+            if (count) count.textContent = `${number} ${number === 1 ? "memory" : "memories"}`;
+        };
+        updateCount(visibleEvents.length);
 
-    grid.innerHTML = `
-      <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 pb-4">
-        ${cards}
-      </div>
-    `;
-
-    document.dispatchEvent(new Event('fragmentsLoaded'));
-  } catch (e) {
-    console.error('Failed to load events', e);
-  }
+        document.querySelectorAll("[data-event-filter]").forEach(button => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll("[data-event-filter]").forEach(filter => {
+                    filter.setAttribute("aria-pressed", String(filter === button));
+                });
+                let shown = 0;
+                grid.querySelectorAll(".event-card").forEach(card => {
+                    card.hidden = button.dataset.eventFilter !== "all" && card.dataset.category !== button.dataset.eventFilter;
+                    if (!card.hidden) shown++;
+                });
+                updateCount(shown);
+            });
+        });
+    } catch (error) {
+        console.error("Could not load the event archive", error);
+        grid.innerHTML = '<p class="content-status">The archive couldn’t load just now. You can still find our recaps on <a href="https://www.instagram.com/hksnmcgill/">Instagram ↗</a>.</p>';
+    } finally {
+        grid.setAttribute("aria-busy", "false");
+    }
 })();

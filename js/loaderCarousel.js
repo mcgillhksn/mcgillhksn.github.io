@@ -1,30 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const carouselContainer = document.querySelector("#eventCarousel .carousel-inner");
-    const year = siteConfig.homePageContentYear;
-    const basePath = siteConfig.getBasePath();
+(async function loadCarousel() {
+    const carousel = document.getElementById("eventCarousel");
+    if (!carousel || !window.bootstrap) return;
 
-    fetch(`${basePath}assets/data/${year}/carousel.json`)
-        .then(response => response.json())
-        .then(data => {
-            carouselContainer.innerHTML = ""; // Clear existing items
-            data.forEach((item, index) => {
-                const carouselItem = document.createElement("div");
-                carouselItem.classList.add("carousel-item");
-                if (index === 0) {
-                    carouselItem.classList.add("active");
-                }
+    try {
+        const items = await siteContent.fetchJSON(`assets/data/${siteConfig.homePageContentYear}/carousel.json`);
+        if (!items.length) return;
 
-                const img = document.createElement("img");
-                // Update image path to use dynamic base path
-                const imagePath = item.image.replace('./', basePath);
-                img.src = imagePath;
-                img.classList.add("d-block", "w-100", "rounded");
-                img.alt = item.alt || "Carousel Image";
-                img.loading = "lazy";
-
-                carouselItem.appendChild(img);
-                carouselContainer.appendChild(carouselItem);
-            });
-        })
-        .catch(error => console.error("Error loading carousel data:", error));
-});
+        const fragment = document.createDocumentFragment();
+        items.forEach((item, index) => {
+            const slide = document.createElement("div");
+            slide.className = `carousel-item${index === 0 ? " active" : ""}`;
+            slide.setAttribute("role", "group");
+            slide.setAttribute("aria-roledescription", "slide");
+            slide.setAttribute("aria-label", `${index + 1} of ${items.length}: ${item.alt}`);
+            const image = document.createElement("img");
+            image.src = new URL(item.image, siteConfig.getBasePath());
+            image.alt = item.alt || "Life with HKSN";
+            image.loading = "lazy";
+            image.decoding = "async";
+            if (item.poster) image.className = "poster-image";
+            slide.append(image);
+            fragment.append(slide);
+        });
+        carousel.querySelector(".carousel-inner").replaceChildren(fragment);
+        const caption = document.getElementById("carousel-caption");
+        const count = document.getElementById("carousel-count");
+        const updateCaption = index => {
+            caption.textContent = items[index].alt;
+            count.textContent = `${String(index + 1).padStart(2, "0")} / ${String(items.length).padStart(2, "0")}`;
+        };
+        updateCaption(0);
+        document.getElementById("carousel-controls").hidden = items.length < 2;
+        bootstrap.Carousel.getOrCreateInstance(carousel, { interval: false, ride: false, keyboard: true });
+        carousel.addEventListener("slid.bs.carousel", event => updateCaption(event.to));
+    } catch (error) {
+        // The initial photograph remains useful if the optional gallery cannot load.
+        console.error("Could not load community gallery", error);
+    }
+})();

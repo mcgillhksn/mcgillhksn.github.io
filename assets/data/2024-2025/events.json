@@ -2,6 +2,10 @@
   {
     "id": "semiFormal",
     "title": "Semi Formal",
+    "category": "Nights out",
+    "cover": "semiFormal/1.jpg",
+    "coverAlt": "Friends celebrating at the HKSN semi-formal",
+    "homeFeatured": true,
     "subtitle": "A night of elegance and memories (and drinks).",
     "description": "Our annual semi-formal, a night to dress up and celebrate with friends.",
     "images": [
@@ -17,6 +21,10 @@
   {
     "id": "midAutumnHike",
     "title": "Mid Autumn Hike",
+    "category": "Community",
+    "cover": "midAutumnHike/2.jpg",
+    "coverAlt": "The HKSN hiking group gathering on the McGill campus",
+    "coverPosition": "50% 65%",
     "subtitle": "A scenic hike to celebrate the festival.",
     "description": "A relaxing hike to enjoy the autumn scenery and celebrate the Mid-Autumn Festival with mooncakes.",
     "images": [
@@ -31,6 +39,9 @@
   {
     "id": "welcomeParty",
     "title": "Welcome Party",
+    "category": "Community",
+    "coverIsPoster": true,
+    "homeFeatured": true,
     "subtitle": "",
     "description": "Our first event of the year to introduce HKSN to everyone!",
     "images": [
@@ -45,6 +56,9 @@
   {
     "id": "lny",
     "title": "Lunar New Year",
+    "category": "Culture",
+    "coverIsPoster": true,
+    "homeFeatured": true,
     "subtitle": "",
     "description": "A festive celebration of the Lunar New Year with dim sum, games, and a night market.",
     "images": [
@@ -59,6 +73,8 @@
   {
     "id": "retreat",
     "title": "Retreat",
+    "category": "Community",
+    "coverIsPoster": true,
     "subtitle": "",
     "description": "Our annual execs retreat for team bonding and planning for the year ahead.",
     "images": [
@@ -74,6 +90,8 @@
   {
     "id": "halloween",
     "title": "Halloween",
+    "category": "Nights out",
+    "coverIsPoster": true,
     "subtitle": "",
     "description": "Our annual Halloween party!",
     "images": [

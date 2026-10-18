@@ -1,51 +1,61 @@
-:root {
-    --dropdown-bg: #2a2a2a;
-    --dropdown-border-color: rgba(255, 255, 255, 0.15);
-    --dropdown-link-active-bg: var(--primary-color);
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: 48px;
+    padding: 13px 22px;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.6;
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
-/* 
-    MARK: Dropdown section
-*/
-.dropdown-menu {
-    --bs-dropdown-link-active-bg: var(--dropdown-link-active-bg) !important;
-    --bs-dropdown-bg: var(--dropdown-bg) !important;
-    --bs-dropdown-link-color: var(--text-color) !important;
-    --bs-dropdown-link-hover-color: var(--text-color) !important;
-    --bs-dropdown-link-hover-bg: rgba(0, 0, 0, 0.1) !important;
-    --bs-dropdown-link-active-color: var(--primary-text-color) !important;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+.btn-primary {
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-color: var(--primary-text-color);
+    --bs-btn-hover-bg: var(--primary-hover-color);
+    --bs-btn-hover-border-color: var(--primary-hover-color);
+    --bs-btn-hover-color: var(--primary-text-color);
+    --bs-btn-active-bg: var(--accent-color);
+    --bs-btn-active-border-color: var(--accent-color);
+    --bs-btn-active-color: var(--primary-text-color);
+    --bs-btn-focus-shadow-rgb: 101, 206, 245;
 }
 
-.dropdown-item {
-    color: var(--bs-dropdown-link-color);
-}
-.dropdown-item:hover, .dropdown-item:focus {
-    color: var(--bs-dropdown-link-hover-color);
-    background-color: var(--bs-dropdown-link-hover-bg);
-}
-.dropdown-item.active, .dropdown-item:active {
-    color: var(--bs-dropdown-link-active-color);
-    background-color: var(--bs-dropdown-link-active-bg);
+.btn-outline { color: var(--text-color); background: transparent; border: 1px solid var(--border-strong-color); }
+.btn-outline:hover, .btn-outline:active { color: var(--accent-color); background: var(--surface-hover-color); border-color: var(--accent-color); }
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--border-strong-color);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-color);
+    transition: color 150ms ease, border-color 150ms ease;
 }
 
-/* 
-    Carousel Buttons
-*/
-/* Filled arrows */
-/* .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z'/%3e%3c/svg%3e") !important;
+.icon-button:hover { color: var(--accent-color); border-color: var(--accent-color); }
+
+.filter-button {
+    min-height: 44px;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--secondary-text-color);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition: color 150ms ease, border-color 150ms ease;
 }
 
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/%3e%3c/svg%3e") !important;
-} */
-
-/* Regular arrows */
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z'/%3e%3c/svg%3e") !important;
-}
-
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/%3e%3c/svg%3e") !important;
-}
+.filter-button:hover, .filter-button[aria-pressed="true"] { color: var(--text-color); }
+.filter-button[aria-pressed="true"] { border-bottom-color: var(--accent-color); }

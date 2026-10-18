@@ -1,0 +1,40 @@
+{
+    "academicYear": "2025-2026",
+    "categories": [
+        { "id": "restaurants", "label": "Restaurants" },
+        { "id": "drinks", "label": "Drinks & desserts" }
+    ],
+    "partners": [
+        { "name": "Bistro Japonais Furusato", "category": "restaurants", "offer": "10%", "terms": "Except nabemono and sushi" },
+        { "name": "Cafe Noya", "category": "restaurants", "offer": "15%" },
+        { "name": "Canada Best", "category": "restaurants", "offer": "15% + 1 drink" },
+        { "name": "Cup Mtl", "category": "restaurants", "offer": "15%" },
+        { "name": "Délicieux Mei Mei", "category": "restaurants", "offer": "10–15%", "terms": "10% with card payment · 15% with cash" },
+        { "name": "DonDonYa", "category": "restaurants", "offer": "10%" },
+        { "name": "Foofoo noodz", "category": "restaurants", "offer": "10%" },
+        { "name": "Krapow", "category": "restaurants", "offer": "10%" },
+        { "name": "Restaurant Dumpling Shop", "category": "restaurants", "offer": "10%" },
+        { "name": "Restaurant Phoenix Oriental", "category": "restaurants", "offer": "10%" },
+        { "name": "Restaurant Pinophyta", "category": "restaurants", "offer": "10%" },
+        { "name": "Mai Thai Cuisine", "category": "restaurants", "offer": "10%" },
+        { "name": "NosThés", "category": "restaurants", "offer": "10%" },
+        { "name": "Pho Anh", "category": "restaurants", "offer": "10%" },
+        { "name": "Ramen Isshin", "category": "restaurants", "offer": "15%", "terms": "All locations" },
+        { "name": "Sansotei", "category": "restaurants", "offer": "10%", "terms": "All locations" },
+        { "name": "Satu Lagi", "category": "restaurants", "offer": "10%" },
+        { "name": "Yen Cuisine Japonaise", "category": "restaurants", "offer": "10%" },
+        { "name": "Charyū tea house", "category": "drinks", "offer": "10%", "terms": "On tea bags" },
+        { "name": "La Muse", "category": "drinks", "offer": "Free drinks", "terms": "During happy hour · Lincoln Avenue location" },
+        { "name": "Lakafe", "category": "drinks", "offer": "10%" },
+        { "name": "Matcha Zanmai", "category": "drinks", "offer": "10%" },
+        { "name": "Ocha", "category": "drinks", "offer": "15%" },
+        { "name": "Oishi Bar à Matcha chain", "category": "drinks", "offer": "10%", "terms": "On food and drinks" },
+        { "name": "Pâtisserie Amaïro", "category": "drinks", "offer": "10%", "terms": "1 cake + 1 drink" },
+        { "name": "Pâtisserie Bao Bao Dim Sum", "category": "drinks", "offer": "10%" },
+        { "name": "Pâtisserie Bervig Inc.", "category": "drinks", "offer": "10%" },
+        { "name": "San-O Brasserie", "category": "drinks", "offer": "10%" },
+        { "name": "#Teashop", "category": "drinks", "offer": "20%" },
+        { "name": "Thés Guru store", "category": "drinks", "offer": "10%", "terms": "On loose-leaf teas" },
+        { "name": "Tsujiri", "category": "drinks", "offer": "10%", "terms": "Except retail products and whole cakes" }
+    ]
+}

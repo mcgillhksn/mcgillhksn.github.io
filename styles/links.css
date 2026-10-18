@@ -1,36 +1,17 @@
-:root {
-    --link-color: var(--primary-color);
-    --link-hover-bg: var(--primary-color);
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 44px;
+    padding-block: 10px;
+    border-bottom: 1px solid var(--border-strong-color);
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+    transition: color 150ms ease, border-color 150ms ease;
 }
 
-/* 
-    MARK: Hyperlink styling 
-*/
-.richLinkHighlight {
-    box-shadow: inset 200px 0 0 0 #009ADB !important;
-    color: #fff !important;
-    padding-top: 0 .25rem !important;
-    padding-bottom: 0 .25rem !important;
-    margin-top: 0 -.25rem !important;
-    margin-bottom: 0 -.25rem !important;
-    cursor: pointer !important;
-}
-
-.richLink {
-    box-shadow: inset 0 0 0 0 #009ADB !important;
-    color: #009ADB !important;
-    
-    padding-top: 0 .25rem !important;
-    padding-bottom: 0 .25rem !important;
-
-    margin-top: 0 -.25rem !important;
-    margin-bottom: 0 -.25rem !important;
-
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out !important;
-    cursor: pointer !important;
-}
-
-.richLink:hover {
-    color: #fff !important;
-    box-shadow: inset 200px 0 0 0 #009ADB !important;
-}
+.text-link:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+.inline-link { color: var(--accent-color); text-decoration: underline; text-decoration-color: #65cef550; }
+.inline-link:hover { color: var(--text-color); text-decoration-color: currentColor; }

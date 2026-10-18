@@ -1,69 +1,22 @@
-/*  
-    MARK: Modals section 
-*/
-.modal.fade .modal-header {
-    border-bottom: none;
-    --bs-modal-header-padding: 0rem;
-}
+.modal { --bs-modal-bg: var(--main-bg-color); --bs-modal-border-color: var(--border-strong-color); --bs-modal-border-radius: 8px; }
+.modal-backdrop { --bs-backdrop-opacity: 0.8; }
+.modal-dialog { max-width: 1040px; }
+.modal-content { color: var(--text-color); }
+.modal-header { align-items: flex-start; justify-content: space-between; gap: 24px; padding: 28px 32px; border-bottom: 1px solid var(--border-color); }
+.modal-header .eyebrow { margin-bottom: 12px; font-size: 0.6rem; }
+.modal-title { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.04em; }
+.modal-close { flex: 0 0 44px; }
+.modal-body { padding: 32px; overscroll-behavior-y: contain; }
+.modal-body:focus-visible { outline: 2px solid var(--accent-color); outline-offset: -3px; }
+.modal-description { max-width: 720px; margin-bottom: 36px; }
+.modal-gallery-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.modal-gallery-heading h3 { font-size: 1.1rem; }
+.event-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 20px; }
+.event-gallery img { width: 100%; height: auto; border-radius: var(--radius); background: var(--surface-color); }
 
-.modal-body {
-    padding: 0px !important;
-    overflow: visible !important;
+@media (max-width: 767.98px) {
+    .modal-header { padding: 24px 20px; gap: 16px; }
+    .modal-body { padding: 24px 20px; }
+    .event-gallery { grid-template-columns: 1fr; gap: 20px; }
+    .modal-description { margin-bottom: 28px; font-size: 0.95rem; }
 }
-
-.modal-content {
-    height: max-content !important;
-    background-color: var(--main-bg-color) !important;
-    color: var(--text-color);
-    border: 1px solid var(--dropdown-border-color);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Ensure modal header/footer text and close button adapt */
-.modal-header .btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
-    transition: filter 0.3s ease;
-}
-
-.modal-title {
-    color: var(--text-color);
-}
-
-/* .defaultImage:not(:first-of-type):not(:last-of-type) {
-    max-height: 500px;
-    margin: 8px;
-}
-
-.defaultImage:first-of-type {
-    max-height: 500px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-right: 8px;
-}
-
-.defaultImage:last-of-type {
-    max-height: 500px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 8px;
-}
-
-.vscImage {
-    border-radius: 20px;
-}
-
-.marsImage {
-    border-radius: 10px;
-}
-
-.modal-body .video16x9 {
-    aspect-ratio: 1920 / 1080;
-    background-color: black;
-    width: 100%;
-}
-
-.modal-body .video16x10 {
-    aspect-ratio: 1920 / 1200;
-    background-color: black;
-    width: 100%;
-} */

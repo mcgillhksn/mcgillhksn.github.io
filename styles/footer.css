@@ -1,18 +1,39 @@
-:root {
-    --body-bg: #1a1a1a;
-    --text-color: #d4d1cb;
-    --secondary-text-color: #aaaaaa;
+.site-footer { border-top: 1px solid var(--border-color); }
+
+.footer-invitation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-block: 64px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Footer Icon Theme Handling */
-.footer-icon {
-    fill: var(--text-color);
-    transition: fill 0.3s ease;
+.footer-invitation .eyebrow { margin-bottom: 12px; }
+.footer-main { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-block: 40px; }
+.footer-brand img { width: 112px; height: auto; }
+.footer-brand p { margin-top: 12px; color: var(--secondary-text-color); font-size: 0.75rem; }
+.footer-socials { display: flex; flex-wrap: wrap; column-gap: 28px; row-gap: 4px; }
+.footer-socials a, .footer-bottom a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 0.75rem; }
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-block: 16px;
+    border-top: 1px solid var(--border-color);
+    color: var(--muted-text-color);
+    font-size: 0.65rem;
 }
 
-.btn.disabled, .btn:disabled {
-    background-color: var(--body-bg);
-    border-color: var(--body-bg);
-    opacity: 0.65; 
-    color: var(--secondary-text-color);
+.footer-bottom a { color: var(--secondary-text-color); font-size: 0.65rem; }
+.footer-bottom a:hover { color: var(--accent-color); }
+
+@media (max-width: 767.98px) {
+    .footer-invitation { align-items: flex-start; flex-direction: column; padding-block: 48px; gap: 24px; }
+    .footer-main { align-items: flex-start; flex-direction: column; gap: 24px; padding-block: 32px; }
+    .footer-socials { column-gap: 24px; }
+    .footer-bottom { align-items: flex-start; }
+    .footer-bottom p { max-width: 200px; padding-block: 12px; }
 }

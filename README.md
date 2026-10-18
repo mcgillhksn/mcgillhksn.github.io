@@ -1,6 +1,6 @@
 # McGill HKSN Website
 
-This is the official website for the McGill Hong Kong Student Network (HKSN). This guide explains how to update the text, photos, team, events, and discount-card offers.
+This is the official website for the McGill Hong Kong Student Network (HKSN). This guide explains how to update the text, photos, team, events, and member-card offers.
 
 ## Updating Website Content
 
@@ -13,8 +13,8 @@ Most updates involve editing a few words or uploading photos. Use the file guide
 | Team names, roles, and photos | `assets/members/[year]/` |
 | Homepage photo slideshow | `assets/data/[year]/carousel.json` |
 | Events and their photo galleries | `assets/data/[year]/events.json` and `assets/events/` |
-| Discount-card price and description | `index.html` and `store/index.html` |
-| Restaurant, drink, and dessert offers | `assets/data/discount-card.json` |
+| Member-card price and description | `index.html` and `store/index.html` |
+| Member-card partner offers | `assets/data/member-card.json` |
 
 Replace `[year]` with an academic year written like `2025-2026`.
 
@@ -81,7 +81,6 @@ Click a person to see their photos and roles across all their team years. Keep a
     "id": "welcome-party",
     "title": "Welcome Party",
     "category": "Community",
-    "description": "Our first get-together of the year, full of games and familiar faces.",
     "images": ["welcomeParty/1.jpg", "welcomeParty/2.jpg"],
     "coverIsPoster": true,
     "homeFeatured": true
@@ -93,7 +92,6 @@ What each detail means:
 
 - `title`: the event name visitors see.
 - `category`: choose exactly `Community`, `Culture`, or `Nights out`.
-- `description`: a short recap of the event.
 - `images`: the photo filenames in the order you want them shown. Start with the event folder name, such as `welcomeParty/1.jpg`.
 - `coverIsPoster`: use `true` if the first image is a poster or collage with text; use `false` for a photograph.
 - `homeFeatured`: use `true` to include the event among the homepage highlights. Up to three events are shown, in their listed order.
@@ -102,6 +100,8 @@ The first picture is also used as the event's cover. To choose a different cover
 
 When listing more than one event, separate the events with a comma, just like the two people in the team example.
 
+The Events page arranges the covers as Polaroids, with the event names handwritten underneath. Visitors can drag them around or use the arrow keys when a photo is selected. The layout adjusts automatically when you add events; you do not need to set positions.
+
 ### Updating the Homepage Photo Slideshow
 
 Open `assets/data/[year]/carousel.json`. List the pictures in the order you want them to appear:
@@ -109,49 +109,55 @@ Open `assets/data/[year]/carousel.json`. List the pictures in the order you want
 ```json
 [
   {
+    "title": "Semi Formal",
     "image": "./assets/events/semiFormal/1.jpg",
     "alt": "Friends celebrating at the semi-formal"
   },
   {
+    "title": "Welcome Party",
     "image": "./assets/events/welcomeParty/1.jpg",
-    "alt": "The first hello at our Welcome Party",
+    "alt": "Welcome Party event poster",
     "poster": true
   }
 ]
 ```
 
+- `title`: the event name shown beneath the picture. Use the same name as in the event list.
 - `image`: where the picture is saved. Keep `./assets/events/` at the beginning.
-- `alt`: a short description of the picture, also shown as its caption.
+- `alt`: a short picture description for screen readers, not a visible caption.
 - `poster`: include `true` for posters or collages with text so the whole picture stays visible.
 
-### Updating the Discount Card
+### Updating the Member Card
 
 **Price, description, and artwork**
 
-1. Open `store/index.html` and the discount-card section of `index.html`.
+1. Open `store/index.html` and the member-card section of `index.html`.
 2. Search for the price, academic year, or wording you want to change. Edit the words and numbers while keeping the surrounding symbols in place.
 3. Check the price, year, availability message, and picture descriptions on both pages so they agree.
-4. Save the card artwork as `assets/membershipCard/front.jpg` and the offer sheet as `assets/membershipCard/sponsorlist.png`. The Discount card page includes a link to the offer sheet.
+4. Upload the new card artwork and offer sheet into a folder named for the academic year, such as `assets/membershipCard/2026-2027/`. Update the picture links on both pages and the offer-sheet links on the Member card page to match the new filenames. Keep previous card artwork, but remove the replaced offer sheet.
+5. If a new sponsor map is provided, upload its picture into the same year's folder and update the map picture and both Google Maps links at the bottom of the Member card page.
 
 **Partner offers**
 
-Open `assets/data/discount-card.json`. Update `academicYear` and edit the partner details under `partners`. For example:
+Open `assets/data/member-card.json`. Update `academicYear` and edit the partner details under `partners`. For example:
 
 ```json
 {
-  "name": "Ramen Isshin",
+  "name": "Oh Dumplings Express Concordia",
   "category": "restaurants",
-  "offer": "15%",
-  "terms": "All locations"
+  "offer": "15% + drink",
+  "terms": "Free canned drink · Minimum $20 spend",
+  "spotlight": "2026-2027/spotlights/oh-dumplings-express-concordia.webp"
 }
 ```
 
 - `name`: the business name.
-- `category`: use `restaurants` for restaurants, or `drinks` for drinks and desserts.
+- `category`: use `restaurants` for restaurants, `drinks` for drinks and desserts, or `others` for shops and services.
 - `offer`: the discount or benefit visitors receive.
 - `terms`: any conditions, such as participating locations or excluded items. Leave this detail out if there are no conditions to list.
+- `spotlight`: the sponsor's spotlight image inside `assets/membershipCard/`. Upload the matching image, or leave this detail out if there is no spotlight. Clicking a partner name opens its spotlight in a pop-up on the page, with a link you can copy and share.
 
-Keep the category list near the top of the file in place. Separate partner entries with commas, and do not put a comma after the final entry.
+Replace the previous year's partner list rather than mixing offers from different years. Keep the category list near the top of the file in place. Separate partner entries with commas, and do not put a comma after the final entry.
 
 Confirm each offer with the partner before publishing it. Check the directory's year labels in `store/index.html` against the card and offer sheet, then test the category buttons on the website.
 

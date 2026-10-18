@@ -35,7 +35,7 @@
                 const nav = document.createElement("nav");
                 nav.className = "site-container";
                 nav.setAttribute("aria-label", "Main navigation");
-                [["", "Home"], ["about/", "About"], ["events/", "Events"], ["store/", "Discount card"]].forEach(([path, title]) => {
+                [["", "Home"], ["about/", "About"], ["events/", "Events"], ["store/", "Member Card"]].forEach(([path, title]) => {
                     const link = document.createElement("a");
                     link.href = new URL(path, basePath);
                     link.className = "text-link me-4";

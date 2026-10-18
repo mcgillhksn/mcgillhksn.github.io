@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#111720">
-    <meta name="description" content="Discover the HKSN discount card and browse our 2025–26 restaurant, drink, and dessert partner directory. Message us for current availability.">
-    <title>Discount card — HKSN</title>
+    <meta name="description" content="Discover the 2026–27 HKSN member card and offers from 20 restaurant, café, shop, and service partners around Montréal. Message us for current availability.">
+    <title>Member card — HKSN</title>
     <link rel="icon" type="image/png" href="../assets/logo/logo.png">
     <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="stylesheet" href="../styles/buttons.css">
-    <link rel="stylesheet" href="../styles/links.css">
-    <link rel="stylesheet" href="../styles/store.css">
+    <link rel="stylesheet" href="../styles/global.css?v=logo-accent-1">
+    <link rel="stylesheet" href="../styles/navbar.css?v=focus-style-1">
+    <link rel="stylesheet" href="../styles/buttons.css?v=logo-accent-1">
+    <link rel="stylesheet" href="../styles/links.css?v=logo-accent-1">
+    <link rel="stylesheet" href="../styles/modals.css?v=focus-style-1">
+    <link rel="stylesheet" href="../styles/store.css?v=sponsor-map-1">
     <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body id="top">
@@ -23,14 +24,14 @@
         <section class="section card-hero" aria-labelledby="card-title">
             <div class="site-container split-layout">
                 <div class="section-copy">
-                    <h1 id="card-title">Discount card</h1>
-                    <p class="body-large">Discounts at 30+ participating restaurant, drink, and dessert locations around Montréal.</p>
-                    <div class="card-purchase-row"><div class="card-price">$5 <span>CAD / card</span></div><span class="card-edition">2025–26 edition</span></div>
-                    <a href="https://www.instagram.com/hksnmcgill/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ask about a card <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+                    <h1 id="card-title">Member card</h1>
+                    <p class="body-large">Discounts at 20 participating restaurants, cafés, shops, and services around Montréal.</p>
+                    <div class="card-purchase-row"><div class="card-price">$5 <span>CAD / card</span></div><span class="card-edition">2026–27 edition</span></div>
+                    <a href="https://www.instagram.com/hksnmcgill/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ask about a card</a>
                     <p class="card-availability">DM us on Instagram to check current availability and arrange collection at an HKSN event.</p>
                 </div>
                 <figure class="product-showcase">
-                    <img src="../assets/membershipCard/front.jpg" alt="The 2025–26 joint discount card, featuring the HKSN and partner student-association logos" width="2000" height="1271" fetchpriority="high">
+                    <img src="../assets/membershipCard/2026-2027/front.png" alt="The 2026–27 joint member card, illustrated with rabbits, a crescent moon, and lanterns" width="1200" height="802" fetchpriority="high">
                     <figcaption>HKSN · MCSS · JSA · MTSA · MASSA · KSA</figcaption>
                 </figure>
             </div>
@@ -38,29 +39,51 @@
         <section class="section section-tinted" aria-labelledby="partners-title">
             <div class="site-container">
                 <div class="section-heading">
-                    <div><p class="eyebrow">2025–26</p><h2 id="partners-title">Partner discounts</h2></div>
-                    <p class="partner-disclaimer">These offers are from the 2025–26 card. Please confirm current participation, availability, and terms before visiting.</p>
+                    <div><p class="eyebrow">2026–27</p><h2 id="partners-title">Partner discounts</h2></div>
                 </div>
                 <div class="partner-toolbar">
                     <div class="partner-filters" role="group" aria-label="Filter partners">
                         <button type="button" class="filter-button" data-partner-filter="all" aria-pressed="true" aria-controls="partner-directory">All partners</button>
                         <button type="button" class="filter-button" data-partner-filter="restaurants" aria-pressed="false" aria-controls="partner-directory">Restaurants</button>
                         <button type="button" class="filter-button" data-partner-filter="drinks" aria-pressed="false" aria-controls="partner-directory">Drinks & desserts</button>
+                        <button type="button" class="filter-button" data-partner-filter="others" aria-pressed="false" aria-controls="partner-directory">Shops & services</button>
                     </div>
                     <p id="partner-count" class="small-label" role="status" aria-live="polite"></p>
                 </div>
                 <div id="partner-directory" class="partner-directory" aria-busy="true"><p class="content-status">Loading partners…</p></div>
                 <div id="partner-empty" class="partner-empty" hidden><p>No partners listed for this category.</p></div>
-                <a href="../assets/membershipCard/sponsorlist.png" class="text-link original-offers" target="_blank" rel="noopener noreferrer">View the original 2025–26 offer sheet <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
-                <noscript><p class="noscript-notice">Enable JavaScript to browse the directory, or <a href="../assets/membershipCard/sponsorlist.png">view the original offer sheet</a>.</p></noscript>
+                <div class="partner-resources">
+                    <a href="../assets/membershipCard/2026-2027/sponsorlist.png" class="text-link" target="_blank" rel="noopener noreferrer">View the 2026–27 offer sheet <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+                </div>
+                <noscript><p class="noscript-notice">Enable JavaScript to browse the directory, or <a href="../assets/membershipCard/2026-2027/sponsorlist.png">view the 2026–27 offer sheet</a>.</p></noscript>
+                <figure class="partner-map">
+                    <a href="https://maps.app.goo.gl/y5CinkP9z7w5ew3d8" class="partner-map-preview" target="_blank" rel="noopener noreferrer" aria-label="Open the 2026–27 sponsor map in Google Maps (opens in a new tab)">
+                        <img src="../assets/membershipCard/2026-2027/sponsorship-map.webp" alt="The 2026–27 sponsorship map showing partner locations across Montréal" width="1920" height="1080" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption><a href="https://maps.app.goo.gl/y5CinkP9z7w5ew3d8" class="text-link" target="_blank" rel="noopener noreferrer" aria-label="Open sponsor map in Google Maps (opens in a new tab)">Open sponsor map in Google Maps <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></figcaption>
+                </figure>
             </div>
         </section>
     </main>
+    <div class="modal fade partner-spotlight" id="partner-modal" tabindex="-1" aria-labelledby="partner-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="partner-modal-title">Sponsor spotlight</h2>
+                    <button type="button" class="icon-button modal-close" data-bs-dismiss="modal" aria-label="Close sponsor spotlight"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+                </div>
+                <div class="modal-body" tabindex="0" role="region" aria-label="Sponsor spotlight">
+                    <img id="partner-spotlight-image" class="partner-spotlight-image" alt="" width="1080" height="1350" decoding="async">
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="include-footer"></div>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../js/config.js"></script>
     <script defer src="../js/content.js"></script>
+    <script defer src="../js/modalLinks.js?v=modal-links-2"></script>
     <script defer src="../js/loaderComponents.js"></script>
-    <script defer src="../js/loaderSponsors.js"></script>
+    <script defer src="../js/loaderSponsors.js?v=partner-spotlight-1"></script>
 </body>
 </html>

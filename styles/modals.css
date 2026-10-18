@@ -7,7 +7,6 @@
 .modal-title { font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.04em; }
 .modal-close { flex: 0 0 44px; }
 .modal-body { padding: 32px; overscroll-behavior-y: contain; }
-.modal-body:focus-visible { outline: 2px solid var(--accent-color); outline-offset: -3px; }
 .event-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 20px; }
 .event-gallery img { width: 100%; height: auto; border-radius: var(--radius); background: var(--surface-color); }
 

@@ -120,7 +120,7 @@
 
     if (memberModal && memberHistory && memberHistoryStatus && memberHistoryRetry) {
         memberModal.addEventListener("show.bs.modal", event => {
-            selectedMember = event.relatedTarget.dataset.memberName;
+            selectedMember = event.relatedTarget?.dataset.memberName || selectedMember;
             document.getElementById("member-modal-title").textContent = selectedMember;
             memberModal.querySelector(".modal-body").setAttribute("aria-label", `${selectedMember} — photos by team year`);
             memberModal.querySelector(".modal-body").scrollTop = 0;
@@ -133,6 +133,27 @@
             memberHistory.setAttribute("aria-busy", "false");
         });
         memberHistoryRetry.addEventListener("click", () => loadMemberHistory(selectedMember));
+        siteModalLinks.register(async id => {
+            const trigger = [...container.querySelectorAll(".member-trigger")]
+                .find(link => siteModalLinks.slug(link.dataset.memberName) === id);
+            let name = trigger?.dataset.memberName;
+            if (!name) {
+                const results = await Promise.allSettled(years.map(getMembers));
+                const members = results.filter(result => result.status === "fulfilled").flatMap(result => result.value);
+                name = members.find(member => siteModalLinks.slug(member.name) === id)?.name;
+                if (!name && results.some(result => result.status === "rejected")) {
+                    throw new Error("Some team years could not be loaded to resolve the member link.");
+                }
+            }
+            if (!name) return null;
+            return {
+                modal: memberModal,
+                title: name,
+                prepare() { selectedMember = name; },
+                focusTarget: () => [...container.querySelectorAll(".member-trigger")]
+                    .find(link => link.dataset.memberName === name) || selector
+            };
+        });
     }
 
     groupPhoto.addEventListener("load", () => {
@@ -177,11 +198,10 @@
                 });
                 const name = document.createElement("h3");
                 name.className = "member-name";
-                const trigger = document.createElement("button");
-                trigger.type = "button";
+                const trigger = document.createElement("a");
+                trigger.href = siteModalLinks.href(siteModalLinks.slug(member.name));
                 trigger.className = "member-trigger";
-                trigger.dataset.bsToggle = "modal";
-                trigger.dataset.bsTarget = "#member-modal";
+                trigger.dataset.modalLink = "";
                 trigger.dataset.memberName = member.name;
                 trigger.setAttribute("aria-haspopup", "dialog");
                 trigger.setAttribute("aria-controls", "member-modal");

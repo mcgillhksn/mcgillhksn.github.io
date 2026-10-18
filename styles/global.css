@@ -14,9 +14,10 @@
     --text-color: #f1f2ee;
     --secondary-text-color: #a5afbc;
     --muted-text-color: #8995a6;
+    /* Use the exact blue from the navbar's logoText.png for every accent. */
     --primary-color: #009adb;
-    --accent-color: #65cef5;
-    --primary-hover-color: #29b4ec;
+    --accent-color: var(--primary-color);
+    --primary-hover-color: var(--primary-color);
     --primary-text-color: #07151f;
     --border-color: #ffffff1c;
     --border-strong-color: #ffffff35;
@@ -26,6 +27,13 @@
     --bs-body-font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --bs-body-bg: var(--main-bg-color);
     --bs-body-color: var(--text-color);
+    --bs-primary: var(--primary-color);
+    --bs-primary-rgb: 0, 154, 219;
+    --bs-primary-text-emphasis: var(--primary-color);
+    --bs-link-color: var(--primary-color);
+    --bs-link-color-rgb: var(--bs-primary-rgb);
+    --bs-link-hover-color: var(--primary-color);
+    --bs-link-hover-color-rgb: var(--bs-primary-rgb);
     --bs-border-color: var(--border-color);
     --bs-border-radius: var(--radius);
     --bs-border-radius-lg: 6px;
@@ -66,10 +74,12 @@ a {
 
 a:hover { color: var(--accent-color); }
 
-:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 5px;
+:focus-visible, .btn:focus-visible, .nav-link:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
+
+a:focus-visible, button:focus-visible { color: var(--accent-color); }
 
 button, input, select { font: inherit; }
 button, a, input, select { -webkit-tap-highlight-color: transparent; }

@@ -1,16 +1,19 @@
 [
   {
+    "title": "Semi Formal",
     "image": "./assets/events/semiFormal/1.jpg",
     "alt": "Semi Formal"
   },
   {
+    "title": "Lunar New Year",
     "image": "./assets/events/lny/2.jpg",
-    "alt": "Lunar New Year, together",
+    "alt": "Lunar New Year event poster",
     "poster": true
   },
   {
+    "title": "Welcome Party",
     "image": "./assets/events/welcomeParty/1.jpg",
-    "alt": "The first hello at our Welcome Party",
+    "alt": "Welcome Party event poster",
     "poster": true
   }
 ]

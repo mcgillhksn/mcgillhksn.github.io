@@ -32,7 +32,7 @@
 
 .year-selector .arrow-icon { width: 14px; height: 14px; }
 
-.team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px 24px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px; }
 .member { position: relative; min-width: 0; }
 .member-portrait { position: relative; aspect-ratio: 1; overflow: hidden; margin-bottom: 16px; border-radius: var(--radius); background: var(--surface-color); }
 .member-portrait img { width: 100%; height: 100%; object-fit: cover; }
@@ -42,8 +42,6 @@
 .member-role { color: var(--secondary-text-color); font-size: 0.75rem; line-height: 1.5; }
 .member-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; transition: color 150ms ease; }
 .member-trigger::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
-.member-trigger:focus-visible { outline: none; }
-.member-trigger:focus-visible::after { outline: 2px solid var(--accent-color); outline-offset: 6px; }
 .member:hover .member-trigger, .member-trigger:focus-visible { color: var(--accent-color); }
 
 .member-history-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 28px 24px; }
@@ -55,7 +53,6 @@
 
 @media (max-width: 991.98px) {
     .about-intro .split-layout { gap: 36px; }
-    .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 767.98px) {

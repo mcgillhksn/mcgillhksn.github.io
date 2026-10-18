@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#111720">
-    <meta name="description" content="Hong Kong Student Network at McGill University. A home away from home since 2006, with Hong Kong cultural events and a student discount card.">
+    <meta name="description" content="Hong Kong Student Network at McGill University. A home away from home since 2006, with Hong Kong cultural events and a student member card.">
     <title>HKSN — Hong Kong Student Network</title>
     <link rel="icon" type="image/png" href="./assets/logo/logo.png">
     <link rel="sitemap" type="application/xml" href="./assets/data/sitemap.xml">
     <link rel="preload" href="./assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/navbar.css">
-    <link rel="stylesheet" href="./styles/buttons.css">
-    <link rel="stylesheet" href="./styles/links.css">
+    <link rel="stylesheet" href="./styles/global.css?v=logo-accent-1">
+    <link rel="stylesheet" href="./styles/navbar.css?v=focus-style-1">
+    <link rel="stylesheet" href="./styles/buttons.css?v=logo-accent-1">
+    <link rel="stylesheet" href="./styles/links.css?v=logo-accent-1">
     <link rel="stylesheet" href="./styles/home.css">
-    <link rel="stylesheet" href="./styles/events.css?v=event-cards-4">
-    <link rel="stylesheet" href="./styles/modals.css">
+    <link rel="stylesheet" href="./styles/events.css?v=events-layout-10">
+    <link rel="stylesheet" href="./styles/modals.css?v=focus-style-1">
     <link rel="stylesheet" href="./styles/footer.css">
 </head>
 <body id="top" class="home-page">
@@ -50,9 +50,12 @@
                 <div class="split-layout">
                     <div class="section-copy">
                         <h2 id="community-title">Hong Kong Student Network</h2>
-                        <p class="body-large">We bring Hong Kong culture to McGill through student events, food, and community gatherings.</p>
-                        <p class="muted">From char siu packages to Cantonese mini-classes, dim sum outings to mahjong nights—there’s always a reason to get together.</p>
-                        <a href="./about/" class="text-link">Meet HKSN <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+                        <p class="body-large">Since 2006, we have brought Hong Kong culture to McGill through student events, food, and community gatherings.</p>
+                        <p class="muted">From char siu packages to Cantonese mini-classes, dim sum outings to semi formals, we're a home away from home!</p>
+                        <div class="d-flex flex-wrap align-items-center column-gap-4">
+                            <a href="./events/" class="btn btn-primary">See our events</a>
+                            <a href="./about/" class="text-link">Meet HKSN <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+                        </div>
                     </div>
                     <div class="community-gallery">
                         <div id="eventCarousel" class="carousel slide" aria-label="Life with HKSN" aria-roledescription="carousel">
@@ -64,8 +67,8 @@
                             <div><span class="eyebrow">Event photos</span><p id="carousel-caption" aria-live="polite">Semi Formal</p></div>
                             <div class="gallery-controls" id="carousel-controls" hidden>
                                 <span id="carousel-count" class="small-label" aria-hidden="true">01 / 04</span>
-                                <button class="icon-button" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev" aria-label="Previous community photo"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button>
-                                <button class="icon-button" type="button" data-bs-target="#eventCarousel" data-bs-slide="next" aria-label="Next community photo"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+                                <button class="icon-button" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev" aria-label="Previous community photo"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+                                <button class="icon-button" type="button" data-bs-target="#eventCarousel" data-bs-slide="next" aria-label="Next community photo"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
                             </div>
                         </div>
                     </div>
@@ -77,7 +80,6 @@
             <div class="site-container">
                 <div class="section-heading">
                     <h2 id="memories-title">Past events</h2>
-                    <a href="./events/" class="text-link">Explore the archive <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
                 </div>
                 <div class="events-grid" data-event-grid data-featured="true" aria-busy="true"><p class="content-status" role="status">Loading events…</p></div>
                 <noscript><p class="noscript-notice">Our photo recaps need JavaScript. Find event photos on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
@@ -87,15 +89,14 @@
         <section class="section home-card-section" aria-labelledby="card-title">
             <div class="site-container split-layout">
                 <div class="home-card-art">
-                    <img src="./assets/membershipCard/front.jpg" alt="The colourful 2025–26 joint student-association discount card" width="2000" height="1271" loading="lazy">
-                    <span class="small-label">2025–26 edition shown</span>
+                    <img src="./assets/membershipCard/2026-2027/front.png" alt="The 2026–27 joint member card, illustrated with rabbits, a crescent moon, and lanterns" width="1200" height="802" loading="lazy">
+                    <span class="small-label">2026–27 edition</span>
                 </div>
                 <div class="section-copy">
-                    <h2 id="card-title">Discount card</h2>
-                    <p class="body-large">Save at participating restaurants, drink shops, and dessert spots across Montréal with the student discount card.</p>
-                    <div class="card-benefits"><div><strong>$5</strong><span>per card</span></div><div><strong>30+</strong><span>partner locations</span></div><div><strong>10–20%</strong><span>discounts & offers</span></div></div>
+                    <h2 id="card-title">Member card</h2>
+                    <p class="body-large">Save at participating restaurants, cafés, shops, and more across Montréal with the student member card.</p>
+                    <div class="card-benefits"><div><strong>$5</strong><span>per card</span></div><div><strong>20</strong><span>partners</span></div><div><strong>5–20%</strong><span>discounts & offers</span></div></div>
                     <a href="./store/" class="text-link">Discover the card <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
-                    <p class="availability-note">Check with us for current availability and offers.</p>
                 </div>
             </div>
         </section>
@@ -106,11 +107,12 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="./js/config.js"></script>
     <script defer src="./js/content.js"></script>
+    <script defer src="./js/modalLinks.js?v=modal-links-2"></script>
     <script defer src="./js/loaderComponents.js"></script>
     <script defer src="./js/imagePreloader.js"></script>
     <script defer src="./js/parallax.js"></script>
-    <script defer src="./js/loaderCarousel.js"></script>
-    <script defer src="./js/loaderEventModals.js?v=gallery-2"></script>
-    <script defer src="./js/loaderEvents.js?v=event-cards-3"></script>
+    <script defer src="./js/loaderCarousel.js?v=autoplay-2"></script>
+    <script defer src="./js/loaderEventModals.js?v=gallery-3"></script>
+    <script defer src="./js/loaderEvents.js?v=link-arrows-1"></script>
 </body>
 </html>

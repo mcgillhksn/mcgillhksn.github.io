@@ -29,6 +29,18 @@
                     </div>
                 </div>`;
         }).join("");
+        siteModalLinks.register(id => {
+            const event = events.find(event => siteModalLinks.slug(event.id) === id);
+            if (!event) return null;
+            const modal = document.getElementById(`event-${event.id}-modal`);
+            return {
+                modal,
+                title: event.title,
+                prepare() { modal.querySelector(".modal-body").scrollTop = 0; },
+                focusTarget: () => [...document.querySelectorAll(".event-card-trigger")]
+                    .find(link => link.hash.slice(1) === id)
+            };
+        });
     } catch (error) {
         console.error("Could not load event galleries", error);
     }

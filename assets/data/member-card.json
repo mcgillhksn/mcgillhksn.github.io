@@ -1,0 +1,30 @@
+{
+    "academicYear": "2026-2027",
+    "categories": [
+        { "id": "restaurants", "label": "Restaurants" },
+        { "id": "drinks", "label": "Drinks & desserts" },
+        { "id": "others", "label": "Shops & services" }
+    ],
+    "partners": [
+        { "name": "Tsujiri", "category": "drinks", "offer": "10%", "spotlight": "2026-2027/spotlights/tsujiri.webp" },
+        { "name": "Yen Cuisine Japonaise", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/yen-cuisine-japonaise.webp" },
+        { "name": "San-O Brasserie", "category": "restaurants", "offer": "10%", "terms": "Excluding alcohol", "spotlight": "2026-2027/spotlights/san-o-brasserie.webp" },
+        { "name": "Charyū tea house", "category": "drinks", "offer": "10%", "spotlight": "2026-2027/spotlights/charyu-tea-house.webp" },
+        { "name": "Thés Guru store", "category": "drinks", "offer": "10%", "spotlight": "2026-2027/spotlights/thes-guru.webp" },
+        { "name": "Mai Thai Cuisine", "category": "restaurants", "offer": "12%", "spotlight": "2026-2027/spotlights/mai-thai-cuisine.webp" },
+        { "name": "Restaurant Pinophyta", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/restaurant-pinophyta.webp" },
+        { "name": "Onigiri Shop Concordia", "category": "restaurants", "offer": "15%", "spotlight": "2026-2027/spotlights/onigiri-shop-concordia.webp" },
+        { "name": "Le Restaurant Dumpling Shop", "category": "restaurants", "offer": "15%", "spotlight": "2026-2027/spotlights/le-restaurant-dumpling-shop.webp" },
+        { "name": "Oh Dumplings Express Concordia", "category": "restaurants", "offer": "15% + drink", "terms": "Free canned drink · Minimum $20 spend", "spotlight": "2026-2027/spotlights/oh-dumplings-express-concordia.webp" },
+        { "name": "New Oriental", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/new-oriental.webp" },
+        { "name": "Nouilles Zhonghua", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/nouilles-zhonghua.webp" },
+        { "name": "Dondonya", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/dondonya.webp" },
+        { "name": "Cuisine Formosa", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/cuisine-formosa.webp" },
+        { "name": "#Tea Shop", "category": "drinks", "offer": "10–20%", "terms": "10% with card payment · 20% with cash", "spotlight": "2026-2027/spotlights/tea-shop.webp" },
+        { "name": "Majesthé", "category": "restaurants", "offer": "10%", "spotlight": "2026-2027/spotlights/majesthe.webp" },
+        { "name": "Café Noya", "category": "restaurants", "offer": "15%", "spotlight": "2026-2027/spotlights/cafe-noya.webp" },
+        { "name": "Accio Cup", "category": "drinks", "offer": "10%", "spotlight": "2026-2027/spotlights/accio-cup.webp" },
+        { "name": "Salon Rium", "category": "others", "offer": "5–10%", "terms": "5% off haircuts · 10% off other services", "spotlight": "2026-2027/spotlights/salon-rium.webp" },
+        { "name": "Marché Newon Downtown", "category": "others", "offer": "10%", "terms": "Excludes milk, yogurt, eggs, bread, rice, discounted items, and weekly specials", "spotlight": "2026-2027/spotlights/marche-newon-downtown.webp" }
+    ]
+}

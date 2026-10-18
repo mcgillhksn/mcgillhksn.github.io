@@ -61,7 +61,6 @@
 }
 
 .navbar-toggler:focus { box-shadow: none; }
-.navbar-toggler:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; }
 .menu-icon { position: relative; width: 20px; height: 12px; border-block: 1px solid currentColor; }
 .menu-icon::before, .menu-icon::after { content: ""; position: absolute; inset: 5px 0 auto; border-top: 1px solid currentColor; transition: transform 150ms ease; }
 .menu-icon::before { opacity: 0; }

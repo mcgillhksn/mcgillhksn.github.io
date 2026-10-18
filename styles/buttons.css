@@ -23,8 +23,10 @@
     --bs-btn-active-bg: var(--accent-color);
     --bs-btn-active-border-color: var(--accent-color);
     --bs-btn-active-color: var(--primary-text-color);
-    --bs-btn-focus-shadow-rgb: 101, 206, 245;
+    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
 }
+
+.btn-primary:is(:hover, :focus-visible) { text-decoration: underline; text-underline-offset: 4px; }
 
 .btn-outline { color: var(--text-color); background: transparent; border: 1px solid var(--border-strong-color); }
 .btn-outline:hover, .btn-outline:active { color: var(--accent-color); background: var(--surface-hover-color); border-color: var(--accent-color); }

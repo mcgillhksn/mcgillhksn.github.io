@@ -13,5 +13,5 @@
 }
 
 .text-link:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
-.inline-link { color: var(--accent-color); text-decoration: underline; text-decoration-color: #65cef550; }
+.inline-link { color: var(--accent-color); text-decoration: underline; text-decoration-color: currentColor; }
 .inline-link:hover { color: var(--text-color); text-decoration-color: currentColor; }

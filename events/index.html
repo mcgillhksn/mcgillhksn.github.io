@@ -8,32 +8,35 @@
     <title>Events — HKSN</title>
     <link rel="icon" type="image/png" href="../assets/logo/logo.png">
     <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/permanent-marker-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="stylesheet" href="../styles/buttons.css">
-    <link rel="stylesheet" href="../styles/links.css">
-    <link rel="stylesheet" href="../styles/events.css?v=event-cards-4">
-    <link rel="stylesheet" href="../styles/modals.css">
+    <link rel="stylesheet" href="../styles/global.css?v=logo-accent-1">
+    <link rel="stylesheet" href="../styles/navbar.css?v=focus-style-1">
+    <link rel="stylesheet" href="../styles/buttons.css?v=logo-accent-1">
+    <link rel="stylesheet" href="../styles/links.css?v=logo-accent-1">
+    <link rel="stylesheet" href="../styles/events.css?v=events-layout-10">
+    <link rel="stylesheet" href="../styles/eventPolaroids.css?v=polaroids-6">
+    <link rel="stylesheet" href="../styles/modals.css?v=focus-style-1">
     <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div id="include-navbar"></div>
     <main id="main-content" class="page-main">
-        <header class="page-header site-container events-header">
-            <div>
+        <header class="section site-container events-header">
+            <div class="section-copy">
                 <h1>Events</h1>
                 <p class="body-large">Browse past HKSN events and photo galleries, including our welcome parties, cultural celebrations, and semi-formal.</p>
             </div>
-            <aside class="next-event-note" aria-label="Upcoming event announcements">
-                <p class="eyebrow">Upcoming events</p>
-                <p>Follow HKSN on Instagram for event dates and announcements.</p>
-                <a href="https://www.instagram.com/hksnmcgill/" class="text-link" target="_blank" rel="noopener noreferrer">Instagram <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+            <aside class="next-event-note" aria-labelledby="upcoming-events-title">
+                <a href="https://www.instagram.com/hksnmcgill/" class="next-event-link" target="_blank" rel="noopener noreferrer">
+                    <h2 id="upcoming-events-title">Upcoming events</h2>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>
+                    <p>Follow HKSN on Instagram for event dates and announcements.</p>
+                </a>
             </aside>
         </header>
-        <section class="archive-section site-container" aria-labelledby="archive-title">
-            <div class="archive-heading"><h2 id="archive-title">Past events</h2><span class="small-label" data-events-year>2024–25</span></div>
+        <section class="archive-section site-container" aria-label="Event photo archive">
             <div class="archive-toolbar">
                 <div class="event-filters" role="group" aria-label="Filter past events">
                     <button type="button" class="filter-button" data-event-filter="all" aria-pressed="true" aria-controls="events-grid">All events</button>
@@ -41,9 +44,11 @@
                     <button type="button" class="filter-button" data-event-filter="Culture" aria-pressed="false" aria-controls="events-grid">Culture</button>
                     <button type="button" class="filter-button" data-event-filter="Nights out" aria-pressed="false" aria-controls="events-grid">Nights out</button>
                 </div>
-                <p id="events-count" class="small-label" role="status" aria-live="polite"></p>
+                <span class="small-label" data-events-year>2024–25</span>
             </div>
-            <div id="events-grid" class="events-grid" data-event-grid aria-busy="true"><p class="content-status" role="status">Loading the event archive…</p></div>
+            <p id="polaroid-instructions" class="visually-hidden">Press Enter to open photos. Use the arrow keys to move a Polaroid, or hold Shift to move it farther.</p>
+            <p id="polaroid-status" class="visually-hidden" role="status" aria-live="polite"></p>
+            <div id="events-grid" class="events-grid polaroid-board" data-event-grid data-polaroid-board aria-busy="true"><p class="content-status" role="status">Loading the event archive…</p></div>
             <noscript><p class="noscript-notice">Enable JavaScript to browse the photo archive, or find our event recaps on <a href="https://www.instagram.com/hksnmcgill/">Instagram</a>.</p></noscript>
         </section>
     </main>
@@ -52,8 +57,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="../js/config.js"></script>
     <script defer src="../js/content.js"></script>
+    <script defer src="../js/modalLinks.js?v=modal-links-2"></script>
     <script defer src="../js/loaderComponents.js"></script>
-    <script defer src="../js/loaderEventModals.js?v=gallery-2"></script>
-    <script defer src="../js/loaderEvents.js?v=event-cards-3"></script>
+    <script defer src="../js/loaderEventModals.js?v=gallery-3"></script>
+    <script defer src="../js/eventPolaroids.js?v=polaroids-2"></script>
+    <script defer src="../js/loaderEvents.js?v=link-arrows-1"></script>
 </body>
 </html>

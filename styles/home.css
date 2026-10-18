@@ -28,6 +28,25 @@
 .hero-base { z-index: 0; }
 .images { position: absolute; inset: 0; opacity: 0; }
 .hero.parallax-ready .images { opacity: 1; transition: opacity 240ms ease; }
+
+/* Keep the existing depth ratios and overlap geometry, but let the compositor
+   follow touch scrolling instead of waiting for JavaScript on each frame. */
+.hero.parallax-ready.parallax-active .parallax-layer { will-change: transform; }
+.hero.parallax-ready.parallax-active.parallax-native .parallax-layer {
+    animation: skyline-depth 1ms linear both;
+    animation-timeline: scroll(root block);
+    animation-range: var(--parallax-start) var(--parallax-end);
+}
+
+@keyframes skyline-depth {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(0, var(--parallax-offset), 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero .parallax-layer { animation: none !important; transform: none !important; will-change: auto !important; }
+}
+
 .img1 { z-index: 8; }
 .img2 { z-index: 7; }
 .img3 { z-index: 6; }

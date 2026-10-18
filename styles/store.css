@@ -24,9 +24,6 @@
 .partner-offer { flex: 0 0 auto; max-width: 45%; color: var(--accent-color); font-size: 0.95rem; font-weight: 600; text-align: right; line-height: 1.5; }
 .partner-empty { padding: 64px 24px; border: 1px solid var(--border-color); text-align: center; }
 .partner-empty p { margin-top: 12px; color: var(--secondary-text-color); font-size: 0.875rem; }
-.partner-resources { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-top: 32px; }
-.partner-resources .text-link { color: var(--secondary-text-color); font-size: 0.7rem; }
-.partner-resources .text-link:hover, .partner-resources .text-link:focus-visible { color: var(--accent-color); }
 .partner-map { margin-top: 48px; }
 .partner-map-preview { display: block; overflow: hidden; border-radius: var(--radius); transition: opacity 150ms ease; }
 .partner-map-preview:hover, .partner-map-preview:focus-visible { opacity: 0.9; }

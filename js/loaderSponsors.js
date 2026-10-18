@@ -51,7 +51,7 @@
     } catch (error) {
         console.error("Could not load partner directory", error);
         if (!directory.querySelector(".partner-category")) {
-            directory.innerHTML = '<p class="content-status">The directory couldn’t load just now. The original offer sheet is available below.</p>';
+            directory.innerHTML = '<p class="content-status">The directory couldn’t load just now. Please refresh and try again.</p>';
             count.textContent = "Directory unavailable";
         }
     } finally {

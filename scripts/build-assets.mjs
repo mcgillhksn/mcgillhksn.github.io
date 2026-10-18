@@ -17,7 +17,7 @@ const jobs = new Map();
 const add = (file, widths, lossless = false) => jobs.set(file, { widths, lossless });
 const config = await read("js/config.js");
 const context = vm.createContext({ URL, console });
-vm.runInContext(config.replace('document.currentScript.src', '"https://build.invalid/js/config.js"'), context);
+vm.runInContext(config.replaceAll('document.currentScript.src', '"https://build.invalid/js/config.js"'), context);
 const years = vm.runInContext("siteConfig.allYears", context);
 const homeYear = vm.runInContext("siteConfig.homePageContentYear", context);
 const eventsYear = vm.runInContext("siteConfig.eventsContentYear", context);
@@ -162,7 +162,7 @@ const srcset = list => list.map(([width, file]) => `./${file} ${width}w`).join("
 for (const [file, page] of [["index.html", "home"], ["about/index.html", "about"], ["events/index.html", "events"], ["store/index.html", "store"]]) {
     const prefix = page === "home" ? "./" : "../";
     let html = await read(file);
-    const styles = `<style>html,body{background:#111720;color-scheme:dark}</style>\n    <link rel="stylesheet" href="${prefix}styles/site.min.css?v=performance-1">\n    <link rel="stylesheet" href="${prefix}styles/${page}.min.css?v=performance-1">`;
+    const styles = `<style>html,body{background:#111720;color-scheme:dark}</style>\n    <link rel="stylesheet" href="${prefix}styles/min/site.min.css?v=performance-1">\n    <link rel="stylesheet" href="${prefix}styles/min/${page}.min.css?v=performance-1">`;
     // Replace only stylesheet elements; metadata and font preloads stay editable.
     html = html.replace(/\s*<style>html,body\{background:#111720;color-scheme:dark\}<\/style>/, "");
     let first = true;
@@ -230,7 +230,7 @@ for (const [file, page] of [["index.html", "home"], ["about/index.html", "about"
         html = html.replace(/(<p id="partner-count"[^>]*>)[\s\S]*?<\/p>/, `$1${card.partners.length} partners</p>`);
     }
     html = html.replace(/\s*<script defer[^>]*><\/script>/g, "");
-    html = html.replace("</body>", `    <script defer src="${prefix}js/site.min.js?v=performance-1"></script>\n    <script defer src="${prefix}js/${page}.min.js?v=performance-1"></script>\n</body>`);
+    html = html.replace("</body>", `    <script defer src="${prefix}js/min/site.min.js?v=performance-1"></script>\n    <script defer src="${prefix}js/min/${page}.min.js?v=performance-1"></script>\n</body>`);
     html = html.replaceAll("https://build.invalid/", prefix).replace(/\n[ \t]*\n(?:[ \t]*\n)+/g, "\n\n");
     await writeFile(file, html);
 }
@@ -313,24 +313,28 @@ for (const mobile of [false, true]) {
 }
 heroCSS += '.parallax-layer.original-scene{--trim-width:1;--trim-height:1;--trim-left:0;--trim-top:0}.parallax-layer.original-scene img{--scene-width:max(100cqw,149.8913830557567cqh);--scene-height:max(100cqh,66.71497584541063cqw)}';
 heroCSS += '.hero.legacy-scene .parallax-layer img{position:static;max-width:100%;width:100%;height:100%;object-fit:cover}';
-await writeFile("styles/site.min.css", copyright + (await esbuild.transform(prunedBootstrap.css + (await Promise.all(sharedCSS.map(name => read(`styles/${name}.css`)))).join("\n"), { loader: "css", minify: true, target: ["safari16", "chrome109"] })).code);
+await mkdir("styles/min", { recursive: true });
+await mkdir("js/min", { recursive: true });
+// Sources stay in styles/; relative font/image URLs need one more level in min/.
+const minifyCSS = async css => (await esbuild.transform(css.replace(/url\((["']?)(\.\.?\/[^"'()]+)\1\)/g, (_, quote, url) => `url(${quote}../${url}${quote})`), { loader: "css", minify: true, target: ["safari16", "chrome109"] })).code;
+await writeFile("styles/min/site.min.css", copyright + await minifyCSS(prunedBootstrap.css + (await Promise.all(sharedCSS.map(name => read(`styles/${name}.css`)))).join("\n")));
 for (const [page, files] of Object.entries({ home: ["home", "events"], about: ["about"], events: ["events", "eventPolaroids"], store: ["store"] })) {
-    await writeFile(`styles/${page}.min.css`, (await esbuild.transform((await Promise.all(files.map(name => read(`styles/${name}.css`)))).join("\n") + (page === "events" ? snapshotCSS : page === "home" ? heroCSS : ""), { loader: "css", minify: true, target: ["safari16", "chrome109"] })).code);
+    await writeFile(`styles/min/${page}.min.css`, await minifyCSS((await Promise.all(files.map(name => read(`styles/${name}.css`)))).join("\n") + (page === "events" ? snapshotCSS : page === "home" ? heroCSS : "")));
 }
 const vendor = await esbuild.build({ stdin: { contents: `export { default as Collapse } from "bootstrap/js/src/collapse.js"; export { default as Dropdown } from "bootstrap/js/src/dropdown.js"; export { default as Modal } from "bootstrap/js/src/modal.js"; export { default as Carousel } from "bootstrap/js/src/carousel.js";`, resolveDir: root }, bundle: true, format: "iife", globalName: "bootstrap", write: false, minify: true, target: ["safari16", "chrome109"] });
 const sharedJS = ["config", "content", "images", "templates", "modalLinks", "loaderComponents"];
 const minifyJS = async files => (await esbuild.transform((await Promise.all(files.map(name => read(`js/${name}.js`)))).join("\n"), { minify: true, target: ["safari16", "chrome109"] })).code;
-await writeFile("js/site.min.js", vendor.outputFiles[0].text + "\nconst siteImageSources = {};\n" + await minifyJS(sharedJS));
-for (const [page, files] of Object.entries({ home: ["imagePreloader", "parallax", "loaderCarousel", "loaderEventModals", "loaderEvents"], about: ["loaderMembers"], events: ["loaderEventModals", "eventPolaroids", "loaderEvents"], store: ["loaderSponsors"] })) {
+await writeFile("js/min/site.min.js", vendor.outputFiles[0].text + "\nconst siteImageSources = {};\n" + await minifyJS(sharedJS));
+for (const [page, files] of Object.entries({ home: ["imagePreloader", "parallax", "heroScroll", "loaderCarousel", "loaderEventModals", "loaderEvents"], about: ["loaderMembers"], events: ["loaderEventModals", "eventPolaroids", "loaderEvents"], store: ["loaderSponsors"] })) {
     const pageSources = Object.fromEntries(Object.entries(compactSources).filter(([file]) => file.startsWith("assets/logo/")
         || (page === "about" && file.startsWith("assets/members/"))
         || (["home", "events"].includes(page) && file.startsWith("assets/events/"))
         || (["home", "store"].includes(page) && file.startsWith("assets/membershipCard/"))));
-    await writeFile(`js/${page}.min.js`, `Object.assign(siteImageSources,${JSON.stringify(pageSources)});\n` + await minifyJS(files));
+    await writeFile(`js/min/${page}.min.js`, `Object.assign(siteImageSources,${JSON.stringify(pageSources)});\n` + await minifyJS(files));
 }
 for (const file of ["index.html", "about/index.html", "events/index.html", "store/index.html"]) {
     let html = await read(file);
-    for (const match of [...html.matchAll(/(?:styles|js)\/[a-z]+\.min\.(?:css|js)\?v=[^"]+/g)]) {
+    for (const match of [...html.matchAll(/(?:styles|js)\/min\/[a-z]+\.min\.(?:css|js)\?v=[^"]+/g)]) {
         const asset = match[0].split("?")[0];
         const hash = createHash("sha256").update(await readFile(asset)).digest("hex").slice(0, 12);
         html = html.replace(match[0], `${asset}?v=${hash}`);

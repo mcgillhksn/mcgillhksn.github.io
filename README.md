@@ -134,7 +134,7 @@ Open `assets/data/[year]/carousel.json`. List the pictures in the order you want
 1. Open `store/index.html` and the member-card section of `index.html`.
 2. Search for the price, academic year, or wording you want to change. Edit the words and numbers while keeping the surrounding symbols in place.
 3. Check the price, year, availability message, and picture descriptions on both pages so they agree.
-4. Upload the new card artwork and offer sheet into a folder named for the academic year, such as `assets/membershipCard/2026-2027/`. Update the picture links on both pages and the offer-sheet links on the Member card page to match the new filenames. Keep previous card artwork, but remove the replaced offer sheet.
+4. Upload the new card artwork into a folder named for the academic year, such as `assets/membershipCard/2026-2027/`. Update the picture links on both pages to match the new filenames. Keep previous card artwork; partner offers are listed directly on the Member card page, without a separate offer-sheet download.
 5. If a new sponsor map is provided, upload its picture into the same year's folder and update the map picture and both Google Maps links at the bottom of the Member card page.
 
 **Partner offers**
@@ -159,7 +159,7 @@ Open `assets/data/member-card.json`. Update `academicYear` and edit the partner 
 
 Replace the previous year's partner list rather than mixing offers from different years. Keep the category list near the top of the file in place. Separate partner entries with commas, and do not put a comma after the final entry.
 
-Confirm each offer with the partner before publishing it. Check the directory's year labels in `store/index.html` against the card and offer sheet, then test the category buttons on the website.
+Confirm each offer with the partner before publishing it. Check the directory's year labels in `store/index.html` against the card and partner list, then test the category buttons on the website.
 
 ## Developer Tools and Workflow
 
@@ -181,6 +181,8 @@ npm run build
 - New image paths still work without rebuilding, but use the larger original files until optimized copies are generated.
 - Replacing an image at an existing path requires a rebuild; otherwise, visitors may still see its previous optimized copy.
 - Source CSS/JavaScript changes require a rebuild because the pages load the generated `.min.css` and `.min.js` files.
+
+Editable CSS and JavaScript stay in `styles/` and `js/`. Generated minified bundles live separately in `styles/min/` and `js/min/`; the build updates page links, cache hashes, and relative font URLs for those folders.
 
 This is a publishing step, not something visitors or the server run on each page visit.
 

@@ -6,6 +6,7 @@ import sharp from "sharp";
 import * as sass from "sass";
 import * as esbuild from "esbuild";
 import { PurgeCSS } from "purgecss";
+import { prepareSkylineLayers } from "./skyline-overlap.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 process.chdir(root);
@@ -86,6 +87,8 @@ for (const [file, { widths, lossless }] of jobs) {
 
 const hero = {};
 const heroTrims = {};
+const repairedLayers = await prepareSkylineLayers(Array.from({ length: 5 }, (_, index) => `assets/home/repaired/layer${index + 1}.png`));
+const overlapModified = (await stat("scripts/skyline-overlap.mjs")).mtimeMs;
 async function transparentBounds(file, crop) {
     let image = sharp(file);
     if (crop) image = image.extract(crop);
@@ -101,14 +104,21 @@ async function transparentBounds(file, crop) {
     return { left, top, width: right - left + 1, height: bottom - top + 1 };
 }
 for (const name of ["bg", ...Array.from({ length: 8 }, (_, i) => `layer${i + 1}`)]) {
-    const file = `assets/home/${name}.png`;
+    const repaired = /^layer[1-5]$/.test(name);
+    const file = `assets/home/${repaired ? "repaired/" : ""}${name}.png`;
+    const input = repaired ? repairedLayers[Number(name.slice(5)) - 1] : file;
+    const version = createHash("sha256").update(repaired ? input : await readFile(file)).digest("hex").slice(0, 12);
+    if (repaired) {
+        // Full-canvas alternatives support browsers without container units.
+        await sharp(input).webp({ quality: 88, alphaQuality: 100, effort: 6 }).toFile(file.replace(/\.png$/, ".webp"));
+    }
     const metadata = await sharp(file).metadata();
     const variants = [];
     for (const mobile of [false, true]) {
         const crop = mobile ? { left: 759, top: 0, width: 552, height: 1381 } : null;
         const canvasWidth = mobile ? 552 : metadata.width;
         const canvasHeight = metadata.height;
-        const trim = name === "bg" ? null : await transparentBounds(file, crop);
+        const trim = name === "bg" ? null : await transparentBounds(input, crop);
         (heroTrims[name] ||= []).push(trim ? { ...trim, canvasWidth, canvasHeight } : null);
         const widths = mobile ? [384, 552] : [1280, 1600, metadata.width];
         const list = [];
@@ -117,13 +127,13 @@ for (const name of ["bg", ...Array.from({ length: 8 }, (_, i) => `layer${i + 1}`
             await mkdir(path.dirname(output), { recursive: true });
             let existing;
             try { existing = await stat(output); } catch {}
-            if (!existing || existing.mtimeMs < (await stat(file)).mtimeMs) {
-                let image = sharp(file);
+            if (!existing || existing.mtimeMs < Math.max((await stat(file)).mtimeMs, repaired ? overlapModified : 0)) {
+                let image = sharp(input);
                 if (crop || trim) image = image.extract({ left: (crop?.left || 0) + (trim?.left || 0), top: trim?.top || 0, width: trim?.width || crop.width, height: trim?.height || crop.height });
                 await image.resize({ width: trim ? Math.max(1, Math.round(width * trim.width / canvasWidth)) : width }).webp({ quality: 88, alphaQuality: 100, effort: 6 }).toFile(output);
             }
             const actualWidth = trim ? Math.max(1, Math.round(width * trim.width / canvasWidth)) : width;
-            if (!list.some(([size]) => size === actualWidth)) list.push([actualWidth, output]);
+            if (!list.some(([size]) => size === actualWidth)) list.push([actualWidth, `${output}?v=${version}`]);
             else await unlink(output);
         }
         variants.push(list);
@@ -207,7 +217,7 @@ for (const [file, page] of [["index.html", "home"], ["about/index.html", "about"
         };
         const scene = name => `<source media="(max-width: 767px) and (max-aspect-ratio: 1/2)" ${name === "bg" ? "" : "data-"}srcset="${srcset(hero[name][1])}" sizes="${sceneSizes(name, true)}" type="image/webp"><source ${name === "bg" ? "" : "data-"}srcset="${srcset(hero[name][0])}" sizes="${sceneSizes(name, false)}" type="image/webp">`;
         html = html.replace(/<picture class="hero-base"[\s\S]*?<\/picture>/, `<picture class="hero-base" aria-hidden="true">${scene("bg")}<img src="./assets/home/bg.png" alt="" width="2070" height="1381" fetchpriority="high" decoding="async" draggable="false"></picture>`);
-        html = html.replace(/<picture class="parallax-layer img(\d)"[^>]*>[\s\S]*?<\/picture>/g, (_, number) => `<picture class="parallax-layer img${number}" data-depth="${({ 1: "0.28", 2: "0.25", 3: "0.21", 4: "0.17", 5: "0.14", 6: "0.11", 7: "0.09", 8: "0.07" })[number]}">${scene(`layer${number}`)}<img data-src="./assets/home/layer${number}.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>`);
+        html = html.replace(/<picture class="parallax-layer img(\d)"[^>]*>[\s\S]*?<\/picture>/g, (_, number) => `<picture class="parallax-layer img${number}" data-depth="${({ 1: "0.28", 2: "0.25", 3: "0.21", 4: "0.17", 5: "0.14", 6: "0.11", 7: "0.09", 8: "0.07" })[number]}">${scene(`layer${number}`)}<img data-src="./assets/home/${Number(number) <= 5 ? "repaired/" : ""}layer${number}.png" alt="" width="2070" height="1381" decoding="async" fetchpriority="low" draggable="false"></picture>`);
         html = html.replace(/(<h1 id="hero-title"[\s\S]*?)<img[^>]*>/, `$1${image("assets/logo/logoTextWhite.png", "Hong Kong Student Network (HKSN)", "(max-width: 767px) min(76vw, 300px), 400px", 'draggable="false"')}`);
         const firstSlide = (await json(`assets/data/${homeYear}/carousel.json`))[0];
         html = html.replace(/(<div class="carousel-item active">)<img[^>]*>/, `$1${image(firstSlide.image, firstSlide.alt, "(max-width: 767px) calc(100vw - 40px), (max-width: 1280px) 53vw, 630px", `loading="lazy"${firstSlide.poster ? ' class="poster-image"' : ""}`)}`);
